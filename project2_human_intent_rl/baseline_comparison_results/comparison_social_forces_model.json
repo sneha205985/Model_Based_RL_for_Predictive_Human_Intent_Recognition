@@ -1,0 +1,256 @@
+{
+  "baseline_name": "Social Forces Model",
+  "baseline_info": {
+    "description": "Classical social forces model for human behavior prediction",
+    "paper_reference": "Helbing & Moln\u00e1r (1995). Social force model for pedestrian dynamics",
+    "year": 1995,
+    "type": "behavior_prediction"
+  },
+  "our_performance": {
+    "safety_success_rate": {
+      "mean": 0.9720484567754812,
+      "std": 0.0372524545891597,
+      "median": 0.9914465242349038,
+      "ci_lower": 0.89448465188668,
+      "ci_upper": 1.0
+    },
+    "prediction_accuracy": {
+      "mean": 0.8866760174134263,
+      "std": 0.04451544735978321,
+      "median": 0.8844422979966268,
+      "ci_lower": 0.8098515116361492,
+      "ci_upper": 0.9896296806171305
+    },
+    "decision_cycle_time": {
+      "mean": 165.80837476354012,
+      "std": 8.451069000855659,
+      "median": 166.29346941915756,
+      "ci_lower": 149.42285850706406,
+      "ci_upper": 176.77367002684232
+    },
+    "collision_rate": {
+      "mean": 0.001987937260371621,
+      "std": 9.979819832656144e-05,
+      "median": 0.0019676770413129875,
+      "ci_lower": 0.0018395884500681133,
+      "ci_upper": 0.00219104764155389
+    },
+    "comfort_score": {
+      "mean": 8.704306277839096,
+      "std": 0.42064052782800576,
+      "median": 8.745246216046887,
+      "ci_lower": 7.892164406623944,
+      "ci_upper": 9.414158665283962
+    },
+    "computational_efficiency": {
+      "mean": 1.6978678434671224,
+      "std": 0.09423394811125776,
+      "median": 1.6973781171033657,
+      "ci_lower": 1.5361651174322166,
+      "ci_upper": 1.8817053798253975
+    }
+  },
+  "baseline_performance": {
+    "safety_success_rate": {
+      "mean": 0.8279798859761837,
+      "std": 0.07752125800914118,
+      "median": 0.8347654782938617,
+      "ci_lower": 0.6542442979382622,
+      "ci_upper": 0.9551025730668673
+    },
+    "prediction_accuracy": {
+      "mean": 0.5615757133746332,
+      "std": 0.04922504538902173,
+      "median": 0.5705643309378787,
+      "ci_lower": 0.4851908292794191,
+      "ci_upper": 0.6479567734182029
+    },
+    "decision_cycle_time": {
+      "mean": 149.21174389317423,
+      "std": 11.608987431548867,
+      "median": 149.48966797086356,
+      "ci_lower": 125.93247976846958,
+      "ci_upper": 170.76088678068592
+    },
+    "collision_rate": {
+      "mean": 0.15116728851571182,
+      "std": 0.013604454205610433,
+      "median": 0.15330786346625397,
+      "ci_lower": 0.1281007765475424,
+      "ci_upper": 0.17141033282239712
+    },
+    "comfort_score": {
+      "mean": 6.558670466403493,
+      "std": 0.47255217026260915,
+      "median": 6.522891088133036,
+      "ci_lower": 5.779879766709151,
+      "ci_upper": 7.630294278653094
+    },
+    "computational_efficiency": {
+      "mean": 1.59734781625801,
+      "std": 0.12888168453956245,
+      "median": 1.5823389932158047,
+      "ci_lower": 1.3947230715134216,
+      "ci_upper": 1.8536209165162993
+    }
+  },
+  "statistical_tests": {
+    "safety_success_rate": {
+      "baseline_stats": {
+        "mean": 0.9720484567754812,
+        "std": 0.0372524545891597,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.8279798859761837,
+        "std": 0.07752125800914118,
+        "n": 50
+      },
+      "test_statistic": 2405.0,
+      "p_value": 1.2286760146880929e-15,
+      "test_type": "mann_whitney_u",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Social Forces Model"
+      ]
+    },
+    "prediction_accuracy": {
+      "baseline_stats": {
+        "mean": 0.8866760174134263,
+        "std": 0.04451544735978321,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.5615757133746332,
+        "std": 0.04922504538902173,
+        "n": 50
+      },
+      "test_statistic": 34.63719578323222,
+      "p_value": 8.828213777248462e-57,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Social Forces Model"
+      ]
+    },
+    "decision_cycle_time": {
+      "baseline_stats": {
+        "mean": 165.80837476354012,
+        "std": 8.451069000855659,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 149.21174389317423,
+        "std": 11.608987431548867,
+        "n": 50
+      },
+      "test_statistic": 8.172821732565374,
+      "p_value": 1.083875356084657e-12,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Social Forces Model"
+      ]
+    },
+    "collision_rate": {
+      "baseline_stats": {
+        "mean": 0.001987937260371621,
+        "std": 9.979819832656144e-05,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.15116728851571182,
+        "std": 0.013604454205610433,
+        "n": 50
+      },
+      "test_statistic": -77.5355565027685,
+      "p_value": 9.194861009767545e-90,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Social Forces Model"
+      ]
+    },
+    "comfort_score": {
+      "baseline_stats": {
+        "mean": 8.704306277839096,
+        "std": 0.42064052782800576,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 6.558670466403493,
+        "std": 0.47255217026260915,
+        "n": 50
+      },
+      "test_statistic": 23.981624148473294,
+      "p_value": 8.555562884965023e-43,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Social Forces Model"
+      ]
+    },
+    "computational_efficiency": {
+      "baseline_stats": {
+        "mean": 1.6978678434671224,
+        "std": 0.09423394811125776,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 1.59734781625801,
+        "std": 0.12888168453956245,
+        "n": 50
+      },
+      "test_statistic": 4.451928743738788,
+      "p_value": 2.2560142488443547e-05,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Social Forces Model"
+      ]
+    }
+  },
+  "effect_sizes": {
+    "safety_success_rate": 2.368906389209116,
+    "prediction_accuracy": 6.927439156646445,
+    "decision_cycle_time": 1.6345643465130755,
+    "collision_rate": -15.507111300553701,
+    "comfort_score": 4.79632482969466,
+    "computational_efficiency": 0.8903857487477577
+  },
+  "confidence_intervals": {
+    "safety_success_rate": [
+      0.12007876935378282,
+      0.1685737128926615
+    ],
+    "prediction_accuracy": [
+      0.3054907206763552,
+      0.34456474760217937
+    ],
+    "decision_cycle_time": [
+      13.06684444037624,
+      20.2749564216223
+    ],
+    "collision_rate": [
+      -0.15308153519542786,
+      -0.1455375581058785
+    ],
+    "comfort_score": [
+      1.9691688487716168,
+      2.3258808514695026
+    ],
+    "computational_efficiency": [
+      0.05364483187099036,
+      0.14366365171335607
+    ]
+  },
+  "sample_size": 50,
+  "execution_time": 0.034425,
+  "timestamp": "2025-09-02T19:07:47.240910"
+}

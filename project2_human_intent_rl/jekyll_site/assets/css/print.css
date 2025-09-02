@@ -1,0 +1,486 @@
+/* ==========================================================================
+   Print Styles
+   Optimized styles for printing the documentation
+   ========================================================================== */
+
+@media print {
+    /* Page Setup */
+    @page {
+        margin: 2cm;
+        size: A4;
+        
+        @top-left {
+            content: "Model-Based RL for Human Intent Recognition";
+            font-size: 10pt;
+            color: #666;
+        }
+        
+        @top-right {
+            content: counter(page);
+            font-size: 10pt;
+            color: #666;
+        }
+        
+        @bottom-center {
+            content: "© 2024 Claude Code Research Team - Anthropic";
+            font-size: 8pt;
+            color: #888;
+        }
+    }
+
+    /* Reset and Base Styles */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        background: transparent !important;
+        color: black !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: black;
+        background: white;
+        font-family: "Times New Roman", serif;
+    }
+
+    /* Hide Non-Essential Elements */
+    .site-header,
+    .nav-toggle,
+    .nav-menu,
+    .breadcrumb,
+    .site-footer,
+    .back-to-top,
+    .copy-btn,
+    .social-links,
+    .skip-link {
+        display: none !important;
+    }
+
+    /* Content Layout */
+    .container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .site-main {
+        padding: 0;
+        min-height: auto;
+    }
+
+    .page-content {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Times New Roman", serif;
+        font-weight: bold;
+        color: black;
+        page-break-after: avoid;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    h1 {
+        font-size: 18pt;
+        border-bottom: 2pt solid black;
+        padding-bottom: 0.25em;
+        margin-bottom: 1em;
+    }
+
+    h2 {
+        font-size: 16pt;
+        border-bottom: 1pt solid black;
+        padding-bottom: 0.2em;
+        margin-bottom: 0.75em;
+    }
+
+    h3 {
+        font-size: 14pt;
+        margin-bottom: 0.5em;
+    }
+
+    h4 {
+        font-size: 13pt;
+        margin-bottom: 0.5em;
+    }
+
+    h5, h6 {
+        font-size: 12pt;
+        margin-bottom: 0.25em;
+    }
+
+    p {
+        font-size: 12pt;
+        line-height: 1.4;
+        margin-bottom: 0.75em;
+        text-align: justify;
+        orphans: 2;
+        widows: 2;
+    }
+
+    /* Page Header */
+    .page-header {
+        text-align: center;
+        margin-bottom: 2em;
+        border-bottom: 2pt solid black;
+        padding-bottom: 1em;
+    }
+
+    .page-title {
+        font-size: 20pt;
+        margin-bottom: 0.5em;
+        color: black;
+    }
+
+    .page-subtitle {
+        font-size: 14pt;
+        font-style: italic;
+        color: #333;
+        margin-bottom: 0.25em;
+    }
+
+    .page-date {
+        font-size: 10pt;
+        color: #666;
+    }
+
+    /* Links */
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666;
+        font-style: italic;
+    }
+
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    /* Lists */
+    ul, ol {
+        margin: 0.75em 0 0.75em 1.5em;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 0.25em;
+        line-height: 1.3;
+    }
+
+    /* Code Blocks */
+    code {
+        font-family: "Courier New", monospace;
+        font-size: 10pt;
+        background: #f5f5f5;
+        padding: 0.1em 0.2em;
+        border: 1pt solid #ddd;
+        border-radius: 2pt;
+    }
+
+    pre {
+        font-family: "Courier New", monospace;
+        font-size: 9pt;
+        background: #f8f8f8;
+        border: 1pt solid #ccc;
+        padding: 0.5em;
+        margin: 0.75em 0;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        page-break-inside: avoid;
+    }
+
+    pre code {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: inherit;
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1em 0;
+        page-break-inside: avoid;
+        font-size: 10pt;
+    }
+
+    th, td {
+        border: 1pt solid black;
+        padding: 0.3em 0.5em;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        background: #f0f0f0;
+        font-weight: bold;
+    }
+
+    tr {
+        page-break-inside: avoid;
+    }
+
+    /* Blockquotes */
+    blockquote {
+        border-left: 3pt solid black;
+        margin: 1em 1.5em;
+        padding: 0.5em 1em;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    blockquote p {
+        margin-bottom: 0.5em;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 1em auto;
+        border: 1pt solid #ccc;
+        page-break-inside: avoid;
+    }
+
+    figure {
+        margin: 1em 0;
+        text-align: center;
+        page-break-inside: avoid;
+    }
+
+    figcaption {
+        font-size: 10pt;
+        font-style: italic;
+        color: #666;
+        margin-top: 0.5em;
+        text-align: center;
+    }
+
+    /* Table of Contents */
+    .table-of-contents {
+        background: none;
+        border: 1pt solid black;
+        padding: 1em;
+        margin: 2em 0;
+        page-break-inside: avoid;
+        float: none;
+        max-width: none;
+    }
+
+    .table-of-contents h2 {
+        font-size: 14pt;
+        margin-bottom: 0.5em;
+        border: none;
+        padding: 0;
+    }
+
+    .table-of-contents ul {
+        margin: 0;
+        list-style: none;
+    }
+
+    .table-of-contents li {
+        margin-bottom: 0.2em;
+    }
+
+    .table-of-contents a {
+        color: black;
+        text-decoration: none;
+        page-break-inside: avoid;
+    }
+
+    .table-of-contents a:after {
+        content: "";
+    }
+
+    /* Mathematical Expressions */
+    .MathJax,
+    .MathJax_Display {
+        color: black !important;
+        font-size: 11pt;
+    }
+
+    .MathJax_Display {
+        margin: 1em 0;
+        page-break-inside: avoid;
+    }
+
+    /* Cards and Panels */
+    .card {
+        border: 1pt solid black;
+        padding: 1em;
+        margin: 1em 0;
+        background: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+
+    /* Syntax Highlighting (simplified for print) */
+    .highlight {
+        background: #f8f8f8 !important;
+        border: 1pt solid #ccc !important;
+        padding: 0.5em !important;
+        margin: 0.75em 0 !important;
+        page-break-inside: avoid;
+    }
+
+    .highlight pre {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .highlight code {
+        background: none !important;
+        font-size: 9pt !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Force black text for syntax highlighting */
+    .highlight .c,
+    .highlight .cm,
+    .highlight .cp,
+    .highlight .c1,
+    .highlight .cs,
+    .highlight .k,
+    .highlight .kc,
+    .highlight .kd,
+    .highlight .kn,
+    .highlight .kp,
+    .highlight .kr,
+    .highlight .kt,
+    .highlight .m,
+    .highlight .mf,
+    .highlight .mh,
+    .highlight .mi,
+    .highlight .mo,
+    .highlight .s,
+    .highlight .sb,
+    .highlight .sc,
+    .highlight .sd,
+    .highlight .s2,
+    .highlight .se,
+    .highlight .sh,
+    .highlight .si,
+    .highlight .sx,
+    .highlight .sr,
+    .highlight .s1,
+    .highlight .ss,
+    .highlight .na,
+    .highlight .nb,
+    .highlight .nc,
+    .highlight .no,
+    .highlight .nd,
+    .highlight .ni,
+    .highlight .ne,
+    .highlight .nf,
+    .highlight .nl,
+    .highlight .nn,
+    .highlight .nt,
+    .highlight .nv,
+    .highlight .ow,
+    .highlight .w,
+    .highlight .bp,
+    .highlight .vc,
+    .highlight .vg,
+    .highlight .vi,
+    .highlight .il {
+        color: black !important;
+        background: none !important;
+    }
+
+    /* Page Breaking */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    p, blockquote, ul, ol, dl, table, pre, figure {
+        page-break-inside: avoid;
+    }
+
+    /* Abbreviations and Acronyms */
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+        font-size: 10pt;
+        font-style: italic;
+        color: #666;
+    }
+
+    /* Print-specific utilities */
+    .print-hide {
+        display: none !important;
+    }
+
+    .print-show {
+        display: block !important;
+    }
+
+    .print-break-before {
+        page-break-before: always;
+    }
+
+    .print-break-after {
+        page-break-after: always;
+    }
+
+    .print-avoid-break {
+        page-break-inside: avoid;
+    }
+
+    /* Footer information */
+    .print-footer {
+        position: fixed;
+        bottom: 1cm;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 8pt;
+        color: #666;
+        border-top: 1pt solid #ccc;
+        padding-top: 0.5cm;
+    }
+
+    /* Ensure content doesn't overlap with footer */
+    body {
+        padding-bottom: 2cm;
+    }
+
+    /* Special handling for methodology equations */
+    .methodology-equation {
+        margin: 1em 0;
+        padding: 0.5em;
+        border: 1pt solid #ddd;
+        background: #fafafa;
+        text-align: center;
+        page-break-inside: avoid;
+    }
+
+    /* Results tables special formatting */
+    .results-table {
+        font-size: 9pt;
+        page-break-before: avoid;
+    }
+
+    .results-table th {
+        background: #e0e0e0;
+        font-weight: bold;
+        font-size: 9pt;
+    }
+
+    .results-table td {
+        font-size: 9pt;
+    }
+}

@@ -1,0 +1,77 @@
+# Model-Based RL Human Intent Recognition System Dependencies
+# Generated: 2025-08-29
+# Python 3.13 compatible versions
+
+# Core Machine Learning & Deep Learning
+torch==2.8.0
+torchvision==0.23.0
+torchaudio==2.8.0
+pyro-ppl==1.9.1
+pyro-api==0.1.2
+
+# Scientific Computing
+numpy==2.2.6
+scipy==1.16.1
+scikit-learn==1.7.1
+pandas==2.3.0
+statsmodels==0.14.5
+
+# Control Systems (core dependencies only)
+control==0.10.2
+# Note: roboticstoolbox-python excluded due to installation issues
+# Core functionality works without robotics-specific libraries
+
+# Visualization
+matplotlib==3.10.3
+plotly==6.2.0
+seaborn==0.13.2
+
+# Additional Dependencies (core only)
+tqdm==4.67.1
+joblib==1.5.1
+# Note: removed robotics-specific dependencies that cause install issues
+
+# Standard Library Extensions
+typing-extensions==4.14.0
+filelock==3.19.1
+sympy==1.14.0
+networkx==3.5
+jinja2==3.1.6
+fsspec==2025.7.0
+pillow==11.2.1
+pyparsing==3.2.3
+python-dateutil==2.9.0.post0
+pytz==2025.2
+tzdata==2025.2
+packaging==25.0
+six==1.17.0
+
+# Optional Dependencies for Enhanced Features
+# Install with: pip install -r requirements.txt -r requirements-optional.txt
+# Or: pip install h5py dash bokeh altair
+
+# Advanced Data Storage (for enhanced data formats)
+# h5py==3.10.0  # HDF5 data storage - enables advanced dataset formats
+
+# Enhanced Visualization & Dashboards (for advanced plotting)
+# dash==2.17.1  # Interactive web dashboards
+# dash-bootstrap-components==1.5.0  # Dashboard styling
+# bokeh==3.3.4  # Interactive plots
+# altair==5.2.0  # Statistical visualizations
+# kaleido==0.2.1  # Static image export for plotly
+
+# Scientific Computing Extensions (for specialized analysis)
+# netCDF4==1.6.5  # Network Common Data Format
+# xarray==2023.12.0  # N-dimensional labeled arrays
+# dask==2023.12.1  # Parallel computing
+
+# Development & Testing (optional)
+pre-commit==4.3.0
+virtualenv==20.34.0
+
+# Installation Notes:
+# - Core functionality works without optional dependencies
+# - Advanced visualization features require optional packages
+# - HDF5 support requires h5py for enhanced data storage
+# - Interactive dashboards require dash/bokeh packages
+# - All optional packages have graceful fallbacks in code

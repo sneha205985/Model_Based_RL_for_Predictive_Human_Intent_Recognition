@@ -1,0 +1,244 @@
+\section{Mathematical Notation and Symbols}
+
+\subsection{General Notation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\R$ & Real numbers \\
+$\R^n$ & $n$-dimensional real vector space \\
+$\R^{n \times m}$ & $n \times m$ real matrices \\
+$\N$ & Natural numbers \\
+$\mathbb{Z}$ & Integers \\
+$\mathbb{C}$ & Complex numbers \\
+$\norm{\cdot}$ & Euclidean norm \\
+$\norm{\cdot}_p$ & $p$-norm \\
+$\norm{\cdot}_{\mathcal{H}}$ & RKHS norm \\
+$\inner{\cdot, \cdot}$ & Inner product \\
+$\Tr(\cdot)$ & Matrix trace \\
+$\det(\cdot)$ & Matrix determinant \\
+$\rank(\cdot)$ & Matrix rank \\
+$\lambda_{\max}(\cdot)$ & Maximum eigenvalue \\
+$\lambda_{\min}(\cdot)$ & Minimum eigenvalue \\
+\bottomrule
+\end{tabular}
+\caption{General mathematical notation}
+\end{table}
+
+\subsection{Probability and Statistics}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\Pr[\cdot]$ & Probability measure \\
+$\E[\cdot]$ & Expectation \\
+$\Var[\cdot]$ & Variance \\
+$\Cov[\cdot, \cdot]$ & Covariance \\
+$\Normal(\mu, \sigma^2)$ & Normal distribution \\
+$\GP(\mu, k)$ & Gaussian process \\
+$\Delta(\mathcal{X})$ & Probability simplex over $\mathcal{X}$ \\
+$\mu_0$ & Prior distribution \\
+$\mu_t$ & Posterior at time $t$ \\
+$\mathcal{L}(\cdot)$ & Likelihood function \\
+$\text{KL}(\cdot \| \cdot)$ & Kullback-Leibler divergence \\
+$\Phi(\cdot)$ & Standard normal CDF \\
+$\phi(\cdot)$ & Standard normal PDF \\
+\bottomrule
+\end{tabular}
+\caption{Probability and statistics notation}
+\end{table}
+
+\subsection{Optimization and Control}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\argmin$ & Argument of minimum \\
+$\argmax$ & Argument of maximum \\
+$\nabla f$ & Gradient of function $f$ \\
+$\nabla^2 f$ & Hessian of function $f$ \\
+$\partial f / \partial x$ & Partial derivative \\
+$\mathcal{L}$ & Lagrangian \\
+$J(\cdot)$ & Cost/objective function \\
+$V(\cdot)$ & Value function \\
+$Q(\cdot, \cdot)$ & Action-value function \\
+$\pi$ & Policy \\
+$\pi^*$ & Optimal policy \\
+$\kappa(\cdot)$ & Control law \\
+\bottomrule
+\end{tabular}
+\caption{Optimization and control notation}
+\end{table}
+
+\subsection{System Dynamics and States}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\mathcal{S}$ & State space \\
+$\mathcal{A}$ & Action space \\
+$\mathcal{U}$ & Control input space \\
+$\mathcal{H}$ & Human intent hypothesis space \\
+$\mathcal{D}$ & Disturbance space \\
+$x(t)$ & State at time $t$ \\
+$u(t)$ & Control input at time $t$ \\
+$d(t)$ & Disturbance at time $t$ \\
+$f(\cdot)$ & System dynamics \\
+$h(\cdot)$ & Output/measurement function \\
+$T$ & Time horizon \\
+$N$ & Prediction horizon (MPC) \\
+$H$ & Episode horizon (RL) \\
+\bottomrule
+\end{tabular}
+\caption{System dynamics notation}
+\end{table}
+
+\subsection{Gaussian Processes}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$k(\cdot, \cdot)$ & Kernel/covariance function \\
+$K$ & Covariance matrix \\
+$k_*$ & Covariance vector for test point \\
+$\mathcal{H}_k$ & RKHS of kernel $k$ \\
+$\hat{f}(x)$ & GP posterior mean \\
+$\hat{\sigma}^2(x)$ & GP posterior variance \\
+$\sigma_n^2$ & Noise variance \\
+$\ell$ & Length scale parameter \\
+$\sigma_f^2$ & Signal variance \\
+$\gamma_t$ & Information gain \\
+$\beta_t$ & Confidence parameter \\
+\bottomrule
+\end{tabular}
+\caption{Gaussian process notation}
+\end{table}
+
+\subsection{Model Predictive Control}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\ell(x, u)$ & Stage cost \\
+$V_f(x)$ & Terminal cost \\
+$\mathcal{X}_f$ & Terminal constraint set \\
+$V_N^*(x)$ & Optimal value function \\
+$\kappa_N(x)$ & MPC control law \\
+$\kappa_f(x)$ & Terminal controller \\
+$\mathbf{u}$ & Control sequence \\
+$\mathcal{U}_N(x)$ & Feasible control sequences \\
+$\mathcal{X}_0$ & Initial feasible set \\
+$Q, R$ & Cost matrices \\
+\bottomrule
+\end{tabular}
+\caption{MPC notation}
+\end{table>
+
+\subsection{Reinforcement Learning}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\mathcal{M}$ & Markov Decision Process \\
+$P(s' | s, a)$ & Transition probability \\
+$R(s, a)$ & Reward function \\
+$\gamma$ & Discount factor \\
+$V^\pi(s)$ & Value function under policy $\pi$ \\
+$Q^\pi(s, a)$ & Action-value function under policy $\pi$ \\
+$\rho^\pi$ & State visitation distribution \\
+$\text{Regret}(T)$ & Cumulative regret \\
+$\text{BayesRegret}(T)$ & Bayesian regret \\
+$I_t$ & Information gain \\
+$\mathcal{F}_t$ & Filtration at time $t$ \\
+\bottomrule
+\end{tabular}
+\caption{Reinforcement learning notation}
+\end{table>
+
+\subsection{Safety and Reachability}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\mathcal{S}$ & Safe set \\
+$\mathcal{U}_{\text{unsafe}}$ & Unsafe set \\
+$g_i(x)$ & Safety constraint functions \\
+$\mathcal{R}([0,T], \mathcal{X}_0)$ & Forward reachable set \\
+$\mathcal{R}^{-1}([0,T], \mathcal{T})$ & Backward reachable set \\
+$V(x, t)$ & Value function for reachability \\
+$B(x)$ & Barrier function \\
+$\mathcal{B}(c, r)$ & Ball of radius $r$ centered at $c$ \\
+$d_{\text{safe}}$ & Minimum safe distance \\
+$H(x, p)$ & Hamiltonian \\
+$\phi(x, t)$ & Level set function \\
+$M(x)$ & Safety monitor \\
+\bottomrule
+\end{tabular}
+\caption{Safety and reachability notation}
+\end{table>
+
+\subsection{Complexity and Asymptotic Notation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\mathcal{O}(\cdot)$ & Big-O notation (upper bound) \\
+$\Omega(\cdot)$ & Big-Omega notation (lower bound) \\
+$\Theta(\cdot)$ & Big-Theta notation (tight bound) \\
+$o(\cdot)$ & Little-o notation \\
+$\tilde{\mathcal{O}}(\cdot)$ & Big-O hiding logarithmic factors \\
+$\mathcal{O}_p(\cdot)$ & Stochastic big-O notation \\
+$\xrightarrow{p}$ & Convergence in probability \\
+$\xrightarrow{d}$ & Convergence in distribution \\
+$\xrightarrow{\text{a.s.}}$ & Almost sure convergence \\
+\bottomrule
+\end{tabular}
+\caption{Complexity and asymptotic notation}
+\end{table>
+
+\subsection{Function Classes}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\mathcal{K}$ & Class $\mathcal{K}$ functions (continuous, strictly increasing, $\alpha(0) = 0$) \\
+$\mathcal{K}_\infty$ & Class $\mathcal{K}_\infty$ functions (class $\mathcal{K}$ and unbounded) \\
+$\mathcal{KL}$ & Class $\mathcal{KL}$ functions \\
+$\mathcal{C}^k$ & $k$-times continuously differentiable functions \\
+$L^p$ & $p$-integrable functions \\
+$\mathcal{H}$ & Hilbert space \\
+$\mathcal{H}_k$ & Reproducing Kernel Hilbert Space \\
+\bottomrule
+\end{tabular}
+\caption{Function classes notation}
+\end{table>

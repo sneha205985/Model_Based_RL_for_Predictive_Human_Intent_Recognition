@@ -1,0 +1,177 @@
+\subsection{Lyapunov Stability Analysis}
+
+This section provides a comprehensive Lyapunov stability analysis for the MPC controller in the human-robot interaction system, establishing both local and global stability properties.
+
+\subsubsection{Lyapunov Function Construction}
+
+\begin{definition}[MPC Value Function as Lyapunov Function]
+\label{def:mpc_lyapunov}
+For the MPC problem \eqref{eq:mpc_problem}, define the Lyapunov function candidate as the optimal value function:
+$$V(x) = V_N^*(x) = \min_{\mathbf{u} \in \mathcal{U}_N(x)} J_N(x, \mathbf{u})$$
+where $\mathcal{U}_N(x)$ is the set of feasible control sequences starting from state $x$.
+\end{definition}
+
+\begin{theorem}[Lyapunov Function Properties]
+\label{thm:lyapunov_properties}
+Under Assumptions \ref{ass:dynamics}--\ref{ass:terminal}, the MPC value function $V(x)$ satisfies the Lyapunov function properties:
+
+\begin{enumerate}
+    \item \textbf{Positive definiteness}: $V(x) > 0$ for all $x \neq x_s$ and $V(x_s) = 0$
+    \item \textbf{Radial unboundedness}: $V(x) \to \infty$ as $\norm{x} \to \infty$
+    \item \textbf{Decrease condition}: $V(f(x, \kappa_N(x))) - V(x) \leq -\ell(x, \kappa_N(x))$
+\end{enumerate}
+
+where $\kappa_N(x)$ is the first element of the optimal control sequence.
+\end{theorem}
+
+\begin{proof}
+\textbf{Property 1 - Positive definiteness}:
+From Assumption \ref{ass:stage_cost}, $\ell(x, u) \geq \alpha_\ell \norm{x - x_s}$ for all $(x, u)$. Since the MPC cost includes at least one stage cost term:
+$$V(x) = \sum_{k=0}^{N-1} \ell(x_k, u_k) + V_f(x_N) \geq \ell(x, u_0) \geq \alpha_\ell \norm{x - x_s}$$
+
+Thus $V(x) > 0$ for $x \neq x_s$ and $V(x_s) = 0$ since the optimal trajectory from $x_s$ is $(x_s, u_s, \ldots, x_s, u_s)$.
+
+\textbf{Property 2 - Radial unboundedness}:
+As $\norm{x} \to \infty$, the minimum stage cost $\ell(x, u_0)$ grows without bound due to the lower bound in Assumption \ref{ass:stage_cost}. Therefore $V(x) \to \infty$.
+
+\textbf{Property 3 - Decrease condition}:
+This follows from the proof of Theorem \ref{thm:mpc_stability}, where we showed:
+$$V(f(x, \kappa_N(x))) - V(x) \leq -\ell(x, \kappa_N(x))$$
+\end{proof}
+
+\subsubsection{Regional Stability Analysis}
+
+\begin{definition}[Domain of Attraction]
+The domain of attraction for the MPC controller is defined as:
+$$\mathcal{D}_A = \{x_0 \in \mathcal{X} : \lim_{t \to \infty} x(t) = x_s\}$$
+where $x(t)$ is the closed-loop trajectory starting from $x_0$.
+\end{definition}
+
+\begin{theorem}[Domain of Attraction Characterization]
+\label{thm:domain_attraction}
+The domain of attraction for the MPC controller satisfies:
+$$\mathcal{X}_0 \subseteq \mathcal{D}_A \subseteq \{x : V(x) \leq c\}$$
+for some $c > 0$, where $\mathcal{X}_0$ is the feasible set for the MPC problem.
+\end{theorem}
+
+\begin{proof}
+The inclusion $\mathcal{X}_0 \subseteq \mathcal{D}_A$ follows directly from Theorem \ref{thm:mpc_stability}.
+
+For the upper bound, define $c = \sup_{x \in \mathcal{X}_0} V(x)$. Since $V(x)$ is a Lyapunov function with the decrease property, any trajectory starting in the sublevel set $\{x : V(x) \leq c\}$ will remain bounded and converge to $x_s$.
+\end{proof}
+
+\subsubsection{Robust Lyapunov Stability}
+
+For systems with uncertainties, we establish Input-to-State Stability (ISS) properties.
+
+\begin{assumption}[Bounded Disturbances]
+\label{ass:bounded_disturbance}
+The system disturbances satisfy $\norm{w(t)} \leq W$ for all $t \geq 0$ and some known bound $W \geq 0$.
+\end{assumption>
+
+\begin{theorem}[Input-to-State Stability]
+\label{thm:iss}
+Under Assumptions \ref{ass:dynamics}--\ref{ass:terminal} and \ref{ass:bounded_disturbance}, the MPC closed-loop system is Input-to-State Stable with respect to disturbances $w$. Specifically, there exist class $\mathcal{KL}$ function $\beta$ and class $\mathcal{K}$ function $\gamma$ such that:
+$$\norm{x(t) - x_s} \leq \beta(\norm{x(0) - x_s}, t) + \gamma\left(\sup_{0 \leq \tau \leq t} \norm{w(\tau)}\right)$$
+\end{theorem}
+
+\begin{proof}
+We construct an ISS-Lyapunov function using the modified MPC value function.
+
+\textbf{Step 1: Modified Lyapunov function}
+Consider the robust MPC formulation with tightened constraints. The value function $V_{\text{rob}}(x)$ of this problem serves as an ISS-Lyapunov function.
+
+\textbf{Step 2: ISS decrease condition}
+For the robust MPC, we can establish:
+$$V_{\text{rob}}(f(x, \kappa_{\text{rob}}(x), w)) - V_{\text{rob}}(x) \leq -\alpha_3(\norm{x - x_s}) + \sigma(\norm{w})$$
+where $\alpha_3$ is a class $\mathcal{K}$ function and $\sigma$ is the disturbance gain.
+
+\textbf{Step 3: Apply ISS Lyapunov theorem}
+The existence of such an ISS-Lyapunov function guarantees ISS with the desired bounds.
+\end{proof>
+
+\subsubsection{Lyapunov-based Performance Bounds}
+
+\begin{theorem}[Performance Bounds via Lyapunov Analysis]
+\label{thm:performance_bounds}
+For the MPC controller with Lyapunov function $V(x)$, the closed-loop performance satisfies:
+
+\begin{enumerate}
+    \item \textbf{Finite-time bound}: For any $T > 0$,
+    $$\sum_{t=0}^{T-1} \ell(x(t), u(t)) \leq V(x(0))$$
+    
+    \item \textbf{Infinite-horizon bound}: If $x(0) \in \mathcal{X}_0$,
+    $$\sum_{t=0}^{\infty} \ell(x(t), u(t)) \leq V(x(0)) < \infty$$
+    
+    \item \textbf{Exponential decay}: If the stage cost is quadratic,
+    $$\ell(x(t), u(t)) \leq C e^{-\lambda t} V(x(0))$$
+    for some $C \geq 1$ and $\lambda > 0$.
+\end{enumerate}
+\end{theorem>
+
+\begin{proof}
+\textbf{Part 1}: From the Lyapunov decrease condition:
+$$V(x(t+1)) - V(x(t)) \leq -\ell(x(t), u(t))$$
+
+Summing from $t = 0$ to $T-1$:
+$$V(x(T)) - V(x(0)) \leq -\sum_{t=0}^{T-1} \ell(x(t), u(t))$$
+
+Since $V(x(T)) \geq 0$, the result follows.
+
+\textbf{Part 2}: Taking $T \to \infty$ in Part 1 and using convergence $x(t) \to x_s$.
+
+\textbf{Part 3}: For quadratic costs, the Lyapunov function decreases exponentially, implying exponential decay of the stage costs.
+\end{proof>
+
+\subsubsection{Lyapunov Stability with Learning}
+
+When the MPC uses learned models from the GP, we need to account for model uncertainty.
+
+\begin{theorem}[Lyapunov Stability with GP Models]
+\label{thm:lyapunov_gp}
+Consider MPC using GP posterior mean $\hat{f}_n(x, u)$ as the prediction model with confidence-based constraint tightening. If the GP satisfies the convergence properties from Theorem \ref{thm:gp_convergence}, then:
+
+\begin{enumerate}
+    \item For any $n$, the system remains stable in probability
+    \item As $n \to \infty$, the performance converges to the optimal performance
+    \item The Lyapunov function provides probabilistic stability guarantees
+\end{enumerate}
+\end{theorem>
+
+\begin{proof}
+\textbf{Step 1: Probabilistic model bounds}
+From GP theory, with probability at least $1-\delta$:
+$$\norm{\hat{f}_n(x, u) - f(x, u)} \leq \beta_n \sigma_n(x, u)$$
+where $\beta_n$ is a confidence parameter and $\sigma_n(x, u)$ is the GP posterior standard deviation.
+
+\textbf{Step 2: Robust MPC formulation}
+The MPC problem is formulated with tightened constraints based on the GP uncertainty:
+$$x_{k+1} = \hat{f}_n(x_k, u_k) \pm \beta_n \sigma_n(x_k, u_k)$$
+
+\textbf{Step 3: Apply robust Lyapunov theory}
+The robust Lyapunov function for this formulation provides stability with high probability. As $n \to \infty$, $\sigma_n(x, u) \to 0$, recovering nominal performance.
+\end{proof>
+
+\subsubsection{Computational Lyapunov Functions}
+
+For real-time implementation, we consider approximations to the exact Lyapunov function.
+
+\begin{theorem}[Approximate Lyapunov Functions]
+\label{thm:approx_lyapunov}
+Let $\tilde{V}(x)$ be an approximation to the true MPC value function $V(x)$ such that:
+$$|V(x) - \tilde{V}(x)| \leq \epsilon$$
+for all $x$ in some domain. If $\epsilon$ is sufficiently small, then $\tilde{V}(x)$ can serve as a Lyapunov function with modified decrease rate.
+\end{theorem}
+
+\subsubsection{Multiple Lyapunov Functions}
+
+For switching between different MPC formulations (e.g., learning vs. robust modes), we use multiple Lyapunov functions.
+
+\begin{theorem}[Switched MPC Stability]
+\label{thm:switched_mpc}
+Consider a switched MPC system with modes $i \in \{1, 2, \ldots, m\}$, each with Lyapunov function $V_i(x)$. If the switching satisfies:
+$$V_j(x) \leq \mu V_i(x) + \nu$$
+for switching from mode $i$ to mode $j$, with $\mu \geq 1$ and $\nu \geq 0$, then the switched system is stable under average dwell-time conditions.
+\end{theorem>
+
+This analysis provides the theoretical foundation for safely switching between different operational modes in the human-robot interaction system, such as switching from learning mode to performance mode as the GP model becomes more accurate.

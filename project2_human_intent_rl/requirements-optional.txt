@@ -1,0 +1,39 @@
+# Optional Dependencies for Enhanced Features
+# Model-Based RL Human Intent Recognition System
+# Install with: pip install -r requirements-optional.txt
+
+# Advanced Data Storage
+h5py==3.10.0                    # HDF5 data storage - enables advanced dataset formats
+
+# Enhanced Visualization & Dashboards  
+dash==2.17.1                    # Interactive web dashboards
+dash-bootstrap-components==1.5.0  # Dashboard styling components
+bokeh==3.3.4                    # Interactive plots and visualizations
+altair==5.2.0                   # Statistical visualizations
+kaleido==0.2.1                  # Static image export for plotly
+
+# Scientific Computing Extensions
+netCDF4==1.6.5                  # Network Common Data Format support
+xarray==2023.12.0               # N-dimensional labeled arrays
+dask==2023.12.1                 # Parallel computing for large datasets
+
+# Additional Visualization Tools
+ipywidgets==8.1.1               # Interactive widgets for notebooks
+jupyter==1.0.0                  # Jupyter notebook support
+notebook==7.0.6                 # Jupyter notebook interface
+
+# Performance Monitoring
+psutil==5.9.6                   # System and process utilities
+memory-profiler==0.61.0         # Memory usage profiling
+
+# Installation Instructions:
+# 1. Install core dependencies first: pip install -r requirements.txt
+# 2. Install optional features: pip install -r requirements-optional.txt
+# 3. Or install specific features: pip install h5py dash bokeh
+
+# Feature Mapping:
+# - h5py: Advanced data storage and loading capabilities
+# - dash/bokeh: Interactive real-time dashboards
+# - altair: Statistical visualization enhancements
+# - xarray/dask: Large dataset processing
+# - jupyter: Interactive analysis notebooks

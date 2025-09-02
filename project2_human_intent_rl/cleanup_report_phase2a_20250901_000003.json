@@ -1,0 +1,2814 @@
+{
+  "cleanup_timestamp": "2025-09-01T00:00:03.421523",
+  "project_root": "/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl",
+  "phase": "2A - Generated Files Only",
+  "statistics": {
+    "files_processed": 466,
+    "files_removed": 463,
+    "size_removed_mb": 6.6547393798828125,
+    "errors_count": 3
+  },
+  "cleanup_log": [
+    {
+      "path": "results/figures/completion_time_distribution.png",
+      "status": "skipped",
+      "reason": "safety verification failed",
+      "size": 158788
+    },
+    {
+      "path": "jekyll_site/build.sh",
+      "status": "skipped",
+      "reason": "safety verification failed",
+      "size": 15445
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/RECORD",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 65949
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/WHEEL",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 91
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/entry_points.txt",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 87
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/top_level.txt",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 4
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/REQUESTED",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 0
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/INSTALLER",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 4
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/METADATA",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 3649
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/licenses/LICENSE.txt",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 1093
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip-25.1.1.dist-info/licenses/AUTHORS.txt",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 11223
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/wheel_builder.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 11212
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/build_env.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 10924
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/network/__pycache__/session.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 19270
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/network/__pycache__/download.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12908
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/network/__pycache__/xmlrpc.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3109
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/network/__pycache__/utils.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2363
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/network/__pycache__/cache.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7267
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/network/__pycache__/lazy_wheel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 11570
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/network/__pycache__/auth.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 22630
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/network/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 319
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/setuptools_build.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 4482
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/temp_dir.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12202
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/_jaraco_text.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4506
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/glibc.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2515
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/urls.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2195
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/setuptools_build.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4682
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/unpacking.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 13839
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/packaging.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1933
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/logging.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14593
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/appdirs.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2563
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/compat.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2998
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/deprecation.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4311
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/filetypes.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1230
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/misc.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 33549
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/filesystem.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7505
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/wheel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5956
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/compatibility_tags.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7007
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/hashes.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7807
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/direct_url_helpers.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3699
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/datetime.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 740
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/egg_link.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3280
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/entrypoints.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4256
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 260
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/virtualenv.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4535
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/_log.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1979
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/retry.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2175
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/utils/__pycache__/subprocess.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8937
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/target_python.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4903
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/link.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 27230
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/candidate.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1730
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/pylock.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8426
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/wheel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7546
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/selection_prefs.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1898
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/installation_report.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2447
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/format_control.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4326
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/search_scope.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5179
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/scheme.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1135
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/index.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1833
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/direct_url.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 11071
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/models/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 331
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/build_env.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 15230
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/main.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 730
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/pyproject.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5289
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/self_outdated_check.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10631
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/exceptions.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 39990
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/cache.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12960
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/configuration.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 17916
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/wheel_builder.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 13615
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 845
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/main.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2365
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/req_command.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12980
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/autocompletion.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 9047
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/cmdoptions.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 32005
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/base_command.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10522
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/main_parser.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5070
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/status_codes.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 443
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/progress_bars.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5799
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/command_context.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1938
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/index_command.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7566
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 343
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/spinners.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8244
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/cli/__pycache__/parser.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 15452
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/install/__pycache__/wheel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 34796
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/install/__pycache__/editable_legacy.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1860
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/install/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 331
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/__pycache__/check.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7287
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/__pycache__/freeze.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10546
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/__pycache__/prepare.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 26783
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 265
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/wheel_legacy.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 3620
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/metadata.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 1421
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/metadata_editable.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 1509
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/wheel_editable.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 1417
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__init__.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 0
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/metadata_legacy.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 2189
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/wheel.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 1075
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/build_tracker.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 4774
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__pycache__/wheel_legacy.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4446
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__pycache__/wheel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1751
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__pycache__/metadata_legacy.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3059
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__pycache__/wheel_editable.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2092
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__pycache__/metadata.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1924
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__pycache__/build_tracker.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7809
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__pycache__/metadata_editable.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1976
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/operations/build/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 271
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/req/__pycache__/constructors.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 21615
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/req/__pycache__/req_install.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 39418
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/req/__pycache__/req_dependency_group.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4171
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/req/__pycache__/req_set.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5689
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/req/__pycache__/req_uninstall.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 32924
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/req/__pycache__/req_file.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 24683
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/req/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4207
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/legacy/__pycache__/resolver.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 22949
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/legacy/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 272
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/__pycache__/base.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1315
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 265
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/resolver.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12627
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/reporter.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5298
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/requirements.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 15815
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/base.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8335
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/candidates.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 30109
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/provider.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 11111
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/factory.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 33231
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/found_candidates.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6906
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/resolution/resolvelib/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 276
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/vcs/__pycache__/versioncontrol.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 28360
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/vcs/__pycache__/bazaar.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5204
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/vcs/__pycache__/subversion.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12735
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/vcs/__pycache__/git.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 19484
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/vcs/__pycache__/mercurial.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7666
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/vcs/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 599
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/locations/_distutils.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 6013
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/locations/__pycache__/_distutils.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6967
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/locations/__pycache__/base.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3836
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/locations/__pycache__/_sysconfig.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8204
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/locations/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 16211
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/index/__pycache__/sources.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12821
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/index/__pycache__/collector.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 21909
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/index/__pycache__/package_finder.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 41015
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/index/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 297
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/search.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7972
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/check.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2750
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/show.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 11550
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/list.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 17056
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/download.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7617
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/freeze.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4467
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/hash.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3099
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/debug.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10364
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/wheel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8951
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/cache.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10152
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/help.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1813
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/install.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 29832
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/configuration.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 13302
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/uninstall.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4838
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/completion.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5563
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/index.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7109
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/lock.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8106
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4190
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/commands/__pycache__/inspect.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4104
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/__pycache__/base.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 34724
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/__pycache__/pkg_resources.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 16394
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6698
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/__pycache__/_json.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3084
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/importlib/_dists.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 8279
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/importlib/__pycache__/_compat.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4604
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/importlib/__pycache__/_dists.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 13191
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/importlib/__pycache__/_envs.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8230
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/metadata/importlib/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 426
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/__init__.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 858
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/sdist.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 6751
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/installed.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 842
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/base.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 1783
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/wheel.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 1317
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/__pycache__/base.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2971
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/__pycache__/installed.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1822
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/__pycache__/wheel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2411
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/__pycache__/sdist.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8701
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_internal/distributions/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1031
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/licenses/__pycache__/_spdx.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 47509
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/licenses/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4380
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/markers.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 13169
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/requirements.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4703
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/_musllinux.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4692
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/utils.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6827
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/tags.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 25043
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/metadata.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 27438
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/_tokenizer.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8179
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/_manylinux.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10073
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/_structures.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3422
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 627
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/specifiers.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 37735
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/version.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 20052
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/_elffile.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5286
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/packaging/__pycache__/_parser.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14256
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/truststore/__pycache__/_windows.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 16315
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/truststore/__pycache__/_api.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 17234
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/truststore/__pycache__/_macos.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 19371
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/truststore/__pycache__/_openssl.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2358
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/truststore/__pycache__/_ssl_constants.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1169
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/truststore/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1558
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/msgpack/__pycache__/fallback.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 42137
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/msgpack/__pycache__/exceptions.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2233
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/msgpack/__pycache__/ext.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8162
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/msgpack/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1784
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/dependency_groups/__pycache__/_implementation.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 9721
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/dependency_groups/__pycache__/_toml_compat.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 554
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/dependency_groups/__pycache__/_pip_wrapper.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3521
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/dependency_groups/__pycache__/_lint_dependency_groups.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2948
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/dependency_groups/__pycache__/__main__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2748
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/dependency_groups/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 446
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/filters/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 38039
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexers/__pycache__/_mapping.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 69914
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexers/__pycache__/python.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 43114
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexers/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14824
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/formatters/__pycache__/_mapping.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4285
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/formatters/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6996
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/formatter.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4627
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/regexopt.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4174
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/scanner.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4753
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/lexer.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 38547
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/plugin.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2617
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/style.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7009
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/token.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8313
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/unistring.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 33095
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/modeline.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1643
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/util.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14243
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/sphinxext.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12310
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/filter.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3296
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/__main__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 782
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3502
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/__pycache__/console.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2670
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/styles/__pycache__/_mapping.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3718
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pygments/styles/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2711
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/w64-arm.exe",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 168448
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/w32.exe",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 91648
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/locators.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 51026
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/metadata.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 38724
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/version.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 23727
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/compat.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 41467
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/index.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 20797
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/manifest.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 14168
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/util.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 66682
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/database.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 51160
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/t32.exe",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 97792
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__init__.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 625
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/w64.exe",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 101888
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/markers.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 5164
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/resources.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 10820
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/t64-arm.exe",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 182784
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/scripts.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 18608
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/t64.exe",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 108032
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/wheel.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 43979
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/markers.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7756
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/compat.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 45934
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/resources.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 17726
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/scripts.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 20302
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/wheel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 53848
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/metadata.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 42659
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/locators.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 59600
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/util.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 90184
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/index.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 23621
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1424
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/version.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 31048
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/database.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 65304
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distlib/__pycache__/manifest.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 15101
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distro/__init__.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 981
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distro/py.typed",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 0
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distro/distro.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 49430
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distro/__main__.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 64
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distro/__pycache__/distro.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 52212
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distro/__pycache__/__main__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 363
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/distro/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1029
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/serialize.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5435
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/controller.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 16920
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/filewrapper.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4502
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/_cmd.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2744
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/cache.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3996
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/adapter.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6919
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/wrapper.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1763
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 966
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/__pycache__/heuristics.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6838
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/caches/__pycache__/file_cache.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7232
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/caches/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 504
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/cachecontrol/caches/__pycache__/redis_cache.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2885
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/idnadata.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 78306
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/uts46data.py",
+      "status": "removed",
+      "reason": "Generated file pattern",
+      "size": 239289
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/codec.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5379
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/core.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 17001
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/idnadata.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 99545
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/compat.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 965
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/package_data.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 286
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/uts46data.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 159079
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/intranges.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2678
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 955
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/__pycache__/typing_extensions.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 178326
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4664
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/__version__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 654
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/api.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6940
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/adapters.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 27543
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/_internal_utils.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2088
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/compat.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1747
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/sessions.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 27456
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/hooks.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1164
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/utils.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 36590
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/status_codes.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6114
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/cookies.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 25097
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/exceptions.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8093
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/models.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 35925
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/help.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4331
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/packages.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1384
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/auth.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14302
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/certs.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 750
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5345
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/requests/__pycache__/structures.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5717
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/tomli/__pycache__/_types.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 436
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/tomli/__pycache__/_re.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4097
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/tomli/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 408
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/tomli/__pycache__/_parser.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 29651
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/certifi/__pycache__/core.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3296
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/certifi/__pycache__/__main__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 716
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/certifi/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 387
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/__pycache__/_impl.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 17799
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 827
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/__pycache__/_in_process.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 15579
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1154
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/highlighter.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10047
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_emoji_replace.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1814
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/segment.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 28346
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/color.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 26600
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/theme.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6392
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_windows.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2636
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/constrain.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2381
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/rule.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6689
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/containers.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 9324
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/cells.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5573
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/ansi.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 9330
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/file_proxy.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3777
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_ratio.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6670
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/layout.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 20243
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_emoji_codes.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 206046
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/scope.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3864
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/abc.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1758
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/pretty.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 41354
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_loop.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1970
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/logging.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14089
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_cell_widths.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7942
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/terminal_theme.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3476
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_palettes.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5230
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/style.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 34463
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_log_render.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4395
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/filesize.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3027
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/live_render.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4939
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/text.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 60355
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_fileno.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 911
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/prompt.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 15878
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/progress.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 75602
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/errors.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2117
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/bar.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4403
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_spinners.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 13249
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/default_styles.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 9765
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/status.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6096
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/repr.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6815
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/tree.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 11989
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_extension.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 609
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/measure.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6268
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/screen.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2620
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/palette.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5382
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/region.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 695
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/themes.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 384
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/emoji.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4320
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_stack.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1097
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/control.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10982
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_inspect.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12365
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/syntax.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 39908
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/panel.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12806
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/table.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 44404
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_wrap.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3395
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/live.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 19708
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/align.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12642
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/jupyter.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5460
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/markup.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 9791
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_windows_renderer.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3683
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/protocol.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1938
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_pick.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 789
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_timer.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 938
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/spinner.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6225
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/styled.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2257
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/json.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5988
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_export_format.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2419
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/pager.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1955
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/progress_bar.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10519
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/__main__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10245
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/box.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 11892
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/columns.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8786
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/diagnose.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1580
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 6944
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/traceback.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 36313
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_null_file.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3805
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_win32_console.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 28409
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/console.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 114028
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/color_triplet.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1775
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/padding.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7015
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/tomli_w/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 397
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/tomli_w/__pycache__/_writer.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10854
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/wait.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4647
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/ssltransport.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 11003
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/queue.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1494
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/ssl_match_hostname.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5288
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/response.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3113
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/timeout.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10748
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/proxy.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1645
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/connection.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4847
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/ssl_.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 15569
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/request.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4214
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1216
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/retry.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 21620
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/util/__pycache__/url.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 16005
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/poolmanager.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 20055
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/connectionpool.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 36129
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/fields.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10256
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/filepost.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4065
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/response.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 34345
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/exceptions.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14249
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/_version.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 288
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/connection.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 20797
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/request.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7037
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3423
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/__pycache__/_collections.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 16502
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/__pycache__/securetransport.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 36050
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/__pycache__/pyopenssl.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 24855
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/__pycache__/appengine.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 11838
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/__pycache__/ntlmpool.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 5806
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/__pycache__/socks.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7800
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/__pycache__/_appengine_environ.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 1946
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 268
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__pycache__/bindings.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 17571
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__pycache__/low_level.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14888
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 285
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/packages/__pycache__/six.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 42089
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/packages/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 269
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/packages/backports/__pycache__/weakref_finalize.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 7598
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/packages/backports/__pycache__/makefile.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2003
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/urllib3/packages/backports/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 279
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/pkg_resources/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 161687
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/__pycache__/reporters.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3340
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/__pycache__/providers.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 9430
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 704
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/__pycache__/structs.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 12829
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/resolvers/__pycache__/exceptions.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 4361
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/resolvers/__pycache__/criterion.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 3367
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/resolvers/__pycache__/abstract.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2573
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/resolvers/__pycache__/resolution.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 22660
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/resolvelib/resolvers/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 809
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/platformdirs/__pycache__/api.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 13537
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/platformdirs/__pycache__/android.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 10832
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/platformdirs/__pycache__/windows.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 13853
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/platformdirs/__pycache__/macos.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 8897
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/platformdirs/__pycache__/__main__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2001
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/platformdirs/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 19434
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/platformdirs/__pycache__/version.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 735
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/_vendor/platformdirs/__pycache__/unix.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 14837
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/__pycache__/__pip-runner__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 2350
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/__pycache__/__main__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 913
+    },
+    {
+      "path": "venv/lib/python3.13/site-packages/pip/__pycache__/__init__.cpython-313.pyc",
+      "status": "removed",
+      "reason": "Python cache file",
+      "size": 751
+    },
+    {
+      "path": "src/deployment/distributed.py",
+      "status": "skipped",
+      "reason": "safety verification failed",
+      "size": 38575
+    }
+  ],
+  "errors": [
+    "Safety verification failed for results/figures/completion_time_distribution.png",
+    "Safety verification failed for jekyll_site/build.sh",
+    "Safety verification failed for src/deployment/distributed.py"
+  ]
+}

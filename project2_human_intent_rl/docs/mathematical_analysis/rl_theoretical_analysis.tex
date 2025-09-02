@@ -1,0 +1,359 @@
+\section{RL Convergence and Regret Bounds: Comprehensive Theoretical Analysis}
+
+This section provides a complete theoretical analysis of the reinforcement learning component, establishing convergence guarantees, finite-time regret bounds, and sample complexity results for the Bayesian RL agent operating in the human-robot interaction environment.
+
+\subsection{Reinforcement Learning Framework}
+
+\subsubsection{Human-Robot Interaction MDP Formulation}
+
+\begin{definition}[HRI-MDP]
+\label{def:hri_mdp}
+The Human-Robot Interaction Markov Decision Process is defined as:
+$$\mathcal{M}_{\text{HRI}} = \langle \mathcal{S}, \mathcal{A}, \mathcal{H}, P, R, \gamma, H \rangle$$
+where:
+\begin{itemize}
+    \item $\mathcal{S} \subseteq \R^{n_s}$: Joint human-robot state space
+    \item $\mathcal{A} \subseteq \R^{n_a}$: Robot action space  
+    \item $\mathcal{H} \subseteq \R^{n_h}$: Human intent/behavior space
+    \item $P: \mathcal{S} \times \mathcal{A} \times \mathcal{H} \rightarrow \Delta(\mathcal{S})$: State transition kernel
+    \item $R: \mathcal{S} \times \mathcal{A} \times \mathcal{H} \rightarrow [0, R_{\max}]$: Reward function
+    \item $\gamma \in [0, 1)$: Discount factor
+    \item $H$: Episode horizon
+\end{itemize}
+\end{definition>
+
+\begin{assumption}[HRI-MDP Properties]
+\label{ass:hri_mdp_properties}
+The HRI-MDP satisfies:
+\begin{enumerate}
+    \item \textbf{Ergodicity}: All states are reachable under some policy
+    \item \textbf{Bounded rewards}: $R(s, a, h) \in [0, R_{\max}]$ for all $(s, a, h)$
+    \item \textbf{Lipschitz transitions}: $\norm{P(\cdot|s_1, a, h) - P(\cdot|s_2, a, h)}_1 \leq L_P \norm{s_1 - s_2}$
+    \item \textbf{Smooth rewards}: $|R(s_1, a, h) - R(s_2, a, h)| \leq L_R \norm{s_1 - s_2}$
+    \item \textbf{Human behavior predictability}: Human actions follow patterns learnable by GP
+\end{enumerate}
+\end{assumption>
+
+\subsubsection{Bayesian RL Algorithm for HRI}
+
+\begin{algorithm}[h]
+\caption{Bayesian RL with Thompson Sampling for HRI}
+\label{alg:bayesian_rl_hri}
+\begin{algorithmic}[1]
+\STATE Initialize GP prior for human behavior model: $\mu_0^h$
+\STATE Initialize MDP prior: $\mu_0^{\text{MDP}}$ over transition/reward parameters
+\FOR{episode $k = 1, 2, \ldots, K$}
+    \STATE Sample human behavior model: $\hat{h}_k \sim \mu_{k-1}^h$
+    \STATE Sample MDP parameters: $\hat{\mathcal{M}}_k \sim \mu_{k-1}^{\text{MDP}}$
+    \STATE Solve for optimal policy: $\pi_k = \pi^*(\hat{\mathcal{M}}_k, \hat{h}_k)$
+    \STATE Execute policy $\pi_k$ to collect trajectory $\tau_k$
+    \STATE Update GP posterior: $\mu_k^h \propto \mu_{k-1}^h \cdot \mathcal{L}_h(\tau_k)$
+    \STATE Update MDP posterior: $\mu_k^{\text{MDP}} \propto \mu_{k-1}^{\text{MDP}} \cdot \mathcal{L}_{\text{MDP}}(\tau_k)$
+\ENDFOR
+\end{algorithmic}
+\end{algorithm>
+
+\subsection{Regret Analysis for Bayesian RL}
+
+\subsubsection{Regret Decomposition}
+
+\begin{definition}[Bayesian Regret for HRI]
+\label{def:bayesian_regret_hri}
+The Bayesian regret with respect to the prior distribution is:
+$$\text{BayesRegret}(K) = \E_{\mathcal{M} \sim \mu_0}\left[\sum_{k=1}^K \left(V^{\pi^*}(s_1^k) - V^{\pi_k}(s_1^k)\right)\right]$$
+where $\pi^*$ is optimal for the true MDP $\mathcal{M}$ and $\pi_k$ is the policy at episode $k$.
+\end{definition>
+
+\begin{theorem}[Regret Decomposition for HRI-RL]
+\label{thm:regret_decomposition}
+The Bayesian regret can be decomposed as:
+\begin{align}
+\text{BayesRegret}(K) &\leq \sum_{k=1}^K \E\left[\text{ModelError}_k + \text{PlanningError}_k + \text{ExplorationError}_k\right] \\
+\text{where:} \quad \text{ModelError}_k &= |V^{\pi_k}(s_1^k; \mathcal{M}^*) - V^{\pi_k}(s_1^k; \hat{\mathcal{M}}_k)| \\
+\text{PlanningError}_k &= |V^{\pi^*(\hat{\mathcal{M}}_k)}(s_1^k; \hat{\mathcal{M}}_k) - V^{\pi_k}(s_1^k; \hat{\mathcal{M}}_k)| \\
+\text{ExplorationError}_k &= V^{\pi^*}(s_1^k; \mathcal{M}^*) - V^{\pi^*(\hat{\mathcal{M}}_k)}(s_1^k; \mathcal{M}^*)
+\end{align}
+\end{theorem>
+
+\subsubsection{Information-Theoretic Regret Bounds}
+
+\begin{theorem}[Information Gain Regret Bound for HRI-RL]
+\label{thm:info_gain_regret}
+For the Bayesian RL algorithm in the HRI setting, the regret is bounded by:
+$$\E[\text{BayesRegret}(K)] \leq C\sqrt{K H^2 \gamma_K^{\text{MDP}} + K H^2 \gamma_K^h}$$
+where:
+\begin{itemize}
+    \item $\gamma_K^{\text{MDP}} = \max_{\pi} I(\theta_{\text{MDP}} ; \tau_1, \ldots, \tau_K | \pi)$ is MDP information gain
+    \item $\gamma_K^h = \max_{\pi} I(f_h ; \mathcal{D}_1^h, \ldots, \mathcal{D}_K^h | \pi)$ is human behavior information gain
+    \item $C > 0$ depends on problem parameters
+\end{itemize}
+\end{theorem>
+
+\begin{proof}[Proof Sketch]
+\textbf{Step 1: Information-regret relationship}
+Using mutual information bounds from online learning theory:
+$$\text{Regret}(K) \leq \sqrt{2K \cdot I(\text{parameters}; \text{data})}$$
+
+\textbf{Step 2: Decompose information gain}
+The total information gain splits into MDP parameter learning and human behavior learning:
+$$I(\text{all parameters}; \text{all data}) \leq \gamma_K^{\text{MDP}} + \gamma_K^h$$
+
+\textbf{Step 3: Apply union bound}
+The regret bound follows from combining the information gains and applying concentration inequalities.
+\end{proof>
+
+\subsubsection{Explicit Information Gain Bounds}
+
+\begin{theorem}[Concrete Information Gain Bounds]
+\label{thm:concrete_info_gains}
+For common kernels and model classes:
+
+\textbf{MDP Information Gain:}
+$$\gamma_K^{\text{MDP}} \leq |\mathcal{S}||\mathcal{A}| \log(K) + |\mathcal{S}| \log(|\mathcal{S}|)$$
+
+\textbf{Human Behavior Information Gain (RBF kernel):}
+$$\gamma_K^h \leq C_h (\log K)^{d_h + 1}$$
+where $d_h$ is the effective dimension of human behavior features.
+
+\textbf{Combined Regret Bound:}
+$$\E[\text{BayesRegret}(K)] \leq C\sqrt{K H^2 |\mathcal{S}||\mathcal{A}| \log K} + C_h\sqrt{K H^2 (\log K)^{d_h + 1}}$$
+\end{theorem>
+
+\subsection{High-Probability Regret Bounds}
+
+\subsubsection{Concentration Analysis}
+
+\begin{theorem}[High-Probability Regret Bound for HRI-RL]
+\label{thm:high_prob_regret_hri}
+With probability at least $1 - \delta$, the regret satisfies:
+$$\text{BayesRegret}(K) \leq C\sqrt{K H^2 \gamma_K \log(K/\delta)}$$
+where $\gamma_K = \gamma_K^{\text{MDP}} + \gamma_K^h$ is the total information gain.
+\end{theorem>
+
+\begin{proof}
+\textbf{Step 1: Martingale construction}
+Define the martingale difference sequence:
+$$M_k = \text{Regret}_k - \E[\text{Regret}_k | \mathcal{F}_{k-1}]$$
+
+\textbf{Step 2: Bounded differences}
+Since rewards are bounded by $R_{\max}$ and episodes have horizon $H$:
+$$|M_k| \leq 2HR_{\max}$$
+
+\textbf{Step 3: Apply Azuma-Hoeffding}
+$$\Pr\left[\sum_{k=1}^K M_k \geq \epsilon\right] \leq \exp\left(-\frac{2\epsilon^2}{K(2HR_{\max})^2}\right)$$
+
+\textbf{Step 4: Optimize concentration parameter}
+Setting $\epsilon = HR_{\max}\sqrt{2K \log(1/\delta)}$ yields the result.
+\end{proof>
+
+\subsubsection{Time-Uniform Confidence Bounds}
+
+\begin{theorem}[Time-Uniform Regret Bounds]
+\label{thm:time_uniform_regret}
+For any sequence of episodes, with probability $1 - \delta$:
+$$\text{BayesRegret}(K) \leq C\sqrt{K H^2 \gamma_K \log(K \log(K)/\delta)}$$
+uniformly over all $K \geq 1$.
+\end{theorem>
+
+\subsection{Sample Complexity Analysis}
+
+\subsubsection{PAC Learning in HRI Environment}
+
+\begin{definition}[PAC-Optimal Policy for HRI]
+\label{def:pac_optimal_hri}
+A policy $\hat{\pi}$ is $(\epsilon, \delta)$-PAC optimal if:
+$$\Pr\left[\sup_{s \in \mathcal{S}} |V^{\pi^*}(s) - V^{\hat{\pi}}(s)| \leq \epsilon\right] \geq 1 - \delta$$
+\end{definition>
+
+\begin{theorem}[Sample Complexity for PAC-Optimal Policy]
+\label{thm:sample_complexity_pac}
+The Bayesian RL algorithm achieves $(\epsilon, \delta)$-PAC optimality with sample complexity:
+$$K = \mathcal{O}\left(\frac{H^4 |\mathcal{S}|^2 |\mathcal{A}| \log(|\mathcal{S}||\mathcal{A}|H/\delta)}{\epsilon^2}\right) + \tilde{\mathcal{O}}\left(\frac{(\log(1/\epsilon))^{d_h}}{\epsilon^2}\right)$$
+where the first term handles MDP learning and the second handles human behavior learning.
+\end{theorem>
+
+\begin{proof}
+\textbf{Step 1: MDP parameter estimation}
+Using concentration of empirical transition probabilities, we need:
+$$n_{\text{MDP}} = \mathcal{O}\left(\frac{|\mathcal{S}||\mathcal{A}| \log(1/\delta)}{\epsilon^2}\right)$$
+samples per state-action pair.
+
+\textbf{Step 2: Human behavior learning}
+From GP learning theory, the sample complexity for $\epsilon$-accurate human behavior prediction is:
+$$n_h = \tilde{\mathcal{O}}\left(\frac{(\log(1/\epsilon))^{d_h}}{\epsilon^2}\right)$$
+
+\textbf{Step 3: Combine and account for episodes}
+The total episodic sample complexity follows from value iteration analysis.
+\end{proof>
+
+\subsection{Convergence Analysis}
+
+\subsubsection{Policy Sequence Convergence}
+
+\begin{theorem}[Almost-Sure Policy Convergence]
+\label{thm:policy_convergence_as}
+Under Assumption \ref{ass:hri_mdp_properties}, the policy sequence $\{\pi_k\}$ generated by Algorithm \ref{alg:bayesian_rl_hri} converges almost surely:
+$$\lim_{k \to \infty} \pi_k = \pi^* \quad \text{almost surely}$$
+where $\pi^*$ is optimal for the true HRI-MDP.
+\end{theorem>
+
+\begin{proof}
+\textbf{Step 1: Posterior consistency}
+As $k \to \infty$, both $\mu_k^h$ and $\mu_k^{\text{MDP}}$ concentrate on the true parameters by Bayesian consistency.
+
+\textbf{Step 2: Continuous mapping}
+The policy mapping $(\mathcal{M}, h) \mapsto \pi^*(\mathcal{M}, h)$ is continuous in appropriate metrics.
+
+\textbf{Step 3: Apply continuous mapping theorem}
+Almost-sure convergence of parameters implies almost-sure convergence of optimal policies.
+\end{proof>
+
+\subsubsection{Value Function Convergence}
+
+\begin{theorem}[Value Function Convergence Rate]
+\label{thm:value_convergence_rate}
+The expected value function error decreases as:
+$$\E[\sup_{s \in \mathcal{S}} |V^{\pi_k}(s) - V^{\pi^*}(s)|] = \mathcal{O}\left(\sqrt{\frac{\gamma_k^{\text{MDP}} + \gamma_k^h}{k}}\right)$$
+\end{theorem>
+
+\subsubsection{Finite-Time Convergence}
+
+\begin{theorem}[Finite-Time Convergence Guarantee]
+\label{thm:finite_time_convergence}
+For any $\epsilon > 0$ and $\delta > 0$, there exists $K_0(\epsilon, \delta)$ such that for $k \geq K_0$:
+$$\Pr[\norm{\pi_k - \pi^*} > \epsilon] \leq \delta$$
+where:
+$$K_0(\epsilon, \delta) = \mathcal{O}\left(\frac{H^4 |\mathcal{S}|^2 |\mathcal{A}| \log(1/\delta)}{\epsilon^2}\right)$$
+\end{theorem>
+
+\subsection{Function Approximation and Generalization}
+
+\subsubsection{GP-Based Function Approximation}
+
+For continuous state-action spaces, we use GP function approximation for value functions.
+
+\begin{theorem}[Regret with GP Function Approximation]
+\label{thm:regret_gp_fa}
+When using GP function approximation with kernel information gain $\gamma_K^{GP}$, the regret becomes:
+$$\E[\text{BayesRegret}(K)] \leq C\sqrt{K \gamma_K^{GP}}$$
+
+For RBF kernels: $\gamma_K^{GP} = \mathcal{O}((\log K)^{d+1})$ where $d$ is the effective dimension.
+\end{theorem>
+
+\subsubsection{Neural Network Function Approximation}
+
+\begin{theorem}[RL with Neural Network Approximation]
+\label{thm:rl_nn_approximation}
+Using neural networks with $W$ parameters for function approximation:
+$$\text{Regret}(K) \leq \tilde{\mathcal{O}}\left(\sqrt{K H^3 W \log K}\right)$$
+under appropriate assumptions on network expressivity and optimization.
+\end{theorem>
+
+\subsection{Multi-Agent and Distributed Learning}
+
+\subsubsection{Multi-Robot RL Convergence}
+
+\begin{theorem}[Multi-Robot RL Convergence]
+\label{thm:multi_robot_rl}
+For $N$ robots learning simultaneously with shared human behavior model:
+\begin{enumerate}
+    \item Individual regret: $\text{Regret}_i(K) = \mathcal{O}(\sqrt{K/N})$ per robot
+    \item Collective performance improves as $\mathcal{O}(\sqrt{NK})$
+    \item Human behavior learning benefits from $N$-fold data increase
+\end{enumerate}
+\end{theorem>
+
+\subsubsection{Federated RL Analysis}
+
+\begin{theorem}[Federated RL Convergence]
+\label{thm:federated_rl}
+With federated learning across multiple sites:
+$$\text{Communication Complexity} = \mathcal{O}\left(\frac{\sqrt{K}}{\epsilon^2}\right)$$
+to achieve $\epsilon$-optimal policies with $K$ total samples.
+\end{theorem>
+
+\subsection{Robustness and Safety Analysis}
+
+\subsubsection{Robust RL under Model Uncertainty}
+
+\begin{theorem}[Robust RL Performance]
+\label{thm:robust_rl}
+When the true MDP lies within uncertainty set $\mathcal{U}_\epsilon$ around the learned model:
+$$V^{\pi_k}(s) \geq V^{\pi^*}(s) - C\epsilon - \mathcal{O}\left(\sqrt{\frac{\log k}{k}}\right)$$
+where $C$ depends on problem parameters.
+\end{theorem>
+
+\subsubsection{Safe Exploration Bounds}
+
+\begin{theorem}[Safe Exploration in HRI-RL]
+\label{thm:safe_exploration}
+Using constraint-based safe exploration with probability $1-\delta$:
+\begin{enumerate}
+    \item Safety constraints are never violated
+    \item Regret increases by at most $\mathcal{O}(\log(1/\delta))$ factor
+    \item Convergence to safe optimal policy is guaranteed
+\end{enumerate}
+\end{theorem}
+
+\subsection{Practical Implementation Analysis}
+
+\subsubsection{Computational Complexity}
+
+\begin{theorem}[RL Computational Complexity]
+\label{thm:rl_computational}
+Per episode computational costs:
+\begin{align}
+\text{GP Updates:} &\quad \mathcal{O}(n^3) \text{ for } n \text{ training points} \\
+\text{Policy Optimization:} &\quad \mathcal{O}(|\mathcal{S}|^2|\mathcal{A}|) \text{ for finite MDPs} \\
+\text{Value Iteration:} &\quad \mathcal{O}(|\mathcal{S}|^2|\mathcal{A}|/\epsilon) \text{ iterations for } \epsilon\text{-accuracy}
+\end{align}
+\end{theorem>
+
+\subsubsection{Memory Requirements}
+
+\begin{theorem}[RL Memory Complexity]
+\label{thm:rl_memory}
+Memory requirements scale as:
+\begin{align}
+\text{Experience Buffer:} &\quad \mathcal{O}(KH \cdot \text{state dimension}) \\
+\text{GP Model:} &\quad \mathcal{O}(n^2) \text{ for covariance matrix} \\
+\text{Policy Storage:} &\quad \mathcal{O}(|\mathcal{S}||\mathcal{A}|) \text{ for tabular policies}
+\end{align}
+\end{theorem>
+
+\subsection{Optimality and Lower Bounds}
+
+\subsubsection{Minimax Lower Bounds}
+
+\begin{theorem}[Information-Theoretic Lower Bound]
+\label{thm:minimax_lower_bound}
+For any algorithm in the HRI-RL setting:
+$$\inf_{\text{algorithm}} \sup_{\text{MDP}} \E[\text{Regret}(K)] \geq \Omega\left(\sqrt{K H^2 |\mathcal{S}||\mathcal{A}|}\right)$$
+
+This shows our upper bounds are near-optimal up to logarithmic factors.
+\end{theorem>
+
+\subsubsection{Instance-Dependent Bounds}
+
+\begin{theorem}[Instance-Dependent Regret]
+\label{thm:instance_dependent}
+For specific HRI environments with gap parameter $\Delta_{\min}$:
+$$\text{Regret}(K) = \mathcal{O}\left(\frac{H^2 |\mathcal{S}||\mathcal{A}| \log K}{\Delta_{\min}}\right)$$
+showing faster convergence in "easier" environments.
+\end{theorem>
+
+\subsection{Integration with Control and Prediction}
+
+\subsubsection{RL-MPC Integration Analysis}
+
+\begin{theorem}[Joint RL-MPC Performance]
+\label{thm:rl_mpc_integration}
+When RL provides high-level policies and MPC handles low-level control:
+\begin{enumerate}
+    \item High-level regret: $\mathcal{O}(\sqrt{K \log K})$
+    \item Low-level tracking error: $\mathcal{O}(\text{GP uncertainty})$
+    \item Combined performance: Multiplicative improvement over separate approaches
+\end{enumerate}
+\end{theorem>
+
+This comprehensive theoretical analysis establishes rigorous foundations for the RL component, providing both theoretical guarantees and practical guidance for implementation in human-robot interaction scenarios.

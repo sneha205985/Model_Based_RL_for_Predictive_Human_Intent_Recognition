@@ -1,0 +1,16 @@
+2025-08-29 22:31:35,637 - __main__ - INFO - ✓ Basic models imported successfully
+2025-08-29 22:31:36,165 - __main__ - ERROR - ✗ Gaussian Process failed: attempted relative import beyond top-level package
+2025-08-29 22:31:36,949 - __main__ - ERROR - ✗ Neural Behavior Model failed: 'NeuralHumanBehaviorModel' object has no attribute 'neural_config'
+2025-08-29 22:31:36,949 - __main__ - ERROR - ✗ MPC Controller failed: attempted relative import beyond top-level package
+2025-08-29 22:31:36,954 - __main__ - ERROR - ✗ Bayesian RL Agent failed: No module named 'pyro'
+2025-08-29 22:31:36,987 - __main__ - ERROR - ✗ Optimization Systems failed: cannot import name 'LRUCache' from 'collections' (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py)
+2025-08-29 22:31:36,987 - __main__ - ERROR - ✗ Pipeline setup failed: ContextInformation.__init__() got an unexpected keyword argument 'task_type'
+2025-08-29 22:31:36,987 - __main__ - ERROR - ✗ Profiler failed: cannot import name 'LRUCache' from 'collections' (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py)
+2025-08-29 22:31:36,988 - __main__ - ERROR - ✗ Caching system failed: cannot import name 'LRUCache' from 'collections' (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py)
+2025-08-29 22:31:36,988 - __main__ - ERROR - ✗ Memory management failed: cannot import name 'LRUCache' from 'collections' (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py)
+2025-08-29 22:31:37,201 - __main__ - ERROR - ✗ Constraint enforcement failed: cannot import name 'ConstraintEnforcement' from 'safety.constraint_enforcement' (/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/safety/constraint_enforcement.py)
+2025-08-29 22:31:37,209 - __main__ - ERROR - ✗ Error handling failed: cannot import name 'ErrorHandler' from 'robustness.error_handler' (/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/robustness/error_handler.py)
+2025-08-29 22:31:37,211 - __main__ - ERROR - ✗ GP benchmark failed: attempted relative import beyond top-level package
+2025-08-29 22:31:37,211 - __main__ - ERROR - ✗ Neural benchmark failed: 'NeuralHumanBehaviorModel' object has no attribute 'neural_config'
+2025-08-29 22:31:37,211 - __main__ - INFO - Integration tests completed in 2.1s
+2025-08-29 22:31:37,211 - __main__ - INFO - Success rate: 7.1%

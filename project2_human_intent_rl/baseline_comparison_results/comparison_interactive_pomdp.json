@@ -1,0 +1,256 @@
+{
+  "baseline_name": "Interactive POMDP",
+  "baseline_info": {
+    "description": "Partially Observable MDP for human-robot interaction",
+    "paper_reference": "Bandyopadhyay et al. (2013). Intention-aware motion planning",
+    "year": 2013,
+    "type": "planning_under_uncertainty"
+  },
+  "our_performance": {
+    "safety_success_rate": {
+      "mean": 0.9720484567754812,
+      "std": 0.0372524545891597,
+      "median": 0.9914465242349038,
+      "ci_lower": 0.89448465188668,
+      "ci_upper": 1.0
+    },
+    "prediction_accuracy": {
+      "mean": 0.8866760174134263,
+      "std": 0.04451544735978321,
+      "median": 0.8844422979966268,
+      "ci_lower": 0.8098515116361492,
+      "ci_upper": 0.9896296806171305
+    },
+    "decision_cycle_time": {
+      "mean": 165.80837476354012,
+      "std": 8.451069000855659,
+      "median": 166.29346941915756,
+      "ci_lower": 149.42285850706406,
+      "ci_upper": 176.77367002684232
+    },
+    "collision_rate": {
+      "mean": 0.001987937260371621,
+      "std": 9.979819832656144e-05,
+      "median": 0.0019676770413129875,
+      "ci_lower": 0.0018395884500681133,
+      "ci_upper": 0.00219104764155389
+    },
+    "comfort_score": {
+      "mean": 8.704306277839096,
+      "std": 0.42064052782800576,
+      "median": 8.745246216046887,
+      "ci_lower": 7.892164406623944,
+      "ci_upper": 9.414158665283962
+    },
+    "computational_efficiency": {
+      "mean": 1.6978678434671224,
+      "std": 0.09423394811125776,
+      "median": 1.6973781171033657,
+      "ci_lower": 1.5361651174322166,
+      "ci_upper": 1.8817053798253975
+    }
+  },
+  "baseline_performance": {
+    "safety_success_rate": {
+      "mean": 0.7865808916773744,
+      "std": 0.07364519510868413,
+      "median": 0.7930272043791686,
+      "ci_lower": 0.6215320830413491,
+      "ci_upper": 0.907347444413524
+    },
+    "prediction_accuracy": {
+      "mean": 0.7019696417182915,
+      "std": 0.06153130673627715,
+      "median": 0.7132054136723485,
+      "ci_lower": 0.6064885365992738,
+      "ci_upper": 0.8099459667727538
+    },
+    "decision_cycle_time": {
+      "mean": 497.3724796439142,
+      "std": 38.69662477182954,
+      "median": 498.2988932362118,
+      "ci_lower": 419.77493256156527,
+      "ci_upper": 569.2029559356197
+    },
+    "collision_rate": {
+      "mean": 0.15116728851571182,
+      "std": 0.013604454205610433,
+      "median": 0.15330786346625397,
+      "ci_lower": 0.1281007765475424,
+      "ci_upper": 0.17141033282239712
+    },
+    "comfort_score": {
+      "mean": 6.558670466403493,
+      "std": 0.47255217026260915,
+      "median": 6.522891088133036,
+      "ci_lower": 5.779879766709151,
+      "ci_upper": 7.630294278653094
+    },
+    "computational_efficiency": {
+      "mean": 0.31946956325160203,
+      "std": 0.025776336907912496,
+      "median": 0.316467798643161,
+      "ci_lower": 0.27894461430268436,
+      "ci_upper": 0.37072418330325996
+    }
+  },
+  "statistical_tests": {
+    "safety_success_rate": {
+      "baseline_stats": {
+        "mean": 0.9720484567754812,
+        "std": 0.0372524545891597,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.7865808916773744,
+        "std": 0.07364519510868413,
+        "n": 50
+      },
+      "test_statistic": 2477.0,
+      "p_value": 1.886803563124426e-17,
+      "test_type": "mann_whitney_u",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Interactive POMDP"
+      ]
+    },
+    "prediction_accuracy": {
+      "baseline_stats": {
+        "mean": 0.8866760174134263,
+        "std": 0.04451544735978321,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.7019696417182915,
+        "std": 0.06153130673627715,
+        "n": 50
+      },
+      "test_statistic": 17.197469574732366,
+      "p_value": 2.3444926903034955e-31,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Interactive POMDP"
+      ]
+    },
+    "decision_cycle_time": {
+      "baseline_stats": {
+        "mean": 165.80837476354012,
+        "std": 8.451069000855659,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 497.3724796439142,
+        "std": 38.69662477182954,
+        "n": 50
+      },
+      "test_statistic": -59.191846866484234,
+      "p_value": 1.630969489205578e-78,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Interactive POMDP"
+      ]
+    },
+    "collision_rate": {
+      "baseline_stats": {
+        "mean": 0.001987937260371621,
+        "std": 9.979819832656144e-05,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.15116728851571182,
+        "std": 0.013604454205610433,
+        "n": 50
+      },
+      "test_statistic": -77.5355565027685,
+      "p_value": 9.194861009767545e-90,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Interactive POMDP"
+      ]
+    },
+    "comfort_score": {
+      "baseline_stats": {
+        "mean": 8.704306277839096,
+        "std": 0.42064052782800576,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 6.558670466403493,
+        "std": 0.47255217026260915,
+        "n": 50
+      },
+      "test_statistic": 23.981624148473294,
+      "p_value": 8.555562884965023e-43,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Interactive POMDP"
+      ]
+    },
+    "computational_efficiency": {
+      "baseline_stats": {
+        "mean": 1.6978678434671224,
+        "std": 0.09423394811125776,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.31946956325160203,
+        "std": 0.025776336907912496,
+        "n": 50
+      },
+      "test_statistic": 99.76635899690119,
+      "p_value": 2.33580328606667e-100,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Interactive POMDP"
+      ]
+    }
+  },
+  "effect_sizes": {
+    "safety_success_rate": 3.178088937556491,
+    "prediction_accuracy": 3.439493914946473,
+    "decision_cycle_time": -11.838369373296848,
+    "collision_rate": -15.507111300553701,
+    "comfort_score": 4.79632482969466,
+    "computational_efficiency": 19.95327179938024
+  },
+  "confidence_intervals": {
+    "safety_success_rate": [
+      0.162532035170951,
+      0.20930440811600803
+    ],
+    "prediction_accuracy": [
+      0.162643191254698,
+      0.20714255993081337
+    ],
+    "decision_cycle_time": [
+      -341.11920390516775,
+      -321.7071185302511
+    ],
+    "collision_rate": [
+      -0.15308153519542786,
+      -0.1455375581058785
+    ],
+    "comfort_score": [
+      1.9691688487716168,
+      2.3258808514695026
+    ],
+    "computational_efficiency": [
+      1.3503553596376023,
+      1.403253331324762
+    ]
+  },
+  "sample_size": 50,
+  "execution_time": 0.033921,
+  "timestamp": "2025-09-02T19:07:47.378074"
+}

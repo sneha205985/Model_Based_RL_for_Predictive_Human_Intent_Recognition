@@ -1,0 +1,256 @@
+{
+  "baseline_name": "LSTM Behavior Predictor",
+  "baseline_info": {
+    "description": "LSTM neural network for human trajectory prediction",
+    "paper_reference": "Alahi et al. (2016). Social LSTM: Human Trajectory Prediction in Crowded Spaces",
+    "year": 2016,
+    "type": "behavior_prediction"
+  },
+  "our_performance": {
+    "safety_success_rate": {
+      "mean": 0.9720484567754812,
+      "std": 0.0372524545891597,
+      "median": 0.9914465242349038,
+      "ci_lower": 0.89448465188668,
+      "ci_upper": 1.0
+    },
+    "prediction_accuracy": {
+      "mean": 0.8866760174134263,
+      "std": 0.04451544735978321,
+      "median": 0.8844422979966268,
+      "ci_lower": 0.8098515116361492,
+      "ci_upper": 0.9896296806171305
+    },
+    "decision_cycle_time": {
+      "mean": 165.80837476354012,
+      "std": 8.451069000855659,
+      "median": 166.29346941915756,
+      "ci_lower": 149.42285850706406,
+      "ci_upper": 176.77367002684232
+    },
+    "collision_rate": {
+      "mean": 0.001987937260371621,
+      "std": 9.979819832656144e-05,
+      "median": 0.0019676770413129875,
+      "ci_lower": 0.0018395884500681133,
+      "ci_upper": 0.00219104764155389
+    },
+    "comfort_score": {
+      "mean": 8.704306277839096,
+      "std": 0.42064052782800576,
+      "median": 8.745246216046887,
+      "ci_lower": 7.892164406623944,
+      "ci_upper": 9.414158665283962
+    },
+    "computational_efficiency": {
+      "mean": 1.6978678434671224,
+      "std": 0.09423394811125776,
+      "median": 1.6973781171033657,
+      "ci_lower": 1.5361651174322166,
+      "ci_upper": 1.8817053798253975
+    }
+  },
+  "baseline_performance": {
+    "safety_success_rate": {
+      "mean": 0.7451818973785653,
+      "std": 0.06976913220822709,
+      "median": 0.7512889304644755,
+      "ci_lower": 0.588819868144436,
+      "ci_upper": 0.8595923157601807
+    },
+    "prediction_accuracy": {
+      "mean": 0.6317726775464624,
+      "std": 0.05537817606264945,
+      "median": 0.6418848723051136,
+      "ci_lower": 0.5458396829393466,
+      "ci_upper": 0.7289513700954784
+    },
+    "decision_cycle_time": {
+      "mean": 248.6862398219571,
+      "std": 19.34831238591477,
+      "median": 249.1494466181059,
+      "ci_lower": 209.88746628078263,
+      "ci_upper": 284.60147796780984
+    },
+    "collision_rate": {
+      "mean": 0.15116728851571182,
+      "std": 0.013604454205610433,
+      "median": 0.15330786346625397,
+      "ci_lower": 0.1281007765475424,
+      "ci_upper": 0.17141033282239712
+    },
+    "comfort_score": {
+      "mean": 6.558670466403493,
+      "std": 0.47255217026260915,
+      "median": 6.522891088133036,
+      "ci_lower": 5.779879766709151,
+      "ci_upper": 7.630294278653094
+    },
+    "computational_efficiency": {
+      "mean": 0.798673908129005,
+      "std": 0.06444084226978122,
+      "median": 0.7911694966079024,
+      "ci_lower": 0.6973615357567108,
+      "ci_upper": 0.9268104582581497
+    }
+  },
+  "statistical_tests": {
+    "safety_success_rate": {
+      "baseline_stats": {
+        "mean": 0.9720484567754812,
+        "std": 0.0372524545891597,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.7451818973785653,
+        "std": 0.06976913220822709,
+        "n": 50
+      },
+      "test_statistic": 2494.0,
+      "p_value": 6.7907183994705335e-18,
+      "test_type": "mann_whitney_u",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "LSTM Behavior Predictor"
+      ]
+    },
+    "prediction_accuracy": {
+      "baseline_stats": {
+        "mean": 0.8866760174134263,
+        "std": 0.04451544735978321,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.6317726775464624,
+        "std": 0.05537817606264945,
+        "n": 50
+      },
+      "test_statistic": 25.36793110728578,
+      "p_value": 7.39698766232125e-45,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "LSTM Behavior Predictor"
+      ]
+    },
+    "decision_cycle_time": {
+      "baseline_stats": {
+        "mean": 165.80837476354012,
+        "std": 8.451069000855659,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 248.6862398219571,
+        "std": 19.34831238591477,
+        "n": 50
+      },
+      "test_statistic": -27.756478049067987,
+      "p_value": 3.1837235874998715e-48,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "LSTM Behavior Predictor"
+      ]
+    },
+    "collision_rate": {
+      "baseline_stats": {
+        "mean": 0.001987937260371621,
+        "std": 9.979819832656144e-05,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.15116728851571182,
+        "std": 0.013604454205610433,
+        "n": 50
+      },
+      "test_statistic": -77.5355565027685,
+      "p_value": 9.194861009767545e-90,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "LSTM Behavior Predictor"
+      ]
+    },
+    "comfort_score": {
+      "baseline_stats": {
+        "mean": 8.704306277839096,
+        "std": 0.42064052782800576,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 6.558670466403493,
+        "std": 0.47255217026260915,
+        "n": 50
+      },
+      "test_statistic": 23.981624148473294,
+      "p_value": 8.555562884965023e-43,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "LSTM Behavior Predictor"
+      ]
+    },
+    "computational_efficiency": {
+      "baseline_stats": {
+        "mean": 1.6978678434671224,
+        "std": 0.09423394811125776,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.798673908129005,
+        "std": 0.06444084226978122,
+        "n": 50
+      },
+      "test_statistic": 55.69572390910736,
+      "p_value": 5.3638179895225885e-76,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "LSTM Behavior Predictor"
+      ]
+    }
+  },
+  "effect_sizes": {
+    "safety_success_rate": 4.05653530773894,
+    "prediction_accuracy": 5.073586221457156,
+    "decision_cycle_time": -5.5512956098135975,
+    "collision_rate": -15.507111300553701,
+    "comfort_score": 4.79632482969466,
+    "computational_efficiency": 11.139144781821471
+  },
+  "confidence_intervals": {
+    "safety_success_rate": [
+      0.20493263170411535,
+      0.24988500062322871
+    ],
+    "prediction_accuracy": [
+      0.2341909219528651,
+      0.2759017117407877
+    ],
+    "decision_cycle_time": [
+      -88.08095017848989,
+      -77.41596812348226
+    ],
+    "collision_rate": [
+      -0.15308153519542786,
+      -0.1455375581058785
+    ],
+    "comfort_score": [
+      1.9691688487716168,
+      2.3258808514695026
+    ],
+    "computational_efficiency": [
+      0.863218590703475,
+      0.9295165165005507
+    ]
+  },
+  "sample_size": 50,
+  "execution_time": 0.033865,
+  "timestamp": "2025-09-02T19:07:47.275182"
+}

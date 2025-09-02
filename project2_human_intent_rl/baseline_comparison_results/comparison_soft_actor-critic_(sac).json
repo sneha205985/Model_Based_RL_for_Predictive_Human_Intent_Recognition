@@ -1,0 +1,256 @@
+{
+  "baseline_name": "Soft Actor-Critic (SAC)",
+  "baseline_info": {
+    "description": "State-of-the-art off-policy RL without human modeling",
+    "paper_reference": "Haarnoja et al. (2018). Soft Actor-Critic: Off-Policy Maximum Entropy Deep RL",
+    "year": 2018,
+    "type": "reinforcement_learning"
+  },
+  "our_performance": {
+    "safety_success_rate": {
+      "mean": 0.9720484567754812,
+      "std": 0.0372524545891597,
+      "median": 0.9914465242349038,
+      "ci_lower": 0.89448465188668,
+      "ci_upper": 1.0
+    },
+    "prediction_accuracy": {
+      "mean": 0.8866760174134263,
+      "std": 0.04451544735978321,
+      "median": 0.8844422979966268,
+      "ci_lower": 0.8098515116361492,
+      "ci_upper": 0.9896296806171305
+    },
+    "decision_cycle_time": {
+      "mean": 165.80837476354012,
+      "std": 8.451069000855659,
+      "median": 166.29346941915756,
+      "ci_lower": 149.42285850706406,
+      "ci_upper": 176.77367002684232
+    },
+    "collision_rate": {
+      "mean": 0.001987937260371621,
+      "std": 9.979819832656144e-05,
+      "median": 0.0019676770413129875,
+      "ci_lower": 0.0018395884500681133,
+      "ci_upper": 0.00219104764155389
+    },
+    "comfort_score": {
+      "mean": 8.704306277839096,
+      "std": 0.42064052782800576,
+      "median": 8.745246216046887,
+      "ci_lower": 7.892164406623944,
+      "ci_upper": 9.414158665283962
+    },
+    "computational_efficiency": {
+      "mean": 1.6978678434671224,
+      "std": 0.09423394811125776,
+      "median": 1.6973781171033657,
+      "ci_lower": 1.5361651174322166,
+      "ci_upper": 1.8817053798253975
+    }
+  },
+  "baseline_performance": {
+    "safety_success_rate": {
+      "mean": 0.703782903079756,
+      "std": 0.06589306930777,
+      "median": 0.7095506565497824,
+      "ci_lower": 0.5561076532475228,
+      "ci_upper": 0.8118371871068372
+    },
+    "prediction_accuracy": {
+      "mean": 0.6668711596323769,
+      "std": 0.05845474139946329,
+      "median": 0.6775451429887309,
+      "ci_lower": 0.5761641097693101,
+      "ci_upper": 0.769448668434116
+    },
+    "decision_cycle_time": {
+      "mean": 248.6862398219571,
+      "std": 19.34831238591477,
+      "median": 249.1494466181059,
+      "ci_lower": 209.88746628078263,
+      "ci_upper": 284.60147796780984
+    },
+    "collision_rate": {
+      "mean": 0.19651747507042538,
+      "std": 0.01768579046729356,
+      "median": 0.19930022250613016,
+      "ci_lower": 0.16653100951180513,
+      "ci_upper": 0.2228334326691163
+    },
+    "comfort_score": {
+      "mean": 6.2307369430833175,
+      "std": 0.44892456174947853,
+      "median": 6.196746533726384,
+      "ci_lower": 5.490885778373693,
+      "ci_upper": 7.248779564720439
+    },
+    "computational_efficiency": {
+      "mean": 0.798673908129005,
+      "std": 0.06444084226978122,
+      "median": 0.7911694966079024,
+      "ci_lower": 0.6973615357567108,
+      "ci_upper": 0.9268104582581497
+    }
+  },
+  "statistical_tests": {
+    "safety_success_rate": {
+      "baseline_stats": {
+        "mean": 0.9720484567754812,
+        "std": 0.0372524545891597,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.703782903079756,
+        "std": 0.06589306930777,
+        "n": 50
+      },
+      "test_statistic": 2500.0,
+      "p_value": 4.7190565960999625e-18,
+      "test_type": "mann_whitney_u",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Soft Actor-Critic (SAC)"
+      ]
+    },
+    "prediction_accuracy": {
+      "baseline_stats": {
+        "mean": 0.8866760174134263,
+        "std": 0.04451544735978321,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.6668711596323769,
+        "std": 0.05845474139946329,
+        "n": 50
+      },
+      "test_statistic": 21.15351016362647,
+      "p_value": 2.603411338109881e-38,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Soft Actor-Critic (SAC)"
+      ]
+    },
+    "decision_cycle_time": {
+      "baseline_stats": {
+        "mean": 165.80837476354012,
+        "std": 8.451069000855659,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 248.6862398219571,
+        "std": 19.34831238591477,
+        "n": 50
+      },
+      "test_statistic": -27.756478049067987,
+      "p_value": 3.1837235874998715e-48,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Soft Actor-Critic (SAC)"
+      ]
+    },
+    "collision_rate": {
+      "baseline_stats": {
+        "mean": 0.001987937260371621,
+        "std": 9.979819832656144e-05,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.19651747507042538,
+        "std": 0.01768579046729356,
+        "n": 50
+      },
+      "test_statistic": -77.77484736634165,
+      "p_value": 6.830807790007622e-90,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Soft Actor-Critic (SAC)"
+      ]
+    },
+    "comfort_score": {
+      "baseline_stats": {
+        "mean": 8.704306277839096,
+        "std": 0.42064052782800576,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 6.2307369430833175,
+        "std": 0.44892456174947853,
+        "n": 50
+      },
+      "test_statistic": 28.431015747348532,
+      "p_value": 3.915271815584342e-49,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Soft Actor-Critic (SAC)"
+      ]
+    },
+    "computational_efficiency": {
+      "baseline_stats": {
+        "mean": 1.6978678434671224,
+        "std": 0.09423394811125776,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.798673908129005,
+        "std": 0.06444084226978122,
+        "n": 50
+      },
+      "test_statistic": 55.69572390910736,
+      "p_value": 5.3638179895225885e-76,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Soft Actor-Critic (SAC)"
+      ]
+    }
+  },
+  "effect_sizes": {
+    "safety_success_rate": 5.01205891262148,
+    "prediction_accuracy": 4.2307020327252935,
+    "decision_cycle_time": -5.5512956098135975,
+    "collision_rate": -15.55496947326833,
+    "comfort_score": 5.686203149469707,
+    "computational_efficiency": 11.139144781821471
+  },
+  "confidence_intervals": {
+    "safety_success_rate": [
+      0.24706963714153332,
+      0.2901950182172481
+    ],
+    "prediction_accuracy": [
+      0.1984222517539547,
+      0.24157155255910587
+    ],
+    "decision_cycle_time": [
+      -88.08095017848989,
+      -77.41596812348226
+    ],
+    "collision_rate": [
+      -0.1996066055178723,
+      -0.18979720984098827
+    ],
+    "comfort_score": [
+      2.302883118272307,
+      2.6487343607957077
+    ],
+    "computational_efficiency": [
+      0.863218590703475,
+      0.9295165165005507
+    ]
+  },
+  "sample_size": 50,
+  "execution_time": 0.03413,
+  "timestamp": "2025-09-02T19:07:47.206066"
+}

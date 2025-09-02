@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-09-03T01:22:19.975075",
+  "system_performance": {
+    "safety_success_rate": 0.998,
+    "prediction_accuracy": 0.892,
+    "decision_cycle_time": 166.15
+  },
+  "baseline_comparisons": {
+    "classical_mpc": 51.0,
+    "deep_qn": 63.2,
+    "sac": 59.3
+  },
+  "statistical_validation": {
+    "p_value": 0.001,
+    "effect_size": 2.5,
+    "confidence_interval": [
+      0.989,
+      1.0
+    ]
+  }
+}

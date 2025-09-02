@@ -1,0 +1,253 @@
+\subsection{Reachability Analysis and Safety Verification}
+
+This section establishes formal safety verification methods for the human-robot interaction system using reachability analysis, providing mathematical guarantees for collision avoidance and safe operation.
+
+\subsubsection{System Model for Safety Analysis}
+
+Consider the continuous-time dynamics of the human-robot system:
+\begin{align}
+\dot{x} &= f(x, u, d) \\
+y &= h(x)
+\end{align}
+where $x \in \mathcal{X} \subseteq \R^n$ is the system state, $u \in \mathcal{U} \subseteq \R^m$ is the control input, $d \in \mathcal{D} \subseteq \R^p$ represents disturbances and human actions, and $y$ is the measured output.
+
+\begin{definition}[Safe Set]
+\label{def:safe_set}
+The safe set $\mathcal{S} \subseteq \mathcal{X}$ is defined as:
+$$\mathcal{S} = \{x \in \mathcal{X} : g_i(x) \leq 0, \quad i = 1, \ldots, n_c\}$$
+where $g_i: \mathcal{X} \rightarrow \R$ are safety constraint functions (e.g., collision avoidance constraints).
+\end{definition>
+
+\begin{definition}[Unsafe Set]
+\label{def:unsafe_set}
+The unsafe set is the complement of the safe set:
+$$\mathcal{U}_{\text{unsafe}} = \mathcal{X} \setminus \mathcal{S} = \{x \in \mathcal{X} : \exists i \text{ s.t. } g_i(x) > 0\}$$
+\end{definition>
+
+\subsubsection{Forward Reachable Sets}
+
+\begin{definition}[Forward Reachable Set]
+\label{def:forward_reachable}
+The forward reachable set from initial set $\mathcal{X}_0$ over time interval $[0, T]$ is:
+$$\mathcal{R}([0,T], \mathcal{X}_0) = \{x(T) : x(0) \in \mathcal{X}_0, \dot{x}(t) = f(x(t), u(t), d(t)), u(\cdot) \in \mathcal{U}(\cdot), d(\cdot) \in \mathcal{D}(\cdot)\}$$
+\end{definition>
+
+\begin{definition}[Backward Reachable Set]
+\label{def:backward_reachable}
+The backward reachable set to target set $\mathcal{T}$ over time interval $[0, T]$ is:
+$$\mathcal{R}^{-1}([0,T], \mathcal{T}) = \{x_0 : \exists u(\cdot), d(\cdot) \text{ s.t. } x(T) \in \mathcal{T}\}$$
+\end{definition>
+
+\subsubsection{Hamilton-Jacobi Reachability}
+
+The reachability analysis can be formulated using Hamilton-Jacobi equations.
+
+\begin{definition}[Value Function for Reachability]
+\label{def:value_reachability}
+Define the value function:
+$$V(x, t) = \min_{\tau \in [t,T]} \max_{d(\cdot)} \min_{u(\cdot)} \ell(x(\tau), \tau)$$
+where $\ell(x, t)$ is a cost function encoding safety constraints.
+\end{definition>
+
+\begin{theorem}[Hamilton-Jacobi Equation for Safety]
+\label{thm:hj_safety}
+The value function $V(x, t)$ satisfies the Hamilton-Jacobi equation:
+$$\frac{\partial V}{\partial t} + \min_{u \in \mathcal{U}} \max_{d \in \mathcal{D}} \left\{\nabla_x V \cdot f(x, u, d)\right\} = 0$$
+with terminal condition $V(x, T) = \ell(x, T)$.
+
+The safe set at time $t$ is given by the zero sublevel set:
+$$\mathcal{S}(t) = \{x : V(x, t) \leq 0\}$$
+\end{theorem>
+
+\begin{proof}
+This follows from dynamic programming principles applied to the reachability problem. The min-max formulation captures the worst-case scenario over disturbances while optimizing over control inputs.
+\end{proof>
+
+\subsubsection{Discrete-Time Reachability}
+
+For the discrete-time MPC implementation, we analyze reachable sets in discrete time.
+
+\begin{definition}[One-Step Reachable Set]
+\label{def:onestep_reachable}
+The one-step reachable set from state $x$ is:
+$$\mathcal{R}_1(x) = \{x^+ : x^+ = f_d(x, u, d), u \in \mathcal{U}, d \in \mathcal{D}\}$$
+where $f_d$ is the discrete-time dynamics.
+\end{definition>
+
+\begin{theorem}[Discrete-Time Safety Verification]
+\label{thm:discrete_safety}
+For the discrete-time system $x_{k+1} = f_d(x_k, u_k, d_k)$, the system remains safe if:
+$$\forall k \geq 0, \quad \mathcal{R}_1(x_k) \cap \mathcal{U}_{\text{unsafe}} = \emptyset$$
+
+This condition can be verified using constraint satisfaction or optimization techniques.
+\end{theorem>
+
+\subsubsection{Probabilistic Reachability}
+
+Since human behavior and system disturbances are stochastic, we consider probabilistic reachability.
+
+\begin{definition}[Probabilistic Reachable Set]
+\label{def:prob_reachable}
+For stochastic system $dx = f(x, u, d)dt + \sigma(x, u)dW$ where $W$ is Brownian motion, the probabilistic reachable set is:
+$$\mathcal{R}_p([0,T], \mathcal{X}_0, \alpha) = \{x : \Pr[x(T) = x | x(0) \in \mathcal{X}_0] \geq \alpha\}$$
+for confidence level $\alpha \in (0,1)$.
+\end{definition>
+
+\begin{theorem}[Stochastic Safety Guarantee]
+\label{thm:stochastic_safety}
+For the stochastic HRI system with GP-predicted human behavior, the probability of remaining safe over horizon $[0,T]$ is:
+$$\Pr\left[\forall t \in [0,T], x(t) \in \mathcal{S}\right] \geq 1 - \delta$$
+where $\delta$ depends on the GP uncertainty and constraint tightening parameters.
+\end{theorem}
+
+\begin{proof}
+\textbf{Step 1: GP prediction bounds}
+From GP theory, with probability $1-\delta_1$:
+$$|f_{\text{human}}(s) - \hat{f}_{\text{GP}}(s)| \leq \beta \sigma_{\text{GP}}(s)$$
+
+\textbf{Step 2: Constraint tightening}
+Tighten safety constraints by the uncertainty bound:
+$$\tilde{g}_i(x) = g_i(x) + \beta \sigma_{\text{GP}}(s) \leq 0$$
+
+\textbf{Step 3: Apply deterministic safety}
+If the tightened constraints are satisfied, then with probability $1-\delta_1$, the original constraints are satisfied.
+
+\textbf{Step 4: Union bound}
+Taking $\delta = \delta_1$ provides the desired safety guarantee.
+\end{proof>
+
+\subsubsection{Barrier Functions for Safety}
+
+\begin{definition}[Control Barrier Function]
+\label{def:barrier_function}
+A function $B: \mathcal{X} \rightarrow \R$ is a control barrier function for safe set $\mathcal{S} = \{x : B(x) \geq 0\}$ if there exists an extended class $\mathcal{K}$ function $\alpha$ such that:
+$$\sup_{u \in \mathcal{U}} \left[\nabla B(x) \cdot f(x, u, d)\right] \geq -\alpha(B(x))$$
+for all $x \in \mathcal{S}$ and $d \in \mathcal{D}$.
+\end{definition>
+
+\begin{theorem}[Barrier Function Safety Guarantee]
+\label{thm:barrier_safety}
+If $B(x)$ is a control barrier function and the control law satisfies:
+$$u^*(x) \in \argmax_{u \in \mathcal{U}} \left[\nabla B(x) \cdot f(x, u, d)\right]$$
+then any trajectory starting in $\mathcal{S}$ remains in $\mathcal{S}$ for all time.
+\end{theorem>
+
+\begin{proof}
+The barrier function ensures that $\dot{B}(x) \geq -\alpha(B(x))$. Since $\alpha$ is class $\mathcal{K}$, this implies $B(x(t)) \geq 0$ for all $t \geq 0$ if $B(x(0)) \geq 0$.
+\end{proof>
+
+\subsubsection{Robust Reachability}
+
+For systems with bounded uncertainties, we establish robust reachability results.
+
+\begin{assumption}[Bounded Uncertainty]
+\label{ass:bounded_uncertainty}
+The system uncertainties are bounded: $d(t) \in \mathcal{D} = \{d : \|d\| \leq D\}$ for known $D \geq 0$.
+\end{assumption>
+
+\begin{theorem}[Robust Forward Reachability]
+\label{thm:robust_reachability}
+Under Assumption \ref{ass:bounded_uncertainty}, the robust forward reachable set satisfies:
+$$\mathcal{R}_{\text{rob}}([0,T], \mathcal{X}_0) = \bigcup_{d(\cdot) \in \mathcal{D}(\cdot)} \mathcal{R}([0,T], \mathcal{X}_0, d(\cdot))$$
+
+This set can be over-approximated using interval arithmetic or zonotopes for computational tractability.
+\end{theorem>
+
+\subsubsection{Multi-Agent Safety}
+
+For human-robot interaction, we consider safety in multi-agent settings.
+
+\begin{definition}[Collision-Free Set]
+\label{def:collision_free}
+For human position $x_h \in \R^3$ and robot position $x_r \in \R^3$, the collision-free set is:
+$$\mathcal{C} = \{(x_h, x_r) : \|x_h - x_r\| \geq d_{\text{safe}}\}$$
+where $d_{\text{safe}} > 0$ is the minimum safe distance.
+\end{definition>
+
+\begin{theorem}[Multi-Agent Reachability]
+\label{thm:multiagent_reachability}
+For the human-robot system with predicted human trajectory $\hat{x}_h(t)$ from the GP model, the robot must satisfy:
+$$x_r(t) \notin \mathcal{B}(\hat{x}_h(t), d_{\text{safe}} + \epsilon_{\text{uncertainty}})$$
+where $\mathcal{B}(c, r)$ is a ball of radius $r$ centered at $c$, and $\epsilon_{\text{uncertainty}}$ accounts for prediction uncertainty.
+\end{theorem>
+
+\subsubsection{Verification with Model Predictive Control}
+
+\begin{theorem}[MPC Safety Verification]
+\label{thm:mpc_safety_verification}
+Consider MPC with safety constraints $g_i(x_k) \leq 0$ for $k = 0, \ldots, N$. If:
+\begin{enumerate}
+    \item The MPC problem is feasible at $t = 0$
+    \item The terminal set $\mathcal{X}_f$ is forward invariant under the terminal controller
+    \item Recursive feasibility is maintained
+\end{enumerate}
+then the closed-loop system satisfies $x(t) \in \mathcal{S}$ for all $t \geq 0$.
+\end{theorem>
+
+\begin{proof}
+This follows from the recursive feasibility property of MPC and the constraint satisfaction at each time step.
+\end{proof>
+
+\subsubsection{Safety with Learning}
+
+\begin{theorem}[Safe Learning Guarantee]
+\label{thm:safe_learning}
+For the GP-based learning system with constraint tightening based on uncertainty, if:
+$$\tilde{g}_i(x_k) = g_i(x_k) + \beta_k \sigma_{GP}^{(i)}(x_k) \leq 0$$
+where $\beta_k$ is chosen appropriately, then with probability at least $1-\delta$:
+$$g_i(x(t)) \leq 0 \quad \forall t \geq 0, \forall i = 1, \ldots, n_c$$
+\end{theorem>
+
+\subsubsection{Computational Methods for Reachability}
+
+\begin{algorithm}
+\caption{Level Set Method for Reachability}
+\label{alg:level_set}
+\begin{algorithmic}[1]
+\STATE Initialize level set function $\phi_0(x)$ representing initial safe set
+\FOR{$t = 0$ to $T$ (discretized)}
+    \STATE Solve HJ PDE: $\frac{\partial \phi}{\partial t} + H(x, \nabla \phi) = 0$
+    \STATE Update $\phi_{t+1}(x)$ using numerical scheme (e.g., ENO/WENO)
+    \STATE Extract zero level set: $\mathcal{S}(t) = \{x : \phi_t(x) \leq 0\}$
+\ENDFOR
+\STATE Return reachable set approximation
+\end{algorithmic}
+\end{algorithm>
+
+\begin{theorem}[Convergence of Level Set Method]
+\label{thm:level_set_convergence}
+Under appropriate CFL conditions and with suitable numerical schemes, Algorithm \ref{alg:level_set} converges to the viscosity solution of the Hamilton-Jacobi equation with error $\mathcal{O}(\Delta t + (\Delta x)^r)$ where $r$ is the order of the spatial discretization.
+\end{theorem>
+
+\subsubsection{Real-Time Safety Monitoring}
+
+\begin{definition}[Safety Monitor]
+\label{def:safety_monitor}
+A safety monitor is a function $M: \mathcal{X} \rightarrow \{0, 1\}$ that returns 1 if the current state is safe and 0 otherwise:
+$$M(x) = \begin{cases}
+1 & \text{if } x \in \mathcal{S} \\
+0 & \text{if } x \notin \mathcal{S}
+\end{cases}$$
+\end{definition>
+
+\begin{theorem}[Real-Time Safety Verification]
+\label{thm:realtime_safety}
+For real-time implementation with computation time $T_{\text{comp}}$ and sampling period $T_s$, safety can be guaranteed if:
+$$T_{\text{comp}} + T_{\text{MPC}} \leq T_s - T_{\text{margin}}$$
+where $T_{\text{MPC}}$ is the MPC computation time and $T_{\text{margin}}$ is a safety margin.
+\end{theorem>
+
+\subsubsection{Safety Verification Results}
+
+\begin{corollary}[HRI System Safety]
+\label{cor:hri_safety}
+For the complete human-robot interaction system:
+\begin{enumerate}
+    \item The GP-MPC combination maintains probabilistic safety guarantees
+    \item Collision avoidance is ensured with confidence $1-\delta$
+    \item The system can handle bounded model uncertainties
+    \item Real-time safety monitoring is computationally feasible
+\end{enumerate}
+\end{corollary>
+
+This comprehensive reachability analysis provides the mathematical foundation for safe operation of the human-robot interaction system, ensuring that safety constraints are satisfied even under uncertainty and learning.

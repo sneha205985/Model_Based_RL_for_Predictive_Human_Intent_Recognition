@@ -1,0 +1,370 @@
+{
+  "timestamp": "2025-09-01T19:46:35.778825",
+  "project_root": "/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl",
+  "validation_version": "1.0.0",
+  "tests": {
+    "project_structure": {
+      "status": "PASS",
+      "execution_time": 0.0058841705322265625,
+      "details": {
+        "critical_files": {
+          "src/system/human_intent_rl_system.py": {
+            "exists": true,
+            "size_bytes": 47413
+          },
+          "src/agents/bayesian_rl_agent.py": {
+            "exists": true,
+            "size_bytes": 81015
+          },
+          "src/models/gaussian_process.py": {
+            "exists": true,
+            "size_bytes": 36074
+          },
+          "src/controllers/mpc_controller.py": {
+            "exists": true,
+            "size_bytes": 40001
+          },
+          "src/data/dataset_quality_analyzer.py": {
+            "exists": true,
+            "size_bytes": 115058
+          },
+          "requirements.txt": {
+            "exists": true,
+            "size_bytes": 1154
+          },
+          "README.md": {
+            "exists": true,
+            "size_bytes": 8271
+          },
+          "pyproject.toml": {
+            "exists": true,
+            "size_bytes": 3855
+          }
+        },
+        "critical_directories": {
+          "src": true,
+          "src/agents": true,
+          "src/models": true,
+          "src/controllers": true,
+          "src/data": true,
+          "tests": true,
+          "jekyll_site": true,
+          "data": true
+        },
+        "jekyll_files": {
+          "jekyll_site/methodology.md": {
+            "exists": true,
+            "size_bytes": 16851
+          },
+          "jekyll_site/results.md": {
+            "exists": true,
+            "size_bytes": 15204
+          },
+          "jekyll_site/assets/css/main.css": {
+            "exists": true,
+            "size_bytes": 10136
+          },
+          "jekyll_site/_config.yml": {
+            "exists": true,
+            "size_bytes": 2382
+          }
+        },
+        "total_files_found": 697,
+        "missing_critical": []
+      },
+      "warnings": []
+    },
+    "core_imports": {
+      "status": "FAIL",
+      "execution_time": 1.2355690002441406,
+      "details": {
+        "error": "name 'HumanState' is not defined",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/comprehensive_project_validation.py\", line 201, in validate_core_imports\n    module = importlib.import_module(module_name)\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py\", line 88, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 1026, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/integration/__init__.py\", line 34, in <module>\n    from .hri_bayesian_rl import HRIBayesianRLIntegration, HRIBayesianRLConfig\n  File \"/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/integration/hri_bayesian_rl.py\", line 102, in <module>\n    class HumanIntentPredictor:\n    ...<118 lines>...\n            }\n  File \"/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/integration/hri_bayesian_rl.py\", line 129, in HumanIntentPredictor\n    def predict_intent(self, human_state: HumanState,\n                                          ^^^^^^^^^^\nNameError: name 'HumanState' is not defined\n"
+      },
+      "warnings": []
+    },
+    "component_instantiation": {
+      "status": "FAIL",
+      "execution_time": 0.0008611679077148438,
+      "details": {
+        "component_tests": {
+          "HumanIntentRLSystem": {
+            "instantiation": "failed",
+            "error": "'NoneType' object has no attribute 'use_threading'"
+          },
+          "DatasetQualityAnalyzer": {
+            "instantiation": "failed",
+            "error": "No module named 'h5py'"
+          },
+          "IntegrationModule": {
+            "instantiation": "failed",
+            "error": "name 'HumanState' is not defined"
+          }
+        },
+        "successful_instantiations": 0,
+        "failed_instantiations": 3,
+        "success_rate": 0.0
+      },
+      "warnings": [
+        "Component success rate: 0.0%"
+      ]
+    },
+    "dataset_integrity": {
+      "status": "PASS",
+      "execution_time": 0.061038970947265625,
+      "details": {
+        "dataset_files": [
+          {
+            "path": "data/synthetic_full/synthetic_dataset.pkl",
+            "size_mb": 4.523637771606445
+          },
+          {
+            "path": "data/synthetic_full/features.csv",
+            "size_mb": 1.706498146057129
+          },
+          {
+            "path": "data/synthetic_full/features.csv",
+            "size_mb": 1.706498146057129
+          },
+          {
+            "path": "data/synthetic/synthetic_dataset.pkl",
+            "size_mb": 0.18255138397216797
+          },
+          {
+            "path": "data/synthetic_full/synthetic_dataset.pkl",
+            "size_mb": 4.523637771606445
+          }
+        ],
+        "total_samples": 1178,
+        "dataset_quality": {
+          "main_dataset": {
+            "type": "<class 'list'>",
+            "loaded_successfully": true,
+            "shape": "unknown"
+          }
+        },
+        "feature_analysis": {
+          "shape": [
+            1178,
+            78
+          ],
+          "columns": [
+            "speed_mean",
+            "speed_std",
+            "speed_max",
+            "acc_mean",
+            "acc_std",
+            "acc_max",
+            "jerk_mean",
+            "jerk_std",
+            "smoothness_sal",
+            "n_movement_units",
+            "movement_efficiency",
+            "duration",
+            "sampling_rate",
+            "n_movement_phases",
+            "movement_time_ratio",
+            "dominant_period",
+            "periodicity_strength",
+            "time_to_peak_velocity",
+            "path_length",
+            "displacement",
+            "path_efficiency",
+            "workspace_x",
+            "workspace_y",
+            "workspace_z",
+            "workspace_volume",
+            "curvature_mean",
+            "curvature_std",
+            "curvature_max",
+            "curvature_median",
+            "total_angular_change",
+            "mean_angular_change",
+            "n_direction_changes",
+            "pos_var_x",
+            "pos_var_y",
+            "pos_var_z",
+            "pos_x_mean",
+            "pos_x_std",
+            "pos_x_skew",
+            "pos_x_kurt",
+            "pos_x_q25",
+            "pos_x_q75",
+            "pos_y_mean",
+            "pos_y_std",
+            "pos_y_skew",
+            "pos_y_kurt",
+            "pos_y_q25",
+            "pos_y_q75",
+            "pos_z_mean",
+            "pos_z_std",
+            "pos_z_skew",
+            "pos_z_kurt",
+            "pos_z_q25",
+            "pos_z_q75",
+            "vel_mean",
+            "vel_std",
+            "vel_skew",
+            "vel_kurt",
+            "vel_p10",
+            "vel_p90",
+            "acc_mean.1",
+            "acc_std.1",
+            "acc_p95",
+            "power_band_0_x",
+            "power_band_1_x",
+            "power_band_2_x",
+            "power_band_0_y",
+            "power_band_1_y",
+            "power_band_2_y",
+            "power_band_0_z",
+            "power_band_1_z",
+            "power_band_2_z",
+            "dominant_freq",
+            "spectral_centroid",
+            "spectral_spread",
+            "spectral_rolloff",
+            "spectral_flux",
+            "zero_crossing_rate",
+            "sequence_id"
+          ],
+          "has_nan_values": "False",
+          "numeric_columns": 77
+        }
+      },
+      "warnings": []
+    },
+    "algorithm_functionality": {
+      "status": "FAIL",
+      "execution_time": 6.604194641113281e-05,
+      "details": {
+        "algorithm_tests": {
+          "GaussianProcess": {
+            "instantiation": "failed",
+            "error": "cannot import name 'GaussianProcessModel' from 'src.models.gaussian_process' (/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/models/gaussian_process.py)"
+          },
+          "SystemIntegration": {
+            "instantiation": "failed",
+            "error": "'NoneType' object has no attribute 'use_threading'"
+          }
+        },
+        "synthetic_data_tests": {
+          "samples": 100,
+          "features": 10,
+          "data_shape": [
+            100,
+            10
+          ]
+        },
+        "performance_metrics": {},
+        "success_rate": 0.0
+      },
+      "warnings": [
+        "GP instantiation failed: cannot import name 'GaussianProcessModel' from 'src.models.gaussian_process' (/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/models/gaussian_process.py)",
+        "System integration failed: 'NoneType' object has no attribute 'use_threading'"
+      ]
+    },
+    "jekyll_site_validation": {
+      "status": "PASS",
+      "execution_time": 0.0011069774627685547,
+      "details": {
+        "jekyll_structure": {
+          "_config.yml": {
+            "exists": true,
+            "size_bytes": 2382,
+            "size_kb": 2.326171875
+          },
+          "methodology.md": {
+            "exists": true,
+            "size_bytes": 16851,
+            "size_kb": 16.4560546875
+          },
+          "results.md": {
+            "exists": true,
+            "size_bytes": 15204,
+            "size_kb": 14.84765625
+          },
+          "about.md": {
+            "exists": true,
+            "size_bytes": 6128,
+            "size_kb": 5.984375
+          },
+          "index.md": {
+            "exists": true,
+            "size_bytes": 3118,
+            "size_kb": 3.044921875
+          },
+          "assets/css/main.css": {
+            "exists": true,
+            "size_bytes": 10136,
+            "size_kb": 9.8984375
+          },
+          "_layouts/default.html": {
+            "exists": true,
+            "size_bytes": 8717,
+            "size_kb": 8.5126953125
+          }
+        },
+        "content_analysis": {
+          "methodology.md": {
+            "word_count": 1659,
+            "line_count": 477,
+            "char_count": 16423,
+            "technical_terms_found": 5,
+            "has_quantitative_data": true,
+            "content_quality": "good"
+          },
+          "results.md": {
+            "word_count": 2065,
+            "line_count": 416,
+            "char_count": 15013,
+            "technical_terms_found": 4,
+            "has_quantitative_data": true,
+            "content_quality": "good"
+          }
+        },
+        "site_metrics": {
+          "total_files_expected": 7,
+          "existing_files": 7,
+          "completeness_ratio": 1.0,
+          "total_content_size_kb": 61.0703125,
+          "avg_file_size_kb": 8.724330357142858
+        }
+      },
+      "warnings": []
+    },
+    "performance_benchmarks": {
+      "status": "PASS",
+      "execution_time": 0.00011587142944335938,
+      "details": {
+        "performance_tests": {
+          "system_instantiation_failed": "'NoneType' object has no attribute 'use_threading'",
+          "memory_usage": {
+            "rss_mb": 368.84375,
+            "vms_mb": 401671.828125
+          }
+        },
+        "timing_benchmarks": {
+          "import_time": 0.0
+        },
+        "meets_realtime_constraints": false
+      },
+      "warnings": [
+        "System instantiation failed: 'NoneType' object has no attribute 'use_threading'",
+        "Real-time constraints not fully validated"
+      ]
+    }
+  },
+  "summary": {
+    "total_tests": 7,
+    "passed_tests": 4,
+    "failed_tests": 3,
+    "warnings": 5,
+    "execution_time": 1.3075587749481201
+  },
+  "overall_status": "CRITICAL",
+  "recommendations": [
+    "Address 3 failing tests before deployment",
+    "Project requires critical fixes before any deployment"
+  ]
+}

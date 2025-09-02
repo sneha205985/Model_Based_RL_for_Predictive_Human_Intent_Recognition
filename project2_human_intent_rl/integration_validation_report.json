@@ -1,0 +1,90 @@
+{
+  "integration_test_summary": {
+    "total_tests": 14,
+    "successful_tests": 1,
+    "success_rate": 0.07142857142857142,
+    "overall_status": "FAIL",
+    "timestamp": 1756486897.211074,
+    "test_duration": "2.1s"
+  },
+  "detailed_results": {
+    "components": {
+      "basic_models": {
+        "status": "success",
+        "message": "Basic models imported successfully"
+      },
+      "gaussian_process": {
+        "status": "failed",
+        "message": "attempted relative import beyond top-level package"
+      },
+      "neural_behavior_model": {
+        "status": "failed",
+        "message": "'NeuralHumanBehaviorModel' object has no attribute 'neural_config'"
+      },
+      "mpc_controller": {
+        "status": "failed",
+        "message": "attempted relative import beyond top-level package"
+      },
+      "bayesian_rl_agent": {
+        "status": "failed",
+        "message": "No module named 'pyro'"
+      },
+      "optimization_systems": {
+        "status": "failed",
+        "message": "cannot import name 'LRUCache' from 'collections' (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py)"
+      }
+    },
+    "pipeline": {
+      "pipeline_setup": {
+        "status": "failed",
+        "message": "ContextInformation.__init__() got an unexpected keyword argument 'task_type'"
+      }
+    },
+    "optimization": {
+      "profiler": {
+        "status": "failed",
+        "message": "cannot import name 'LRUCache' from 'collections' (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py)"
+      },
+      "caching": {
+        "status": "failed",
+        "message": "cannot import name 'LRUCache' from 'collections' (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py)"
+      },
+      "memory_management": {
+        "status": "failed",
+        "message": "cannot import name 'LRUCache' from 'collections' (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py)"
+      }
+    },
+    "safety": {
+      "constraint_enforcement": {
+        "status": "failed",
+        "message": "cannot import name 'ConstraintEnforcement' from 'safety.constraint_enforcement' (/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/safety/constraint_enforcement.py)"
+      },
+      "error_handling": {
+        "status": "failed",
+        "message": "cannot import name 'ErrorHandler' from 'robustness.error_handler' (/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl/src/robustness/error_handler.py)"
+      }
+    },
+    "benchmarks": {
+      "gp_benchmark": {
+        "status": "failed",
+        "message": "attempted relative import beyond top-level package"
+      },
+      "neural_benchmark": {
+        "status": "failed",
+        "message": "'NeuralHumanBehaviorModel' object has no attribute 'neural_config'"
+      }
+    }
+  },
+  "performance_analysis": {},
+  "recommendations": [
+    "Fix failed components: gaussian_process, neural_behavior_model, mpc_controller, bayesian_rl_agent, optimization_systems, pipeline_setup, profiler, caching, memory_management, constraint_enforcement, error_handling, gp_benchmark, neural_benchmark",
+    "Overall success rate below 90% - investigate system stability",
+    "Neural model issues may affect prediction accuracy"
+  ],
+  "system_readiness": {
+    "core_components": false,
+    "performance_optimization": false,
+    "safety_systems": false,
+    "ready_for_demo": false
+  }
+}

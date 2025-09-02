@@ -1,0 +1,85 @@
+# Docker Compose Configuration
+# Model-Based RL Human Intent Recognition System
+# Research-Grade Production Deployment
+
+version: '3.8'
+
+services:
+  # Main research system
+  research-system:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: human-intent-rl-system
+    ports:
+      - "8080:8080"    # Main system port
+      - "8050:8050"    # Monitoring dashboard port
+    volumes:
+      # Mount results directory for persistent storage
+      - ./results:/app/results
+      - ./logs:/app/logs
+      - ./monitoring:/app/monitoring
+    environment:
+      - PYTHONPATH=/app:/app/src
+      - ENVIRONMENT=production
+      - RESEARCH_MODE=enabled
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    networks:
+      - research-network
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import src; print('✅ System healthy')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Performance monitoring service  
+  monitoring:
+    image: grafana/grafana:latest
+    container_name: human-intent-rl-monitoring
+    ports:
+      - "3000:3000"    # Grafana dashboard
+    volumes:
+      - monitoring-data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=research123
+      - GF_USERS_ALLOW_SIGN_UP=false
+    restart: unless-stopped
+    networks:
+      - research-network
+    depends_on:
+      - research-system
+
+  # Jupyter notebook for research development
+  jupyter:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: human-intent-rl-jupyter
+    ports:
+      - "8888:8888"    # Jupyter notebook port
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app:/app/src
+      - JUPYTER_ENABLE_LAB=yes
+    command: >
+      bash -c "pip install jupyter jupyterlab || echo 'Jupyter install failed' &&
+               python3 -c 'print(\"🔧 Jupyter service ready - install manually if needed\")'"
+    restart: unless-stopped
+    networks:
+      - research-network
+    depends_on:
+      - research-system
+
+# Networks
+networks:
+  research-network:
+    driver: bridge
+    name: human-intent-research-network
+
+# Persistent volumes
+volumes:
+  monitoring-data:
+    driver: local

@@ -1,0 +1,123 @@
+# Site configuration
+title: "Model-Based RL for Predictive Human Intent Recognition"
+subtitle: "Advanced Human-Robot Interaction Through Bayesian Reinforcement Learning"
+description: >-
+  A comprehensive research project implementing Model-Based Reinforcement Learning
+  with Bayesian inference for predictive human intent recognition in collaborative
+  robotics applications. This work presents novel algorithms for uncertainty
+  quantification, safety-aware control, and real-time human behavior prediction.
+
+author:
+  name: "Claude Code Research Team"
+  email: "research@anthropic.com"
+  
+url: "https://anthropics.github.io"
+baseurl: "/model-based-rl-human-intent"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+      
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+# Navigation menu
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about"
+  - title: "Methodology"
+    url: "/methodology"
+  - title: "Results"
+    url: "/results"
+  - title: "Conclusions"
+    url: "/conclusion"
+  - title: "Contact"
+    url: "/contact"
+
+# Site settings
+show_excerpts: false
+date_format: "%B %d, %Y"
+
+# Social links
+github_username: anthropics
+twitter_username: AnthropicAI
+
+# Analytics (optional)
+google_analytics: # Add your GA tracking ID here
+
+# Math rendering
+mathjax: true
+
+# Collections
+collections:
+  results:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      author: "Claude Code Research Team"
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE.txt
+  - CHANGELOG.md
+
+# Include
+include:
+  - _pages
+
+# Sass configuration
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Repository information
+repository: anthropics/model-based-rl-human-intent
+branch: main
+
+# Build optimization
+incremental: true
+profile: false
+safe: true
+lsi: false
+
+# Timezone
+timezone: America/Los_Angeles
+
+# Encoding
+encoding: utf-8
+
+# Liquid options
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false

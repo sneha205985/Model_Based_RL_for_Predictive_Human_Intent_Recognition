@@ -1,0 +1,13 @@
+control==0.10.2
+matplotlib==3.10.3
+numpy==2.2.6
+pandas==2.3.0
+plotly==6.2.0
+pyro-api==0.1.2
+pyro-ppl==1.9.1
+roboticstoolbox-python==1.1.1
+scipy==1.16.1
+seaborn==0.13.2
+torch==2.8.0
+torchaudio==2.8.0
+torchvision==0.23.0

@@ -1,0 +1,256 @@
+{
+  "baseline_name": "Classical MPC",
+  "baseline_info": {
+    "description": "Classical Model Predictive Control with linear dynamics",
+    "paper_reference": "Maciejowski, J. M. (2002). Predictive control: with constraints",
+    "year": 2002,
+    "type": "model_predictive"
+  },
+  "our_performance": {
+    "safety_success_rate": {
+      "mean": 0.9720484567754812,
+      "std": 0.0372524545891597,
+      "median": 0.9914465242349038,
+      "ci_lower": 0.89448465188668,
+      "ci_upper": 1.0
+    },
+    "prediction_accuracy": {
+      "mean": 0.8866760174134263,
+      "std": 0.04451544735978321,
+      "median": 0.8844422979966268,
+      "ci_lower": 0.8098515116361492,
+      "ci_upper": 0.9896296806171305
+    },
+    "decision_cycle_time": {
+      "mean": 165.80837476354012,
+      "std": 8.451069000855659,
+      "median": 166.29346941915756,
+      "ci_lower": 149.42285850706406,
+      "ci_upper": 176.77367002684232
+    },
+    "collision_rate": {
+      "mean": 0.001987937260371621,
+      "std": 9.979819832656144e-05,
+      "median": 0.0019676770413129875,
+      "ci_lower": 0.0018395884500681133,
+      "ci_upper": 0.00219104764155389
+    },
+    "comfort_score": {
+      "mean": 8.704306277839096,
+      "std": 0.42064052782800576,
+      "median": 8.745246216046887,
+      "ci_lower": 7.892164406623944,
+      "ci_upper": 9.414158665283962
+    },
+    "computational_efficiency": {
+      "mean": 1.6978678434671224,
+      "std": 0.09423394811125776,
+      "median": 1.6973781171033657,
+      "ci_lower": 1.5361651174322166,
+      "ci_upper": 1.8817053798253975
+    }
+  },
+  "baseline_performance": {
+    "safety_success_rate": {
+      "mean": 0.7451818973785653,
+      "std": 0.06976913220822709,
+      "median": 0.7512889304644755,
+      "ci_lower": 0.588819868144436,
+      "ci_upper": 0.8595923157601807
+    },
+    "prediction_accuracy": {
+      "mean": 0.7019696417182915,
+      "std": 0.06153130673627715,
+      "median": 0.7132054136723485,
+      "ci_lower": 0.6064885365992738,
+      "ci_upper": 0.8099459667727538
+    },
+    "decision_cycle_time": {
+      "mean": 174.08036787536994,
+      "std": 13.543818670140345,
+      "median": 174.40461263267414,
+      "ci_lower": 146.92122639654784,
+      "ci_upper": 199.2210345774669
+    },
+    "collision_rate": {
+      "mean": 0.1814007462188542,
+      "std": 0.01632534504673252,
+      "median": 0.18396943615950478,
+      "ci_lower": 0.15372093185705085,
+      "ci_upper": 0.20569239938687656
+    },
+    "comfort_score": {
+      "mean": 6.558670466403493,
+      "std": 0.47255217026260915,
+      "median": 6.522891088133036,
+      "ci_lower": 5.779879766709151,
+      "ci_upper": 7.630294278653094
+    },
+    "computational_efficiency": {
+      "mean": 0.798673908129005,
+      "std": 0.06444084226978122,
+      "median": 0.7911694966079024,
+      "ci_lower": 0.6973615357567108,
+      "ci_upper": 0.9268104582581497
+    }
+  },
+  "statistical_tests": {
+    "safety_success_rate": {
+      "baseline_stats": {
+        "mean": 0.9720484567754812,
+        "std": 0.0372524545891597,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.7451818973785653,
+        "std": 0.06976913220822709,
+        "n": 50
+      },
+      "test_statistic": 2494.0,
+      "p_value": 6.7907183994705335e-18,
+      "test_type": "mann_whitney_u",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Classical MPC"
+      ]
+    },
+    "prediction_accuracy": {
+      "baseline_stats": {
+        "mean": 0.8866760174134263,
+        "std": 0.04451544735978321,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.7019696417182915,
+        "std": 0.06153130673627715,
+        "n": 50
+      },
+      "test_statistic": 17.197469574732366,
+      "p_value": 2.3444926903034955e-31,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Classical MPC"
+      ]
+    },
+    "decision_cycle_time": {
+      "baseline_stats": {
+        "mean": 165.80837476354012,
+        "std": 8.451069000855659,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 174.08036787536994,
+        "std": 13.543818670140345,
+        "n": 50
+      },
+      "test_statistic": -3.663937722242614,
+      "p_value": 0.00040308802585986656,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Classical MPC"
+      ]
+    },
+    "collision_rate": {
+      "baseline_stats": {
+        "mean": 0.001987937260371621,
+        "std": 9.979819832656144e-05,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.1814007462188542,
+        "std": 0.01632534504673252,
+        "n": 50
+      },
+      "test_statistic": -77.70839949093954,
+      "p_value": 7.417803641579017e-90,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Classical MPC"
+      ]
+    },
+    "comfort_score": {
+      "baseline_stats": {
+        "mean": 8.704306277839096,
+        "std": 0.42064052782800576,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 6.558670466403493,
+        "std": 0.47255217026260915,
+        "n": 50
+      },
+      "test_statistic": 23.981624148473294,
+      "p_value": 8.555562884965023e-43,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Classical MPC"
+      ]
+    },
+    "computational_efficiency": {
+      "baseline_stats": {
+        "mean": 1.6978678434671224,
+        "std": 0.09423394811125776,
+        "n": 50
+      },
+      "ablated_stats": {
+        "mean": 0.798673908129005,
+        "std": 0.06444084226978122,
+        "n": 50
+      },
+      "test_statistic": 55.69572390910736,
+      "p_value": 5.3638179895225885e-76,
+      "test_type": "independent_t_test",
+      "significant": true,
+      "labels": [
+        "Our Method",
+        "Classical MPC"
+      ]
+    }
+  },
+  "effect_sizes": {
+    "safety_success_rate": 4.05653530773894,
+    "prediction_accuracy": 3.439493914946473,
+    "decision_cycle_time": -0.7327875444485228,
+    "collision_rate": -15.541679898187908,
+    "comfort_score": 4.79632482969466,
+    "computational_efficiency": 11.139144781821471
+  },
+  "confidence_intervals": {
+    "safety_success_rate": [
+      0.20493263170411535,
+      0.24988500062322871
+    ],
+    "prediction_accuracy": [
+      0.162643191254698,
+      0.20714255993081337
+    ],
+    "decision_cycle_time": [
+      -12.14197869009708,
+      -4.206165265767109
+    ],
+    "collision_rate": [
+      -0.18409825409304315,
+      -0.1750439900738279
+    ],
+    "comfort_score": [
+      1.9691688487716168,
+      2.3258808514695026
+    ],
+    "computational_efficiency": [
+      0.863218590703475,
+      0.9295165165005507
+    ]
+  },
+  "sample_size": 50,
+  "execution_time": 0.038103,
+  "timestamp": "2025-09-02T19:07:47.136869"
+}

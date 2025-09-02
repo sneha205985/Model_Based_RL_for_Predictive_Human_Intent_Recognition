@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-08-29T22:40:11.911558",
+  "dataset_info": {
+    "n_samples": 1178,
+    "n_features": 77,
+    "n_classes": 5,
+    "class_distribution": {

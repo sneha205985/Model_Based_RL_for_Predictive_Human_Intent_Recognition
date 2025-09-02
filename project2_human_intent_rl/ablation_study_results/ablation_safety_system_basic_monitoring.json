@@ -1,0 +1,58 @@
+{
+  "component_name": "safety_system",
+  "ablation_type": "basic_monitoring",
+  "performance_metrics": {
+    "decision_cycle_time_baseline": 80.67867895510169,
+    "decision_cycle_time_ablated": 79.45832513923241,
+    "decision_cycle_time_difference": 1.2203538158692737,
+    "decision_cycle_time_relative_change": -1.5126100621310496,
+    "safety_success_rate_baseline": 0.5312386540003015,
+    "safety_success_rate_ablated": 0.5196896450396671,
+    "safety_success_rate_difference": 0.011549008960634377,
+    "safety_success_rate_relative_change": -2.173977528492839,
+    "prediction_accuracy_baseline": 0.4664264958279461,
+    "prediction_accuracy_ablated": 0.4591511466307685,
+    "prediction_accuracy_difference": 0.007275349197177594,
+    "prediction_accuracy_relative_change": -1.5598061564369836,
+    "memory_usage_baseline": 488.479406910038,
+    "memory_usage_ablated": 489.83458226911074,
+    "memory_usage_difference": -1.3551753590727458,
+    "memory_usage_relative_change": 0.277427326495736,
+    "cpu_usage_baseline": 1.0060393622604737,
+    "cpu_usage_ablated": 0.9859641013211291,
+    "cpu_usage_difference": 0.02007526093934464,
+    "cpu_usage_relative_change": -1.9954746993435186,
+    "throughput_baseline": 2.024935794419895,
+    "throughput_ablated": 2.028049173809332,
+    "throughput_difference": -0.003113379389437121,
+    "throughput_relative_change": 0.1537520052742731
+  },
+  "statistical_significance": {
+    "baseline_stats": {
+      "mean": 0.5312386540003015,
+      "std": 0.022500531292105733,
+      "n": 30
+    },
+    "ablated_stats": {
+      "mean": 0.5196896450396671,
+      "std": 0.025695446809258796,
+      "n": 30
+    },
+    "test_statistic": 1.8520700513973078,
+    "p_value": 0.06910738304434054,
+    "test_type": "independent_t_test",
+    "significant": false,
+    "labels": [
+      "Baseline",
+      "Ablated (basic_monitoring)"
+    ]
+  },
+  "effect_size": 0.47820243100475257,
+  "confidence_interval": [
+    -0.0025751625239939673,
+    0.024289587212924343
+  ],
+  "sample_size": 30,
+  "execution_time": 0.005723,
+  "timestamp": "2025-09-02T19:08:04.420881"
+}

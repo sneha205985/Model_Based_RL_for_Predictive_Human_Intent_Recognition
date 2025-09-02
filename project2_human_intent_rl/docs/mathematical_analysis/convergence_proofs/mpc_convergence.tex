@@ -1,0 +1,197 @@
+\subsection{Model Predictive Control Convergence Analysis}
+
+This section establishes convergence properties of the MPC controller for the human-robot interaction system, considering both nominal and robust formulations.
+
+\subsubsection{MPC Problem Formulation}
+
+The MPC optimization problem at time $t$ is formulated as:
+
+\begin{align}
+\label{eq:mpc_problem}
+\min_{u_0, \ldots, u_{N-1}} \quad & J_N(x_t, \mathbf{u}) = \sum_{k=0}^{N-1} \ell(x_k, u_k) + V_f(x_N) \\
+\text{s.t.} \quad & x_{k+1} = f(x_k, u_k, w_k), \quad k = 0, \ldots, N-1 \\
+& x_k \in \mathcal{X}, \quad u_k \in \mathcal{U}, \quad k = 0, \ldots, N-1 \\
+& x_N \in \mathcal{X}_f
+\end{align}
+
+where:
+- $\mathbf{u} = (u_0, \ldots, u_{N-1})$ is the control sequence
+- $\ell(x, u)$ is the stage cost
+- $V_f(x)$ is the terminal cost
+- $f(x, u, w)$ is the system dynamics with disturbance $w$
+- $\mathcal{X}, \mathcal{U}, \mathcal{X}_f$ are state, input, and terminal constraint sets
+
+\subsubsection{Assumptions for Convergence Analysis}
+
+\begin{assumption}[System Dynamics]
+\label{ass:dynamics}
+The system dynamics $f: \mathcal{X} \times \mathcal{U} \times \mathcal{W} \rightarrow \mathcal{X}$ is Lipschitz continuous in $(x, u)$ with Lipschitz constant $L_f$:
+$$\norm{f(x_1, u_1, w) - f(x_2, u_2, w)} \leq L_f (\norm{x_1 - x_2} + \norm{u_1 - u_2})$$
+for all $w \in \mathcal{W}$.
+\end{assumption}
+
+\begin{assumption}[Stage Cost Properties]
+\label{ass:stage_cost}
+The stage cost $\ell: \mathcal{X} \times \mathcal{U} \rightarrow \R_+$ satisfies:
+\begin{enumerate}
+    \item $\ell(x, u) \geq \alpha_\ell(\norm{x - x_s} + \norm{u - u_s})$ for some $\alpha_\ell > 0$
+    \item $\ell$ is Lipschitz continuous with constant $L_\ell$
+    \item $\ell(x_s, u_s) = 0$ where $(x_s, u_s)$ is the equilibrium point
+\end{enumerate}
+\end{assumption}
+
+\begin{assumption}[Terminal Conditions]
+\label{ass:terminal}
+The terminal cost $V_f$ and terminal set $\mathcal{X}_f$ satisfy:
+\begin{enumerate}
+    \item $V_f$ is a Lyapunov function for the system in $\mathcal{X}_f$
+    \item $\mathcal{X}_f$ is a positively invariant set under the terminal controller
+    \item $V_f(f(x, \kappa_f(x), 0)) - V_f(x) \leq -\ell(x, \kappa_f(x))$ for all $x \in \mathcal{X}_f$
+\end{enumerate}
+where $\kappa_f$ is the terminal controller.
+\end{assumption}
+
+\begin{assumption}[Feasibility]
+\label{ass:feasibility}
+For each initial state $x_0 \in \mathcal{X}_0$, there exists a feasible control sequence for the MPC problem \eqref{eq:mpc_problem}.
+\end{assumption}
+
+\subsubsection{Nominal MPC Convergence}
+
+\begin{theorem}[MPC Asymptotic Stability]
+\label{thm:mpc_stability}
+Under Assumptions \ref{ass:dynamics}--\ref{ass:feasibility}, the MPC controller $\kappa_N(x)$ renders the closed-loop system asymptotically stable at the equilibrium $(x_s, u_s)$.
+
+Specifically, if $x_0 \in \mathcal{X}_0$, then:
+\begin{enumerate}
+    \item The closed-loop trajectory exists and remains in $\mathcal{X}_0$ for all $t \geq 0$
+    \item $\lim_{t \to \infty} x(t) = x_s$
+    \item $\lim_{t \to \infty} u(t) = u_s$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We prove stability using the value function as a Lyapunov function.
+
+\textbf{Step 1: Define the Lyapunov function}
+Let $V_N^*(x)$ denote the optimal value function of the MPC problem:
+$$V_N^*(x) = \min_{\mathbf{u}} J_N(x, \mathbf{u})$$
+
+\textbf{Step 2: Establish feasibility propagation}
+Let $\mathbf{u}^*(t) = (u_0^*(t), \ldots, u_{N-1}^*(t))$ be the optimal solution at time $t$. 
+Define the candidate sequence at time $t+1$:
+$$\tilde{\mathbf{u}}(t+1) = (u_1^*(t), \ldots, u_{N-1}^*(t), \kappa_f(x_N^*(t)))$$
+
+By Assumption \ref{ass:terminal}, this sequence is feasible at time $t+1$, ensuring recursive feasibility.
+
+\textbf{Step 3: Prove Lyapunov decrease}
+The value function decreases along trajectories:
+\begin{align}
+V_N^*(x(t+1)) - V_N^*(x(t)) &\leq J_N(x(t+1), \tilde{\mathbf{u}}(t+1)) - V_N^*(x(t)) \\
+&= \sum_{k=1}^{N-1} \ell(x_{k+1}^*(t), u_{k+1}^*(t)) + V_f(x_{N+1}^*(t)) \\
+&\quad - \sum_{k=0}^{N-1} \ell(x_k^*(t), u_k^*(t)) - V_f(x_N^*(t)) \\
+&= V_f(x_{N+1}^*(t)) - V_f(x_N^*(t)) - \ell(x_0^*(t), u_0^*(t)) \\
+&\leq -\ell(x_N^*(t), \kappa_f(x_N^*(t))) - \ell(x(t), u_0^*(t)) \\
+&\leq -\ell(x(t), u_0^*(t))
+\end{align}
+
+\textbf{Step 4: Apply Lyapunov theory}
+Since $\ell(x, u) \geq \alpha_\ell \norm{x - x_s}$ and $V_N^*(x_s) = 0$, we have:
+$$V_N^*(x(t+1)) - V_N^*(x(t)) \leq -\alpha_\ell \norm{x(t) - x_s}$$
+
+This establishes asymptotic stability by Lyapunov's theorem.
+\end{proof}
+
+\subsubsection{Convergence Rate Analysis}
+
+\begin{theorem}[MPC Exponential Convergence Rate]
+\label{thm:mpc_rate}
+Under the conditions of Theorem \ref{thm:mpc_stability}, if the stage cost is quadratic near the equilibrium:
+$$\ell(x, u) = \frac{1}{2} \begin{bmatrix} x - x_s \\ u - u_s \end{bmatrix}^T Q \begin{bmatrix} x - x_s \\ u - u_s \end{bmatrix}$$
+with $Q \succ 0$, then the closed-loop system converges exponentially:
+$$\norm{x(t) - x_s} \leq C e^{-\lambda t} \norm{x(0) - x_s}$$
+for some $C \geq 1$ and $\lambda > 0$.
+\end{theorem}
+
+\begin{proof}
+The proof uses the fact that near equilibrium, the MPC controller approximates the infinite-horizon LQR controller, which has known exponential stability properties.
+
+\textbf{Step 1: Linearization near equilibrium}
+Near $(x_s, u_s)$, the dynamics can be linearized:
+$$x(t+1) \approx A x(t) + B u(t)$$
+where $A = \nabla_x f(x_s, u_s, 0)$ and $B = \nabla_u f(x_s, u_s, 0)$.
+
+\textbf{Step 2: Relate to LQR}
+For sufficiently large $N$, the MPC controller converges to the LQR controller:
+$$u = -K x$$
+where $K$ is the optimal LQR gain.
+
+\textbf{Step 3: Apply LQR stability theory}
+The LQR closed-loop system $(A - BK)$ has eigenvalues strictly inside the unit circle, ensuring exponential stability with rate determined by the largest eigenvalue magnitude.
+\end{proof}
+
+\subsubsection{Robust MPC Convergence}
+
+For the human-robot interaction system, model uncertainties are inevitable. We consider robust MPC formulations.
+
+\begin{assumption}[Model Uncertainty]
+\label{ass:uncertainty}
+The true dynamics differ from the nominal model:
+$$x(t+1) = f(x(t), u(t)) + \Delta f(x(t), u(t), t) + w(t)$$
+where $\norm{\Delta f(x, u, t)} \leq \delta$ and $\norm{w(t)} \leq W$ for known bounds $\delta, W \geq 0$.
+\end{assumption}
+
+\begin{theorem}[Robust MPC Convergence]
+\label{thm:robust_mpc}
+Consider the tube-based robust MPC formulation where the optimization is performed over nominal trajectories with tightened constraints. Under Assumptions \ref{ass:dynamics}--\ref{ass:uncertainty}, the robust MPC controller achieves:
+
+$$\limsup_{t \to \infty} \norm{x(t) - x_s} \leq \gamma(\delta + W)$$
+
+for some $\gamma > 0$ depending on the system parameters.
+\end{theorem}
+
+\begin{proof}
+The proof follows the tube MPC framework:
+
+\textbf{Step 1: Decompose the trajectory}
+The actual trajectory is decomposed as:
+$$x(t) = z(t) + e(t)$$
+where $z(t)$ is the nominal trajectory and $e(t)$ is the error.
+
+\textbf{Step 2: Bound the error}
+The error dynamics satisfy:
+$$e(t+1) = A e(t) + \Delta f(x(t), u(t), t) + w(t)$$
+
+Using an auxiliary controller $v(t) = -K e(t)$, the error can be bounded in a robust positively invariant set $\mathcal{S}$ with $\sup_{e \in \mathcal{S}} \norm{e} \leq \gamma(\delta + W)$.
+
+\textbf{Step 3: Apply nominal convergence}
+The nominal trajectory $z(t)$ converges to $x_s$ by the nominal MPC analysis, completing the proof.
+\end{proof}
+
+\subsubsection{MPC with Learning-based Models}
+
+In our human-robot interaction system, the GP provides probabilistic models that can be incorporated into the MPC framework.
+
+\begin{theorem}[MPC with GP Model Convergence]
+\label{thm:mpc_gp}
+Consider an MPC controller using GP posterior mean as the prediction model with confidence bounds for constraint tightening. If the GP converges to the true model as established in Section 2.1, then:
+
+$$\lim_{n \to \infty} \limsup_{t \to \infty} \norm{x_n(t) - x_s} = 0$$
+
+where $x_n(t)$ denotes the trajectory under the MPC controller with $n$ GP training points.
+\end{theorem}
+
+\begin{proof}
+This follows by combining GP convergence (Theorem \ref{thm:gp_convergence}) with robust MPC theory (Theorem \ref{thm:robust_mpc}). As $n \to \infty$, the GP model uncertainty vanishes, and the robust MPC converges to the nominal case.
+\end{proof}
+
+\subsubsection{Computational Convergence}
+
+\begin{theorem}[MPC Optimization Convergence]
+\label{thm:mpc_optimization}
+For the quadratic program formulation of MPC with linear constraints, interior-point methods converge to the optimal solution with superlinear convergence rate:
+$$\norm{x^{(k+1)} - x^*} \leq C \norm{x^{(k)} - x^*}^{1+\sigma}$$
+for some $C > 0$ and $\sigma > 0$, where $x^{(k)}$ is the iterate and $x^*$ is the optimal solution.
+\end{theorem}
+
+This ensures that the MPC optimization can be solved efficiently in real-time applications.

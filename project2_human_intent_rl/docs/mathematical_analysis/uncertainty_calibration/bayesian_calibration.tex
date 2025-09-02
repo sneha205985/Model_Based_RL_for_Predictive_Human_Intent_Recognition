@@ -1,0 +1,231 @@
+\subsection{Bayesian Uncertainty Calibration Analysis}
+
+This section provides a comprehensive analysis of uncertainty calibration properties for the Bayesian Gaussian Process component, establishing theoretical foundations for reliable uncertainty quantification in human behavior prediction.
+
+\subsubsection{Calibration Definitions and Framework}
+
+\begin{definition}[Prediction Intervals]
+\label{def:prediction_intervals}
+For a prediction $\hat{f}(x)$ with uncertainty estimate $\hat{\sigma}(x)$, the $(1-\alpha)$ prediction interval is:
+$$PI_{1-\alpha}(x) = \left[\hat{f}(x) - z_{\alpha/2}\hat{\sigma}(x), \hat{f}(x) + z_{\alpha/2}\hat{\sigma}(x)\right]$$
+where $z_{\alpha/2}$ is the $\alpha/2$ quantile of the standard normal distribution.
+\end{definition}
+
+\begin{definition}[Marginal Calibration]
+\label{def:marginal_calibration}
+A prediction system is marginally calibrated at level $1-\alpha$ if:
+$$\Pr[Y^* \in PI_{1-\alpha}(X^*)] = 1-\alpha$$
+for test data $(X^*, Y^*)$ drawn from the same distribution as training data.
+\end{definition}
+
+\begin{definition}[Conditional Calibration]
+\label{def:conditional_calibration}
+A prediction system is conditionally calibrated if:
+$$\Pr[Y^* \in PI_{1-\alpha}(X^*) | X^* = x] = 1-\alpha$$
+for all $x$ in the domain.
+\end{definition>
+
+\begin{definition}[Sharpness]
+\label{def:sharpness}
+The sharpness of prediction intervals is measured by their expected width:
+$$\text{Sharpness} = \E[2 z_{\alpha/2}\hat{\sigma}(X^*)]$$
+\end{definition>
+
+\subsubsection{GP Calibration Under Correct Specification}
+
+\begin{theorem}[GP Marginal Calibration]
+\label{thm:gp_marginal_calibration}
+Consider a Gaussian Process with kernel $k(\cdot, \cdot)$ and noise variance $\sigma_n^2$. If the true function $f^* \sim \GP(0, k)$ and observations are $y_i = f^*(x_i) + \epsilon_i$ with $\epsilon_i \sim \Normal(0, \sigma_n^2)$, then the GP is marginally calibrated:
+$$\Pr[Y^* \in PI_{1-\alpha}(X^*)] = 1-\alpha$$
+\end{theorem>
+
+\begin{proof}
+Under the GP model assumptions, the posterior predictive distribution is:
+$$Y^* | \mathcal{D}_n, X^* \sim \Normal(\hat{f}_n(X^*), \hat{\sigma}_n^2(X^*))$$
+
+where:
+\begin{align}
+\hat{f}_n(x) &= k_n(x)^T (K_n + \sigma_n^2 I)^{-1} \mathbf{y}_n \\
+\hat{\sigma}_n^2(x) &= k(x,x) - k_n(x)^T (K_n + \sigma_n^2 I)^{-1} k_n(x) + \sigma_n^2
+\end{align}
+
+Since the predictive distribution is exactly Gaussian, the prediction intervals have the correct coverage by construction.
+\end{proof>
+
+\begin{theorem}[GP Conditional Calibration]
+\label{thm:gp_conditional_calibration}
+Under the same assumptions as Theorem \ref{thm:gp_marginal_calibration}, the GP is also conditionally calibrated:
+$$\Pr[Y^* \in PI_{1-\alpha}(X^*) | X^* = x] = 1-\alpha$$
+for all $x$ in the domain.
+\end{theorem>
+
+\begin{proof}
+This follows directly from the fact that the GP posterior is a well-calibrated Bayesian posterior under correct model specification. The conditional distribution $P(Y^*|X^*=x, \mathcal{D}_n)$ is exactly $\Normal(\hat{f}_n(x), \hat{\sigma}_n^2(x))$.
+\end{proof>
+
+\subsubsection{Calibration Under Model Misspecification}
+
+In practice, the GP model may be misspecified. We analyze robustness of calibration properties.
+
+\begin{assumption}[Bounded Model Misspecification]
+\label{ass:misspec}
+The true function $f^*$ satisfies $\norm{f^* - \Pi_{\mathcal{H}_k} f^*}_{\mathcal{H}_k} \leq \delta$ where $\Pi_{\mathcal{H}_k}$ is the projection onto the RKHS $\mathcal{H}_k$ and $\delta \geq 0$ measures misspecification.
+\end{assumption>
+
+\begin{theorem}[Calibration Under Misspecification]
+\label{thm:calibration_misspec}
+Under Assumption \ref{ass:misspec}, the GP prediction intervals satisfy:
+$$\left|\Pr[Y^* \in PI_{1-\alpha}(X^*)] - (1-\alpha)\right| \leq C \cdot \frac{\delta}{\hat{\sigma}_n(X^*)}$$
+for some constant $C > 0$ depending on the kernel.
+\end{theorem>
+
+\begin{proof}
+\textbf{Step 1: Decompose prediction error}
+The prediction error can be decomposed as:
+$$Y^* - \hat{f}_n(X^*) = (f^*(X^*) - \Pi_{\mathcal{H}_k} f^*(X^*)) + (\Pi_{\mathcal{H}_k} f^*(X^*) - \hat{f}_n(X^*)) + \epsilon^*$$
+
+\textbf{Step 2: Analyze each component}
+- Misspecification error: $|f^*(X^*) - \Pi_{\mathcal{H}_k} f^*(X^*)| \leq \delta$
+- GP estimation error: $\Pi_{\mathcal{H}_k} f^*(X^*) - \hat{f}_n(X^*) \sim \Normal(0, \sigma_{\text{est}}^2(X^*))$
+- Observation noise: $\epsilon^* \sim \Normal(0, \sigma_n^2)$
+
+\textbf{Step 3: Coverage probability analysis}
+The coverage probability becomes:
+$$\Pr[Y^* \in PI_{1-\alpha}(X^*)] = \Phi\left(\frac{z_{\alpha/2}\hat{\sigma}_n(X^*) + \delta}{\sqrt{\sigma_{\text{est}}^2(X^*) + \sigma_n^2}}\right) - \Phi\left(\frac{-z_{\alpha/2}\hat{\sigma}_n(X^*) + \delta}{\sqrt{\sigma_{\text{est}}^2(X^*) + \sigma_n^2}}\right)$$
+
+The deviation from nominal coverage is approximately $C \cdot \delta/\hat{\sigma}_n(X^*)$.
+\end{proof>
+
+\subsubsection{Adaptive Calibration Methods}
+
+To improve calibration under misspecification, we consider adaptive methods.
+
+\begin{definition}[Temperature Scaling]
+\label{def:temperature_scaling}
+Temperature scaling modifies the GP predictive variance:
+$$\hat{\sigma}_{\text{cal}}^2(x) = T^2 \hat{\sigma}_n^2(x)$$
+where $T > 0$ is learned to optimize calibration on a validation set.
+\end{definition}
+
+\begin{theorem}[Optimal Temperature for Calibration]
+\label{thm:optimal_temperature}
+The temperature $T^*$ that minimizes the calibration error (measured by Expected Calibration Error) satisfies:
+$$T^* = \argmin_{T > 0} \E_{(X,Y) \sim P_{\text{val}}} \left[\left|\mathbb{I}[Y \in PI_{1-\alpha}^T(X)] - (1-\alpha)\right|\right]$$
+
+Under regularity conditions, $T^*$ can be estimated consistently from validation data.
+\end{theorem>
+
+\subsubsection{Frequentist Calibration Properties}
+
+We analyze calibration from a frequentist perspective, relevant when the GP model is viewed as an approximation method.
+
+\begin{theorem}[Asymptotic Calibration Properties]
+\label{thm:asymptotic_calibration}
+Under Assumptions \ref{ass:regularity} and \ref{ass:bounded_obs} from the convergence analysis, as the training set size $n \to \infty$:
+
+\begin{enumerate}
+    \item If the kernel is well-specified: $\lim_{n \to \infty} \Pr[Y^* \in PI_{1-\alpha}(X^*)] = 1-\alpha$
+    \item If the kernel is misspecified: the limit coverage depends on the approximation quality
+    \item The prediction intervals become sharp: $\hat{\sigma}_n(x) \to 0$ as $n \to \infty$
+\end{enumerate>
+\end{theorem>
+
+\begin{proof}
+This follows from GP convergence properties established in Section 2.1, combined with the consistency of empirical covariance estimates.
+\end{proof>
+
+\subsubsection{Calibration Metrics and Testing}
+
+\begin{definition}[Expected Calibration Error (ECE)]
+\label{def:ece}
+The Expected Calibration Error measures average miscalibration:
+$$\text{ECE} = \E_{X^*}\left[\left|\Pr[Y^* \in PI_{1-\alpha}(X^*) | X^*] - (1-\alpha)\right|\right]$$
+\end{definition}
+
+\begin{definition}[Maximum Calibration Error (MCE)]
+\label{def:mce}
+The Maximum Calibration Error measures worst-case miscalibration:
+$$\text{MCE} = \max_{x \in \mathcal{X}} \left|\Pr[Y^* \in PI_{1-\alpha}(x) | X^*=x] - (1-\alpha)\right|$$
+\end{definition>
+
+\begin{theorem}[Calibration Testing]
+\label{thm:calibration_testing}
+For a test set of size $m$, the empirical coverage rate:
+$$\hat{C}_\alpha = \frac{1}{m}\sum_{i=1}^m \mathbb{I}[y_i^* \in PI_{1-\alpha}(x_i^*)]$$
+satisfies:
+$$\sqrt{m}(\hat{C}_\alpha - (1-\alpha)) \xrightarrow{d} \Normal(0, \alpha(1-\alpha))$$
+under the null hypothesis of perfect calibration.
+\end{theorem>
+
+\subsubsection{Multi-Level Calibration}
+
+\begin{definition}[Multi-Level Calibration]
+\label{def:multilevel_calibration}
+A prediction system is multi-level calibrated if it is calibrated at all confidence levels:
+$$\Pr[Y^* \in PI_{1-\alpha}(X^*)] = 1-\alpha \quad \forall \alpha \in (0,1)$$
+\end{definition>
+
+\begin{theorem}[GP Multi-Level Calibration]
+\label{thm:gp_multilevel}
+Under correct specification, GP predictive distributions achieve multi-level calibration. Under misspecification with bias $b(x)$, the system achieves:
+$$\Pr[Y^* \in PI_{1-\alpha}(X^*)] = \Phi\left(\frac{z_{\alpha/2}\hat{\sigma}(X^*) - b(X^*)}{\sigma_{\text{true}}(X^*)}\right) - \Phi\left(\frac{-z_{\alpha/2}\hat{\sigma}(X^*) - b(X^*)}{\sigma_{\text{true}}(X^*)}\right)$$
+\end{theorem>
+
+\subsubsection{Calibration in Sequential Settings}
+
+For the reinforcement learning context, we analyze calibration properties over time.
+
+\begin{theorem}[Sequential Calibration]
+\label{thm:sequential_calibration}
+In the online learning setting where the GP is updated after each observation, the sequence of prediction intervals $\{PI_{1-\alpha}^{(t)}(X_t)\}_{t=1}^T$ satisfies:
+$$\frac{1}{T}\sum_{t=1}^T \mathbb{I}[Y_t \in PI_{1-\alpha}^{(t)}(X_t)] \xrightarrow{p} 1-\alpha$$
+as $T \to \infty$, under appropriate regularity conditions.
+\end{theorem>
+
+\subsubsection{Uncertainty Decomposition}
+
+\begin{definition}[Epistemic vs Aleatoric Uncertainty]
+\label{def:uncertainty_decomposition}
+For a GP model, uncertainty can be decomposed as:
+\begin{align}
+\hat{\sigma}^2_{\text{total}}(x) &= \hat{\sigma}^2_{\text{epistemic}}(x) + \hat{\sigma}^2_{\text{aleatoric}} \\
+&= \left(k(x,x) - k_n(x)^T (K_n + \sigma_n^2 I)^{-1} k_n(x)\right) + \sigma_n^2
+\end{align}
+where epistemic uncertainty decreases with data and aleatoric uncertainty is irreducible.
+\end{definition>
+
+\begin{theorem}[Calibration of Uncertainty Components]
+\label{thm:uncertainty_components}
+The epistemic uncertainty component is calibrated for model uncertainty:
+$$\Pr[(f^*(x) - \hat{f}_n(x))^2 \leq z_{\alpha/2}^2 \hat{\sigma}^2_{\text{epistemic}}(x)] \approx 1-\alpha$$
+
+The aleatoric component is calibrated for observation noise:
+$$\Pr[(\epsilon^*)^2 \leq z_{\alpha/2}^2 \sigma_n^2] = 1-\alpha$$
+\end{theorem>
+
+\subsubsection{Calibration for Human Behavior Prediction}
+
+Specializing to the human-robot interaction domain:
+
+\begin{corollary}[HRI Calibration Properties]
+\label{cor:hri_calibration}
+For human behavior prediction in the HRI system:
+\begin{enumerate}
+    \item Intent prediction intervals are calibrated if human behavior follows the assumed GP prior
+    \item Misspecification from individual differences leads to systematic calibration errors
+    \item Adaptive calibration methods can correct for population-level biases
+    \item Epistemic uncertainty decreases as the system learns specific user patterns
+\end{enumerate}
+\end{corollary>
+
+\subsubsection{Practical Calibration Guidelines}
+
+\begin{theorem}[Calibration Monitoring]
+\label{thm:calibration_monitoring}
+For real-time calibration monitoring, maintain a sliding window of recent predictions and test:
+$$H_0: \text{Coverage rate} = 1-\alpha \quad \text{vs} \quad H_1: \text{Coverage rate} \neq 1-\alpha$$
+
+Reject $H_0$ if $|\hat{C}_\alpha - (1-\alpha)| > z_{\beta/2}\sqrt{\frac{\alpha(1-\alpha)}{w}}$ where $w$ is the window size and $\beta$ is the significance level.
+\end{theorem>
+
+This comprehensive calibration analysis ensures that the uncertainty estimates provided by the GP component are reliable and can be trusted for safety-critical decision making in the human-robot interaction system.

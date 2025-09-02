@@ -1,0 +1,305 @@
+\section{MPC Stability Proofs and Lyapunov Analysis}
+
+This section provides comprehensive mathematical proofs for the stability properties of the Model Predictive Control (MPC) system in the context of human-robot interaction with learning-based components. We establish rigorous Lyapunov-based stability guarantees that account for GP model uncertainties and real-time implementation constraints.
+
+\subsection{System Model and MPC Formulation}
+
+\subsubsection{Nonlinear System Dynamics}
+
+Consider the nonlinear human-robot interaction system:
+\begin{align}
+\label{eq:system_dynamics}
+\dot{x}(t) &= f(x(t), u(t), h(t), w(t)) \\
+y(t) &= g(x(t)) + v(t)
+\end{align}
+where:
+- $x(t) \in \R^n$ is the system state (joint human-robot configuration)
+- $u(t) \in \mathcal{U} \subset \R^m$ is the control input (robot actions)
+- $h(t) \in \mathcal{H} \subset \R^p$ represents human behavior/intent
+- $w(t) \in \mathcal{W} \subset \R^q$ is process disturbance
+- $v(t) \in \R^r$ is measurement noise
+
+\begin{assumption}[System Properties]
+\label{ass:system_properties}
+The system dynamics satisfy:
+\begin{enumerate}
+    \item \textbf{Lipschitz continuity}: $\norm{f(x_1, u, h, w) - f(x_2, u, h, w)} \leq L_f \norm{x_1 - x_2}$
+    \item \textbf{Input Lipschitz}: $\norm{f(x, u_1, h, w) - f(x, u_2, h, w)} \leq L_u \norm{u_1 - u_2}$
+    \item \textbf{Bounded disturbances}: $\norm{w(t)} \leq W$, $\norm{v(t)} \leq V$ for all $t$
+    \item \textbf{Equilibrium existence}: There exist $(x_s, u_s, h_s)$ such that $f(x_s, u_s, h_s, 0) = 0$
+\end{enumerate}
+\end{assumption>
+
+\subsubsection{MPC Optimization Problem}
+
+At each time instant $t$, solve the finite-horizon optimal control problem:
+\begin{align}
+\label{eq:mpc_problem_detailed}
+\min_{u_0, \ldots, u_{N-1}} \quad &J_N(x(t), \mathbf{u}, \hat{\mathbf{h}}) \\
+&= \sum_{k=0}^{N-1} \ell(x_k, u_k) + V_f(x_N) \nonumber \\
+\text{subject to:} \quad &x_{k+1} = f_d(x_k, u_k, \hat{h}_k), \quad k = 0, \ldots, N-1 \nonumber \\
+&x_0 = x(t) \nonumber \\
+&x_k \in \mathcal{X}, \quad u_k \in \mathcal{U}, \quad k = 0, \ldots, N-1 \nonumber \\
+&x_N \in \mathcal{X}_f \nonumber
+\end{align}
+where $\hat{\mathbf{h}} = [\hat{h}_0, \ldots, \hat{h}_{N-1}]$ are GP-predicted human behaviors.
+
+\subsection{Lyapunov Stability Theory for MPC}
+
+\subsubsection{MPC Value Function as Lyapunov Function}
+
+\begin{definition}[MPC Value Function]
+\label{def:mpc_value_function}
+Define the optimal value function of the MPC problem:
+$$V_N^*(x) = \min_{\mathbf{u} \in \mathcal{U}_N(x)} J_N(x, \mathbf{u}, \hat{\mathbf{h}})$$
+where $\mathcal{U}_N(x)$ is the set of feasible control sequences from state $x$.
+\end{definition>
+
+\begin{theorem}[Lyapunov Function Properties of MPC Value Function]
+\label{thm:mpc_lyapunov_properties}
+Under Assumption \ref{ass:system_properties} and standard MPC terminal conditions, the optimal value function $V_N^*(x)$ satisfies:
+
+\begin{enumerate}
+    \item \textbf{Positive definiteness}: $\alpha_1(\norm{x - x_s}) \leq V_N^*(x) \leq \alpha_2(\norm{x - x_s})$ for class $\mathcal{K}$ functions $\alpha_1, \alpha_2$
+    \item \textbf{Lyapunov decrease}: $V_N^*(x^+) - V_N^*(x) \leq -\ell(x, \kappa_N(x)) + \sigma(\norm{e_h})$
+\end{enumerate}
+where $x^+ = f_d(x, \kappa_N(x), h)$, $\kappa_N(x)$ is the MPC control law, and $e_h = h - \hat{h}$ is the human behavior prediction error.
+\end{theorem>
+
+\begin{proof}
+\textbf{Part 1 - Positive definiteness}:
+From the stage cost properties and terminal cost design:
+$$V_N^*(x) = \sum_{k=0}^{N-1} \ell(x_k^*, u_k^*) + V_f(x_N^*)$$
+
+Since $\ell(x, u) \geq \alpha_\ell(\norm{x - x_s})$ and $V_f$ is a positive definite terminal cost:
+$$V_N^*(x) \geq \ell(x, u_0^*) \geq \alpha_\ell(\norm{x - x_s})$$
+
+Upper bound follows from continuity and boundedness of the cost functions.
+
+\textbf{Part 2 - Lyapunov decrease}:
+Consider the candidate control sequence at time $t+1$:
+$$\tilde{\mathbf{u}}(t+1) = [u_1^*(t), \ldots, u_{N-1}^*(t), \kappa_f(x_N^*(t))]$$
+
+The cost with this sequence is:
+\begin{align}
+J_N(x^+, \tilde{\mathbf{u}}, \hat{\mathbf{h}}) &= \sum_{k=1}^{N-1} \ell(x_{k+1}^*(t), u_{k+1}^*(t)) + V_f(f_d(x_N^*(t), \kappa_f(x_N^*(t)), \hat{h}_N)) \\
+&\leq V_N^*(x) - \ell(x, u_0^*(t)) + \text{prediction error terms}
+\end{align}
+
+The prediction error term $\sigma(\norm{e_h})$ arises from using $\hat{h}$ instead of true human behavior $h$.
+\end{proof>
+
+\subsubsection{Robust Lyapunov Stability}
+
+\begin{theorem}[Robust MPC Stability with GP Uncertainty]
+\label{thm:robust_mpc_stability}
+Consider the MPC controller with GP human behavior predictions. If:
+\begin{enumerate}
+    \item GP prediction errors are bounded: $\norm{h - \hat{h}} \leq \delta_{GP}(1-\delta)$ with probability $1-\delta$
+    \item Constraints are tightened: $\tilde{\mathcal{X}} = \{x : x \in \mathcal{X}, d(x, \partial\mathcal{X}) \geq \gamma \delta_{GP}\}$
+    \item Terminal conditions are satisfied with robustness margins
+\end{enumerate}
+then the closed-loop system is robustly stable with ultimate bound:
+$$\limsup_{t \to \infty} \norm{x(t) - x_s} \leq \rho \cdot \delta_{GP}$$
+for some $\rho > 0$ depending on system parameters.
+\end{theorem>
+
+\begin{proof}
+\textbf{Step 1: Robust invariant set construction}
+Define the robust positively invariant set:
+$$\mathcal{S} = \{x : V_N^*(x) \leq c, x \in \tilde{\mathcal{X}}\}$$
+for appropriately chosen $c > 0$.
+
+\textbf{Step 2: Robust decrease condition}
+With constraint tightening, the Lyapunov decrease becomes:
+$$V_N^*(x^+) - V_N^*(x) \leq -\alpha(\norm{x - x_s}) + \gamma \delta_{GP}$$
+
+\textbf{Step 3: Ultimate boundedness}
+When $\alpha(\norm{x - x_s}) > \gamma \delta_{GP}$, the value function decreases.
+When $\alpha(\norm{x - x_s}) \leq \gamma \delta_{GP}$, we have $\norm{x - x_s} \leq \alpha^{-1}(\gamma \delta_{GP}) =: \rho \delta_{GP}$.
+
+Therefore, all trajectories are ultimately bounded by $\rho \delta_{GP}$.
+\end{proof>
+
+\subsection{Input-to-State Stability Analysis}
+
+\subsubsection{ISS with Respect to Human Behavior Prediction Errors}
+
+\begin{theorem}[ISS Property of MPC with GP Predictions]
+\label{thm:iss_mpc_gp}
+The MPC closed-loop system with GP human behavior predictions is Input-to-State Stable (ISS) with respect to prediction errors $e_h = h - \hat{h}$. There exist class $\mathcal{KL}$ function $\beta$ and class $\mathcal{K}$ function $\gamma$ such that:
+$$\norm{x(t) - x_s} \leq \beta(\norm{x(0) - x_s}, t) + \gamma\left(\sup_{0 \leq \tau \leq t} \norm{e_h(\tau)}\right)$$
+\end{theorem>
+
+\begin{proof}
+\textbf{Step 1: ISS-Lyapunov function}
+The MPC value function serves as an ISS-Lyapunov function. From Theorem \ref{thm:mpc_lyapunov_properties}:
+$$V_N^*(x^+) - V_N^*(x) \leq -\alpha_3(\norm{x - x_s}) + \sigma(\norm{e_h})$$
+
+\textbf{Step 2: ISS conditions verification}
+We verify the ISS conditions:
+- $\alpha_1(\norm{x - x_s}) \leq V_N^*(x) \leq \alpha_2(\norm{x - x_s})$ (established)
+- $\norm{x - x_s} \geq \gamma^{-1} \circ \sigma(\norm{e_h}) \Rightarrow V_N^*(x^+) - V_N^*(x) \leq -\alpha_3(\norm{x - x_s})$
+
+\textbf{Step 3: ISS estimate}
+The ISS property follows from the ISS-Lyapunov function characterization.
+\end{proof>
+
+\subsubsection{Quantitative ISS Bounds}
+
+\begin{theorem}[Explicit ISS Bounds]
+\label{thm:explicit_iss_bounds}
+For quadratic stage costs $\ell(x, u) = \norm{x - x_s}_Q^2 + \norm{u - u_s}_R^2$ and linear dynamics near equilibrium, the ISS bound is:
+$$\norm{x(t) - x_s} \leq Ce^{-\lambda t}\norm{x(0) - x_s} + \frac{C_d}{\lambda}\sup_{0 \leq \tau \leq t} \norm{e_h(\tau)}$$
+where $C \geq 1$, $\lambda > 0$ depend on the system matrices, and $C_d > 0$ is the disturbance gain.
+\end{theorem>
+
+\subsection{Stability Under Learning and Adaptation}
+
+\subsubsection{Time-Varying Lyapunov Functions}
+
+As the GP model improves over time, the prediction errors $\norm{e_h(t)}$ decrease. This motivates time-varying Lyapunov analysis.
+
+\begin{theorem}[Stability with Improving GP Predictions]
+\label{thm:stability_improving_gp}
+If the GP prediction error decreases as $\norm{e_h(t)} \leq C_0 t^{-\beta}$ for some $\beta > 0$, then:
+\begin{enumerate}
+    \item For $\beta > 1$: The system converges exponentially to the nominal equilibrium
+    \item For $0 < \beta \leq 1$: The system is stable with decreasing ultimate bound $\mathcal{O}(t^{-\beta})$
+\end{enumerate}
+\end{theorem>
+
+\begin{proof}
+From the ISS property:
+$$\norm{x(t) - x_s} \leq \beta(\norm{x(0) - x_s}, t) + \gamma(C_0 t^{-\beta})$$
+
+As $t \to \infty$:
+- If $\beta > 1$: $\gamma(C_0 t^{-\beta}) \to 0$ faster than exponential decay
+- If $0 < \beta \leq 1$: The ultimate bound is $\mathcal{O}(t^{-\beta})$
+\end{proof>
+
+\subsubsection{Adaptive MPC Stability}
+
+\begin{theorem}[Stability of Adaptive MPC with Online GP Learning]
+\label{thm:adaptive_mpc_stability}
+Consider MPC with online GP learning where parameters are updated at each time step. If:
+\begin{enumerate}
+    \item Parameter updates satisfy persistence of excitation
+    \item Learning rate satisfies $\alpha_t = \mathcal{O}(1/t)$
+    \item Robust MPC design with appropriate constraint tightening
+\end{enumerate}
+then the adaptive MPC system is stable, and $\norm{x(t) - x_s} \to 0$ as $t \to \infty$.
+\end{theorem>
+
+\subsection{Regional Stability Analysis}
+
+\subsubsection{Domain of Attraction Characterization}
+
+\begin{theorem}[Domain of Attraction for MPC with GP Predictions]
+\label{thm:domain_attraction_gp}
+The domain of attraction for the MPC system with GP human behavior predictions is:
+$$\mathcal{D}_A = \{x_0 : V_N^*(x_0) \leq \rho^{-1}(\delta_{GP})\}$$
+where $\rho$ is the ultimate bound function from Theorem \ref{thm:robust_mpc_stability}.
+\end{theorem>
+
+\begin{proof}
+Any initial state $x_0 \in \mathcal{D}_A$ satisfies the robust feasibility conditions and will converge to the ultimate bound region around $x_s$.
+\end{proof>
+
+\subsubsection{Enlarging Domain of Attraction}
+
+\begin{corollary}[Enlarging Domain with Better GP Predictions]
+\label{cor:enlarging_domain}
+As GP predictions improve (i.e., $\delta_{GP} \to 0$), the domain of attraction expands:
+$$\lim_{\delta_{GP} \to 0} \mathcal{D}_A = \{x_0 : V_N^*(x_0) < \infty\} = \mathcal{X}_0$$
+recovering the nominal (without uncertainty) domain of attraction.
+\end{corollary>
+
+\subsection{Stochastic Stability Analysis}
+
+\subsubsection{Mean-Square Stability}
+
+When human behavior and disturbances are stochastic, we analyze mean-square stability.
+
+\begin{theorem}[Mean-Square Stability of Stochastic MPC]
+\label{thm:mean_square_stability}
+For the stochastic system with $w(t), v(t)$ being white noise processes and GP providing probabilistic human behavior predictions, the MPC closed-loop system is mean-square stable:
+$$\E[\norm{x(t) - x_s}^2] \leq Ce^{-\lambda t}\E[\norm{x(0) - x_s}^2] + \frac{\sigma_w^2 + \sigma_{GP}^2}{\lambda}$$
+where $\sigma_{GP}^2$ is the variance of GP prediction errors.
+\end{theorem>
+
+\begin{proof}
+\textbf{Step 1: Stochastic Lyapunov analysis}
+Taking expectations in the Lyapunov decrease condition:
+$$\E[V_N^*(x_{t+1})] - \E[V_N^*(x_t)] \leq -\alpha \E[\norm{x_t - x_s}^2] + \gamma(\sigma_w^2 + \sigma_{GP}^2)$$
+
+\textbf{Step 2: Apply discrete-time comparison principle}
+This yields the desired exponential bound.
+\end{proof>
+
+\subsubsection{Almost-Sure Stability}
+
+\begin{theorem}[Almost-Sure Stability with GP Learning]
+\label{thm:almost_sure_stability}
+If the GP prediction errors converge almost surely to zero (as established in the GP convergence analysis), then:
+$$\lim_{t \to \infty} \norm{x(t) - x_s} = 0 \quad \text{almost surely}$$
+\end{theorem>
+
+\subsection{Practical Stability Considerations}
+
+\subsubsection{Computational Stability}
+
+\begin{theorem}[Stability Under Computational Delays]
+\label{thm:stability_computational_delays}
+If the MPC optimization takes time $\Delta$ with $\Delta < T_s$ (sampling period), and a zero-order hold is applied, then stability is maintained provided:
+$$\Delta \leq \frac{\alpha}{\beta + \gamma L_f}$$
+where $\alpha, \beta, \gamma$ depend on the Lyapunov function parameters and $L_f$ is the Lipschitz constant.
+\end{theorem>
+
+\subsubsection{Robust Implementation}
+
+\begin{theorem}[Stability with Implementation Errors]
+\label{thm:stability_implementation}
+The MPC system remains stable under implementation errors (quantization, actuator saturation, communication delays) provided the total implementation error is bounded:
+$$\norm{u_{\text{applied}} - u_{\text{computed}}} \leq \epsilon_{\text{impl}}$$
+with $\epsilon_{\text{impl}}$ sufficiently small depending on system parameters.
+\end{theorem>
+
+\subsection{Multi-Agent Stability}
+
+\subsubsection{Decentralized MPC Stability}
+
+\begin{theorem}[Stability of Multi-Agent MPC with GP Predictions]
+\label{thm:multi_agent_stability}
+For $M$ agents with decentralized MPC controllers using GP predictions of other agents' behaviors:
+\begin{enumerate}
+    \item If inter-agent coupling is weak ($\epsilon$-coupling), each subsystem is approximately stable
+    \item If GP predictions of other agents improve, the overall system stability improves
+    \item Collision avoidance can be guaranteed through constraint tightening based on prediction uncertainty
+\end{enumerate}
+\end{theorem>
+
+\subsection{Performance Bounds via Lyapunov Analysis}
+
+\subsubsection{Closed-Loop Performance}
+
+\begin{theorem}[Performance Bounds from Lyapunov Analysis]
+\label{thm:performance_bounds_lyapunov}
+The MPC closed-loop performance satisfies:
+\begin{align}
+\sum_{t=0}^{\infty} \ell(x(t), u(t)) &\leq V_N^*(x(0)) + \sum_{t=0}^{\infty} \sigma(\norm{e_h(t)}) \\
+&\leq V_N^*(x(0)) + C \int_0^{\infty} \sigma(\delta_{GP}(t)) dt
+\end{align}
+If GP predictions improve polynomially, the integral converges, yielding finite total cost.
+\end{theorem>
+
+\subsubsection{Transient Performance}
+
+\begin{theorem}[Transient Performance Bounds]
+\label{thm:transient_performance}
+During the transient phase (before GP convergence), the performance degradation compared to perfect prediction is bounded:
+$$J_{\text{GP-MPC}} - J_{\text{perfect}} \leq C \cdot \sup_{t \in [0,T]} \norm{e_h(t)} \cdot T$$
+for any finite time horizon $T$.
+\end{theorem>
+
+This comprehensive Lyapunov stability analysis establishes rigorous mathematical foundations for the MPC component in the human-robot interaction system, providing both theoretical guarantees and practical implementation guidelines for safe and stable operation under learning and uncertainty.

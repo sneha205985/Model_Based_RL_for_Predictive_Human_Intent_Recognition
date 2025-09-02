@@ -1,0 +1,37 @@
+# Load Testing Dockerfile
+# Model-Based RL Human Intent Recognition System
+
+FROM python:3.9-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy requirements
+COPY requirements.txt requirements-optional.txt ./
+
+# Install dependencies for load testing
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir requests aiohttp asyncio psutil
+
+# Copy load testing scripts
+COPY load_testing/ ./load_testing/
+COPY src/ ./src/
+
+# Create results directory
+RUN mkdir -p /results
+
+# Set permissions
+RUN chmod +x load_testing/*.py
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=2 \
+    CMD python3 -c "print('Load tester ready')" || exit 1
+
+# Default command runs load test
+CMD ["python3", "load_testing/comprehensive_load_test.py"]

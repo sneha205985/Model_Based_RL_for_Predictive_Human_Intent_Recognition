@@ -1,0 +1,90 @@
+# Model-Based RL Human Intent Recognition System Configuration
+# Production-Ready Configuration Management
+
+# System Configuration
+system:
+  name: "Model-Based RL Human Intent Recognition"
+  version: "1.0.0"
+  environment: "production"
+  debug: false
+
+# Research Configuration
+research:
+  safety_threshold: 0.95
+  prediction_accuracy_threshold: 0.85
+  statistical_significance_level: 0.05
+  baseline_comparison_enabled: true
+  ablation_studies_enabled: true
+
+# Performance Configuration
+performance:
+  max_decision_cycle_time_ms: 200
+  memory_limit_mb: 1024
+  cpu_cores: -1  # Use all available cores
+  real_time_monitoring: true
+
+# Safety Configuration
+safety:
+  safety_distance_threshold: 1.5  # meters
+  emergency_fallback_enabled: true
+  safety_monitoring_frequency_hz: 100
+  collision_avoidance_enabled: true
+
+# Model Configuration
+models:
+  gaussian_process:
+    kernel_type: "rbf"
+    lengthscale: 1.0
+    noise_variance: 0.01
+    optimization_iterations: 300
+  
+  mpc_controller:
+    prediction_horizon: 10
+    control_horizon: 5
+    solver: "osqp"
+    max_iterations: 1000
+  
+  reinforcement_learning:
+    algorithm: "sac"
+    learning_rate: 0.0003
+    batch_size: 256
+    replay_buffer_size: 1000000
+
+# Data Configuration
+data:
+  dataset_path: "data/"
+  validation_split: 0.2
+  batch_processing: true
+  cache_enabled: true
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
+  file_logging: true
+  log_directory: "logs/"
+  max_log_size_mb: 100
+
+# Monitoring Configuration
+monitoring:
+  grafana_enabled: true
+  prometheus_enabled: false
+  alert_thresholds:
+    safety_rate_minimum: 0.98
+    prediction_accuracy_minimum: 0.88
+    response_time_maximum_ms: 500
+  
+# Docker Configuration
+docker:
+  base_image: "python:3.9-slim"
+  working_directory: "/app"
+  exposed_ports: [8080, 8050]
+  health_check_enabled: true
+
+# Production Configuration
+production:
+  auto_scaling_enabled: false
+  load_balancing_enabled: false
+  backup_enabled: true
+  backup_frequency_hours: 24
+  maintenance_window_utc: "02:00-04:00"

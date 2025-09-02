@@ -1,0 +1,465 @@
+{
+  "validation_id": "comprehensive_validation_20250902_031722",
+  "timestamp": "2025-09-02T03:17:22.333110",
+  "project_root": "/Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl",
+  "validation_categories": {
+    "project_structure": {
+      "status": "PASS",
+      "tests": {
+        "file_exists_src_system_human_intent_rl_system_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 46.54
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334227"
+        },
+        "file_exists_src_agents_bayesian_rl_agent_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 79.12
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334258"
+        },
+        "file_exists_src_models_gaussian_process_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 35.8
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334282"
+        },
+        "file_exists_src_controllers_mpc_controller_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 39.7
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334305"
+        },
+        "file_exists_src_data_dataset_quality_analyzer_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 112.36
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334326"
+        },
+        "file_exists_src_data_enhanced_synthetic_generator_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 64.54
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334346"
+        },
+        "file_exists_data_synthetic_full_features_csv": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 1747.45
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334367"
+        },
+        "file_exists_tests_comprehensive_test_suite_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 25.72
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334385"
+        },
+        "file_exists_run_tests_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 13.03
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334404"
+        },
+        "file_exists_Dockerfile": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 1.68
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334421"
+        },
+        "file_exists_docker-compose_yml": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 1.84
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334443"
+        },
+        "file_exists_production_benchmark_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 15.09
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334461"
+        },
+        "file_exists_production_deployment_guide_py": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 19.49
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334479"
+        },
+        "file_exists_jekyll_site_methodology_md": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 16.46
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334497"
+        },
+        "file_exists_jekyll_site_results_md": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 14.85
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334515"
+        },
+        "file_exists_README_md": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 8.08
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334532"
+        },
+        "file_exists_requirements_txt": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 2.22
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334549"
+        },
+        "file_exists_pyproject_toml": {
+          "status": "PASS",
+          "details": {
+            "size_kb": 3.76
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.334569"
+        },
+        "directory_src_": {
+          "status": "PASS",
+          "details": {
+            "file_count": 150
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.336173"
+        },
+        "directory_tests_": {
+          "status": "PASS",
+          "details": {
+            "file_count": 26
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.336338"
+        },
+        "directory_data_": {
+          "status": "PASS",
+          "details": {
+            "file_count": 30
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.336475"
+        },
+        "directory_jekyll_site_": {
+          "status": "PASS",
+          "details": {
+            "file_count": 20
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.336616"
+        },
+        "directory_monitoring_": {
+          "status": "PASS",
+          "details": {
+            "file_count": 1
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.336664"
+        },
+        "directory_load_testing_": {
+          "status": "PASS",
+          "details": {
+            "file_count": 1
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:22.336711"
+        }
+      },
+      "summary": {}
+    },
+    "core_imports": {
+      "status": "FAIL",
+      "tests": {
+        "import_human_intent_rl_system": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:23.292852"
+        },
+        "instantiate_human_intent_rl_system": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:23.292936"
+        },
+        "import_bayesian_rl_agent": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:23.292956"
+        },
+        "instantiate_bayesian_rl_agent": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:23.730264"
+        },
+        "import_gaussian_process": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:23.730288"
+        },
+        "instantiate_gaussian_process": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:23.730689"
+        },
+        "import_mpc_controller": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:23.730709"
+        },
+        "instantiate_mpc_controller": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:23.733089"
+        },
+        "import_dataset_quality_analyzer": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.623317"
+        },
+        "instantiate_dataset_quality_analyzer": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.623409"
+        },
+        "import_enhanced_synthetic_generator": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.623435"
+        },
+        "instantiate_enhanced_synthetic_generator": {
+          "status": "WARN",
+          "details": null,
+          "error": "Instantiation failed: EnhancedSyntheticGenerator.__init__() missing 1 required positional argument: 'workspace_bounds'",
+          "timestamp": "2025-09-02T03:17:24.623458"
+        },
+        "import_src_integration": {
+          "status": "FAIL",
+          "details": null,
+          "error": "name 'HRIState' is not defined",
+          "timestamp": "2025-09-02T03:17:24.627529"
+        },
+        "import_src_utils_optional_dependencies": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.698891"
+        }
+      },
+      "summary": {}
+    },
+    "dataset_integrity": {
+      "status": "PASS",
+      "tests": {
+        "dataset_sample_count": {
+          "status": "PASS",
+          "details": {
+            "samples": 1178,
+            "expected": "1178+"
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.710913"
+        },
+        "dataset_null_check": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.711174"
+        },
+        "dataset_numeric_data": {
+          "status": "PASS",
+          "details": {
+            "numeric_columns": 77
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.711295"
+        },
+        "quality_analyzer_available": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.711338"
+        }
+      },
+      "summary": {}
+    },
+    "algorithm_functionality": {
+      "status": "FAIL",
+      "tests": {
+        "gaussian_process_prediction": {
+          "status": "FAIL",
+          "details": null,
+          "error": "too many values to unpack (expected 2)",
+          "timestamp": "2025-09-02T03:17:24.754815"
+        },
+        "mpc_control_generation": {
+          "status": "PASS",
+          "details": {
+            "time_ms": 14.816
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.770700"
+        },
+        "bayesian_agent_action": {
+          "status": "PASS",
+          "details": {
+            "time_ms": 0.008
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.787390"
+        }
+      },
+      "summary": {}
+    },
+    "integration_pipeline": {
+      "status": "FAIL",
+      "tests": {
+        "end_to_end_pipeline": {
+          "status": "FAIL",
+          "details": null,
+          "error": "'HumanIntentRLSystem' object has no attribute 'predict_intent'",
+          "timestamp": "2025-09-02T03:17:24.787987"
+        }
+      },
+      "summary": {}
+    },
+    "jekyll_documentation": {
+      "status": "PASS",
+      "tests": {
+        "content_jekyll_site_methodology_md": {
+          "status": "PASS",
+          "details": {
+            "words": 1659
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.788640"
+        },
+        "content_jekyll_site_results_md": {
+          "status": "PASS",
+          "details": {
+            "words": 2065
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.788962"
+        },
+        "content_jekyll_site_about_md": {
+          "status": "PASS",
+          "details": {
+            "words": 724
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.789172"
+        },
+        "content_jekyll_site__config_yml": {
+          "status": "PASS",
+          "details": {
+            "words": 267
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.789471"
+        },
+        "content_jekyll_site_assets_css_main_css": {
+          "status": "PASS",
+          "details": {
+            "words": 1132
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.789684"
+        },
+        "technical_content_completeness": {
+          "status": "PASS",
+          "details": {
+            "indicators_found": 4
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:24.789778"
+        }
+      },
+      "summary": {}
+    },
+    "test_suite_execution": {
+      "status": "PASS",
+      "tests": {
+        "test_count_validation": {
+          "status": "PASS",
+          "details": {
+            "tests": 22
+          },
+          "error": null,
+          "timestamp": "2025-09-02T03:17:25.895907"
+        },
+        "test_success_rate": {
+          "status": "PASS",
+          "details": null,
+          "error": null,
+          "timestamp": "2025-09-02T03:17:25.896115"
+        }
+      },
+      "summary": {}
+    }
+  },
+  "summary": {
+    "overall_status": "PARTIAL",
+    "score_percentage": 57.1,
+    "categories_passed": 4,
+    "categories_failed": 3,
+    "total_categories": 7,
+    "tests_passed": 50,
+    "tests_failed": 3,
+    "tests_warned": 1,
+    "total_tests": 54,
+    "validation_duration_seconds": 3.56
+  },
+  "recommendations": [
+    "\u26a0\ufe0f Project has significant issues requiring attention",
+    "\u274c Critical components need repair before deployment",
+    "\u26a0\ufe0f Thorough testing and debugging recommended",
+    "\u274c Fix core_imports: import_src_integration",
+    "\u274c Fix algorithm_functionality: gaussian_process_prediction",
+    "\u274c Fix integration_pipeline: end_to_end_pipeline"
+  ],
+  "overall_status": "PARTIAL"
+}

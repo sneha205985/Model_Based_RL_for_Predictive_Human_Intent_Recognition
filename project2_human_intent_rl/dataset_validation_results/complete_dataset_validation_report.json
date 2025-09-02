@@ -1,0 +1,214 @@
+{
+  "validation_timestamp": "2025-08-29T22:37:56.544326",
+  "dataset_structure": {
+    "synthetic_basic": {
+      "exists": true,
+      "files": {
+        "synthetic_dataset.pkl": {
+          "exists": true,
+          "size_mb": 0.18255138397216797,
+          "readable": false
+        },
+        "dataset_summary.json": {
+          "exists": true,
+          "size_mb": 0.0006208419799804688,
+          "readable": true
+        },
+        "synthetic_dataset_metadata.json": {
+          "exists": true,
+          "size_mb": 0.0007905960083007812,
+          "readable": true
+        }
+      },
+      "size_mb": 0.18396282196044922
+    },
+    "synthetic_full": {
+      "exists": true,
+      "files": {
+        "synthetic_dataset.pkl": {
+          "exists": true,
+          "size_mb": 4.523637771606445,
+          "readable": false
+        },
+        "dataset_summary.json": {
+          "exists": true,
+          "size_mb": 0.0006885528564453125,
+          "readable": true
+        },
+        "features.csv": {
+          "exists": true,
+          "size_mb": 1.706498146057129,
+          "readable": true
+        },
+        "synthetic_dataset_metadata.json": {
+          "exists": true,
+          "size_mb": 0.0150909423828125,
+          "readable": true
+        }
+      },
+      "size_mb": 6.245915412902832,
+      "plot_count": 20
+    }
+  },
+  "basic_dataset_analysis": {
+    "summary_statistics": {
+      "generation_timestamp": "2025-08-27T21:41:10.614216",
+      "total_sequences": 50,
+      "valid_sequences": 50,
+      "invalid_sequences": 0,
+      "validation_success_rate": 1.0,
+      "average_quality_score": 0.9940000000000001,
+      "quality_score_std": 0.029393876913398145,
+      "gesture_distribution": {
+        "grab": 17,
+        "reach": 14,
+        "point": 9,
+        "handover": 5,
+        "wave": 5
+      },
+      "duration_statistics": {
+        "mean": 1.87,
+        "std": 0.44508426168535775,
+        "min": 1.5,
+        "max": 3.0
+      },
+      "common_issues": {
+        "invalid_range": 2
+      },
+      "workspace_bounds": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        0.0,
+        2.0
+      ],
+      "sampling_frequency": 30.0
+    },
+    "trajectory_analysis": {
+      "error": "No module named 'pyro'"
+    },
+    "validation_timestamp": "2025-08-29T22:37:55.910174"
+  },
+  "quality_metrics": {
+    "dataset_completeness": {
+      "total_samples": 1178,
+      "valid_samples": 1145,
+      "completion_rate": 0.9719864176570459
+    },
+    "trajectory_quality": {
+      "smoothness_mean": 0.4998938428826882,
+      "smoothness_std": 1.9229626863835638e-16,
+      "velocity_consistency": 0.4998938428826883,
+      "acceleration_realism": 1.0
+    },
+    "intent_distribution": {
+      "class_distribution": {
+        "grab": 305,
+        "reach": 365,
+        "point": 173,
+        "handover": 237,
+        "wave": 98
+      },
+      "class_balance_score": 0.9899979029807939,
+      "entropy_score": 0.9469710275892553
+    },
+    "temporal_patterns": {
+      "duration_stats": {
+        "mean": 1.9728353140916808,
+        "std": 0.560916308647195,
+        "min": 1.5,
+        "max": 3.0
+      },
+      "sampling_rate_consistency": 0.95,
+      "temporal_coherence": 0.0
+    },
+    "noise_characteristics": {
+      "noise_level": 0.9939546516123144,
+      "signal_to_noise_ratio": 0.05266858979623656,
+      "noise_type": "gaussian"
+    },
+    "feature_analysis": {
+      "feature_importance": {
+        "speed_mean": 0.14619451684189608,
+        "speed_std": 0.20217715348974244,
+        "speed_max": 0.15994995795091774,
+        "acc_mean": 0.20268075719428805,
+        "acc_std": 0.18327583655895535,
+        "acc_max": 0.1296625801187978,
+        "jerk_mean": 0.88825318262903,
+        "jerk_std": 0.807788804537608,
+        "smoothness_sal": 0.17017761633280346,
+        "n_movement_units": 0.7032263762582112
+      },
+      "outlier_percentage": 5.296231781800542
+    },
+    "overall_assessment": {
+      "quality_score": 0.8072606849645941,
+      "quality_grade": "B"
+    }
+  },
+  "algorithm_integration": {
+    "data_preprocessing": {
+      "status": "success",
+      "original_shape": [
+        100,
+        10
+      ],
+      "scaled_shape": [
+        100,
+        10
+      ],
+      "reduced_shape": [
+        100,
+        5
+      ],
+      "explained_variance_ratio": [
+        0.6109100084808312,
+        0.23626416413100185,
+        0.1181619989608474,
+        0.013087290980198032,
+        0.007699287086608755
+      ]
+    },
+    "clustering_test": {
+      "status": "success",
+      "n_clusters": 5,
+      "cluster_sizes": [
+        16,
+        20,
+        23,
+        10,
+        31
+      ],
+      "inertia": 295.94454227396994
+    },
+    "trajectory_processing": {
+      "status": "success",
+      "original_shape": [
+        50,
+        100,
+        3
+      ],
+      "smoothed_shape": [
+        50,
+        100,
+        3
+      ],
+      "smoothing_improvement": 0.6969273033432583
+    }
+  },
+  "recommendations": [
+    "Improve trajectory smoothness with better filtering",
+    "Enhance velocity consistency in trajectory generation",
+    "Consider noise reduction techniques for cleaner signals"
+  ],
+  "overall_assessment": {
+    "ready_for_training": "True",
+    "production_ready": "True",
+    "quality_grade": "B",
+    "primary_issues": [
+      "Poor trajectory smoothness"
+    ]
+  }
+}

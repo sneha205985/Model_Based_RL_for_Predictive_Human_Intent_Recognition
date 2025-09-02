@@ -1,0 +1,160 @@
+================================================================================
+PROJECT FILE ANALYSIS REPORT
+================================================================================
+
+Analysis Date: 2025-08-31T23:47:34.654872
+Project Root: /Users/snehagupta/Model_Based_RL_for_Predictive_Human_Intent_Recognition/project2_human_intent_rl
+Analysis Time: 1.07 seconds
+Total Files: 1128
+Total Size: 29.2 MB
+
+CLASSIFICATION SUMMARY
+----------------------------------------
+CRITICAL        54 files (   1.7 MB,   4.8%)
+WORKING        106 files (  14.1 MB,   9.4%)
+DUPLICATE        0 files (   0.0 MB,   0.0%)
+GENERATED      466 files (   6.9 MB,  41.3%)
+OBSOLETE        58 files (   0.8 MB,   5.1%)
+UNKNOWN        444 files (   5.8 MB,  39.4%)
+
+CLEANUP RECOMMENDATIONS
+----------------------------------------
+
+🟢 SAFE TO DELETE:
+  GENERATED: 466 files (6.9 MB)
+    → Generated files can be safely deleted and regenerated
+
+🟡 REVIEW FOR DELETION:
+  OBSOLETE: 58 files (0.8 MB)
+    → Files not imported and not recently modified - review before deletion
+  DUPLICATE: 0 files (0.0 MB)
+    → Potential duplicates - manual review recommended
+
+🔴 KEEP FILES:
+  CRITICAL: 54 files (1.7 MB)
+    → Critical files - do not delete
+  WORKING: 106 files (14.1 MB)
+    → Active working files - keep
+
+⚪ NEEDS REVIEW:
+  UNKNOWN: 444 files (5.8 MB)
+    → Unknown classification - manual review required
+
+================================================================================
+TOP FILES BY CATEGORY (First 10)
+================================================================================
+
+CRITICAL FILES:
+---------------
+  src/data/dataset_quality_analyzer.py                         ( 112.4 KB)
+    Reason: Automated classification
+  src/agents/bayesian_rl_agent.py                              (  79.1 KB)
+    Reason: Automated classification
+  src/experiments/experimental_framework.py                    (  65.3 KB)
+    Reason: Automated classification
+  src/data/enhanced_synthetic_generator.py                     (  64.5 KB)
+    Reason: Automated classification
+  experiments/experiment_runner.py                             (  56.2 KB)
+    Reason: Automated classification
+  src/safety/safety_analysis.py                                (  47.8 KB)
+    Reason: Automated classification
+  src/safety/human_safety.py                                   (  46.5 KB)
+    Reason: Automated classification
+  src/system/human_intent_rl_system.py                         (  46.3 KB)
+    Reason: Automated classification
+  src/data/statistical_analysis.py                             (  46.1 KB)
+    Reason: Automated classification
+  src/robustness/sensor_management.py                          (  44.4 KB)
+    Reason: Automated classification
+
+WORKING FILES:
+--------------
+  data/synthetic_full/synthetic_dataset.pkl                    (4632.2 KB)
+    Reason: Active development file
+  data/synthetic_full/features.csv                             (1747.5 KB)
+    Reason: Active development file
+  dataset_validation_results/dataset_quality_report.png        ( 687.1 KB)
+    Reason: Active development file
+  results/figures/comprehensive_radar_chart.png                ( 540.6 KB)
+    Reason: Active development file
+  dataset_validation_results/dataset_integration_test_summary.png ( 350.4 KB)
+    Reason: Active development file
+  dataset_validation_results/dataset_integration_report.png    ( 343.0 KB)
+    Reason: Active development file
+  venv/lib/python3.13/site-packages/pip/_vendor/certifi/cacert.pem ( 290.3 KB)
+    Reason: Active development file
+  final_integration_performance_report.png                     ( 289.2 KB)
+    Reason: Active development file
+  data/synthetic_full/plots/handover_933510_timeseries.png     ( 281.1 KB)
+    Reason: Active development file
+  data/synthetic_full/plots/handover_839452_timeseries.png     ( 277.3 KB)
+    Reason: Active development file
+
+GENERATED FILES:
+----------------
+  venv/lib/python3.13/site-packages/pip/_vendor/idna/uts46data.py ( 233.7 KB)
+    Reason: Generated file pattern
+  venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/_emoji_codes.cpython-313.pyc ( 201.2 KB)
+    Reason: Python cache file
+  venv/lib/python3.13/site-packages/pip/_vendor/distlib/t64-arm.exe ( 178.5 KB)
+    Reason: Generated file pattern
+  venv/lib/python3.13/site-packages/pip/_vendor/__pycache__/typing_extensions.cpython-313.pyc ( 174.1 KB)
+    Reason: Python cache file
+  venv/lib/python3.13/site-packages/pip/_vendor/distlib/w64-arm.exe ( 164.5 KB)
+    Reason: Generated file pattern
+  venv/lib/python3.13/site-packages/pip/_vendor/pkg_resources/__pycache__/__init__.cpython-313.pyc ( 157.9 KB)
+    Reason: Python cache file
+  venv/lib/python3.13/site-packages/pip/_vendor/idna/__pycache__/uts46data.cpython-313.pyc ( 155.4 KB)
+    Reason: Python cache file
+  results/figures/completion_time_distribution.png             ( 155.1 KB)
+    Reason: Generated file pattern
+  venv/lib/python3.13/site-packages/pip/_vendor/rich/__pycache__/console.cpython-313.pyc ( 111.4 KB)
+    Reason: Python cache file
+  venv/lib/python3.13/site-packages/pip/_vendor/distlib/t64.exe ( 105.5 KB)
+    Reason: Generated file pattern
+
+OBSOLETE FILES:
+---------------
+  venv/lib/python3.13/site-packages/pip/_vendor/rich/_emoji_codes.py ( 136.9 KB)
+    Reason: Not imported, not recently modified
+  venv/lib/python3.13/site-packages/pip/_vendor/pygments/lexers/_mapping.py (  75.8 KB)
+    Reason: Not imported, not recently modified
+  tests/test_bayesian_rl_suite.py                              (  63.4 KB)
+    Reason: Not imported, not recently modified
+  tests/safety/safety_test_suite.py                            (  62.5 KB)
+    Reason: Not imported, not recently modified
+  tests/comprehensive_validation_suite.py                      (  51.1 KB)
+    Reason: Not imported, not recently modified
+  tests/integration/test_system_orchestration.py               (  46.5 KB)
+    Reason: Not imported, not recently modified
+  tests/mathematical_validation_suite.py                       (  39.4 KB)
+    Reason: Not imported, not recently modified
+  tests/integration/test_performance_integration.py            (  37.7 KB)
+    Reason: Not imported, not recently modified
+  tests/integration/test_complete_pipeline.py                  (  36.0 KB)
+    Reason: Not imported, not recently modified
+  tests/test_safe_rl_system.py                                 (  30.5 KB)
+    Reason: Not imported, not recently modified
+
+UNKNOWN FILES:
+--------------
+  venv/lib/python3.13/site-packages/pip/_vendor/typing_extensions.py ( 168.7 KB)
+    Reason: Automated classification
+  venv/lib/python3.13/site-packages/pip/_vendor/pkg_resources/__init__.py ( 121.5 KB)
+    Reason: Automated classification
+  venv/bin/python3                                             ( 116.6 KB)
+    Reason: Automated classification
+  venv/bin/python                                              ( 116.6 KB)
+    Reason: Automated classification
+  venv/bin/python3.13                                          ( 116.6 KB)
+    Reason: Automated classification
+  venv/lib/python3.13/site-packages/pip/_vendor/rich/console.py (  98.2 KB)
+    Reason: Automated classification
+  experiments/advanced_analysis.py                             (  72.6 KB)
+    Reason: Automated classification
+  experiments/scenario_definitions.py                          (  68.4 KB)
+    Reason: Automated classification
+  venv/lib/python3.13/site-packages/pip/_vendor/pygments/unistring.py (  61.7 KB)
+    Reason: Automated classification
+  venv/lib/python3.13/site-packages/pip/_vendor/rich/progress.py (  58.9 KB)
+    Reason: Automated classification
